@@ -1,6 +1,5 @@
-// --- LOGIK TELAH DIPERBAIKI SEPENUHNYA ---
-// Versi ini membetulkan ralat yang menyebabkan dropdown minggu gagal dimuatkan,
-// sambil mengekalkan semua fungsi AI dan penunjuk status.
+// --- LOGIK TELAH DIPERBAIKI ---
+// VERSI TERKINI: Kriteria Kejayaan (KK) kini lebih spesifik dan dinamik.
 
 document.addEventListener('DOMContentLoaded', function () {
     // Pastikan SEMUA_DATA wujud sebelum meneruskan
@@ -235,13 +234,14 @@ async function generateRPHContent(formData, rptData, bukuTeksData) {
     const spTextClean = spTerpilih.replace(/^\d+\.\d+\.\d+\s*/, '').trim();
     const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextClean} berdasarkan aktiviti yang dijalankan.`;
 
+    // --- PEMBETULAN KRITERIA KEJAYAAN DI SINI ---
     return {
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
         standardKandungan: skTerpilih, standardPembelajaran: spTerpilih,
         mukaSurat: mukaSuratPilihan, objektif: objektifDinamik,
-        kriteriaCemerlang: `Murid berjaya ${spTextClean} dengan cemerlang dan menunjukkan kefahaman mendalam.`,
-        kriteriaSederhana: `Murid berjaya ${spTextClean} dengan baik dan memahami konsep asas.`,
-        kriteriaBimbingan: `Murid berjaya ${spTextClean} dengan bimbingan guru.`,
+        kriteriaCemerlang: `Murid berjaya ${spTextClean} 5 dari 5 aktiviti dengan cemerlang dan menunjukkan kefahaman mendalam.`,
+        kriteriaSederhana: `Murid berjaya ${spTextClean} 3 dari 5 aktiviti dengan baik dan memahami konsep asas.`,
+        kriteriaBimbingan: `Murid berjaya ${spTextClean} 2 dari 5 aktiviti dengan bimbingan guru.`,
         rangkaSetInduksi: [`Guru mempamerkan gambar visual berkaitan ${rptData.tajuk} dan murid menyatakan pemerhatian awal.`, setInduksiBukuTeks],
         rangkaAktiviti: rangkaAktivitiDinamik,
         bahanBBM: `Buku teks muka surat ${mukaSuratPilihan}, bahan PAK21, alat multimedia, visual aids berkaitan ${rptData.tajuk}.`,
@@ -294,6 +294,4 @@ function renderRPH(rphData, formData) {
         </div>
     `;
 }
-
-
 
