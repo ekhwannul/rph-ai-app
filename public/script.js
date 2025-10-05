@@ -1,5 +1,5 @@
 // --- LOGIK TELAH DIPERBAIKI ---
-// VERSI TERKINI: AI kini memilih satu pasangan SK/SP dan mereka bentuk aktiviti yang sesuai.
+// VERSI TERKINI: Menambah penunjuk status untuk mengesahkan jika Groq AI digunakan.
 
 // --- PANGKALAN DATA AKTIVITI PAK21 (BERDASARKAN PDF) ---
 const senaraiAktivitiPAK21 = [
@@ -79,7 +79,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let currentFormData = null;
 
-    // Fungsi untuk mengisi dropdown minggu berdasarkan tahun yang dipilih
     function populateMingguDropdown(selectedTahun) {
         if (!mingguSelect) return;
         mingguSelect.innerHTML = ''; 
@@ -103,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (form) {
-        form.addEventListener('submit', function (e) {
+        form.addEventListener('submit', async function (e) { 
             e.preventDefault();
             
             if (loadingDiv) loadingDiv.style.display = 'block';
@@ -124,38 +123,36 @@ document.addEventListener('DOMContentLoaded', function () {
                 return;
             }
 
-            setTimeout(() => {
-                try {
-                    if (!rphContentDiv) {
-                        throw new Error("Elemen HTML dengan id='rphContent' tidak ditemui. Sila pastikan struktur fail index.html anda betul.");
-                    }
-
-                    const dataTahunIni = SEMUA_DATA[formData.tahun];
-                    if (!dataTahunIni) {
-                        throw new Error(`Data untuk Tahun ${formData.tahun} tidak wujud.`);
-                    }
-
-                    const rptData = dataTahunIni.RPT_DATA[formData.minggu];
-                    const bukuTeksData = (dataTahunIni.BUKU_TEKS_DATA && dataTahunIni.BUKU_TEKS_DATA[formData.minggu]) 
-                                         ? dataTahunIni.BUKU_TEKS_DATA[formData.minggu] 
-                                         : { mukaSurat: "Rujuk buku teks" };
-
-                    if (!rptData) {
-                        rphContentDiv.innerHTML = generateTiadaDataContent(formData.minggu, formData.tahun);
-                    } else {
-                        const rphData = generateRPHContent(formData, rptData, bukuTeksData);
-                        rphContentDiv.innerHTML = renderRPH(rphData, formData);
-                    }
-
-                    if (resultDiv) resultDiv.style.display = 'block';
-
-                } catch (error) {
-                    showError(error.message);
-                    console.error("Ralat semasa menjana RPH:", error);
-                } finally {
-                    if (loadingDiv) loadingDiv.style.display = 'none';
+            try {
+                if (!rphContentDiv) {
+                    throw new Error("Elemen HTML dengan id='rphContent' tidak ditemui.");
                 }
-            }, 500);
+
+                const dataTahunIni = SEMUA_DATA[formData.tahun];
+                if (!dataTahunIni) {
+                    throw new Error(`Data untuk Tahun ${formData.tahun} tidak wujud.`);
+                }
+
+                const rptData = dataTahunIni.RPT_DATA[formData.minggu];
+                 const bukuTeksData = (dataTahunIni.BUKU_TEKS_DATA && dataTahunIni.BUKU_TEKS_DATA[formData.minggu]) 
+                                     ? dataTahunIni.BUKU_TEKS_DATA[formData.minggu] 
+                                     : { mukaSurat: "Rujuk buku teks" };
+
+                if (!rptData) {
+                    rphContentDiv.innerHTML = generateTiadaDataContent(formData.minggu, formData.tahun);
+                } else {
+                    const rphData = await generateRPHContent(formData, rptData, bukuTeksData);
+                    rphContentDiv.innerHTML = renderRPH(rphData, formData);
+                }
+
+                if (resultDiv) resultDiv.style.display = 'block';
+
+            } catch (error) {
+                showError(error.message);
+                console.error("Ralat semasa menjana RPH:", error);
+            } finally {
+                if (loadingDiv) loadingDiv.style.display = 'none';
+            }
         });
     }
 
@@ -200,7 +197,6 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 });
 
-
 function formatTarikh(tarikhISO) {
     if (!tarikhISO) return 'Tarikh tidak ditetapkan';
     const tarikh = new Date(tarikhISO);
@@ -222,69 +218,47 @@ function generateTiadaDataContent(minggu, tahun) {
     `;
 }
 
-// --- FUNGSI "AI" YANG TELAH DIUBAH SUAI SECARA MENYELURUH ---
-function generateRPHContent(formData, rptData, bukuTeksData) {
+async function generateRPHContent(formData, rptData, bukuTeksData) {
     
-    // Fungsi 1: Memilih satu pasangan SK dan SP yang sesuai secara "pintar"
     const pilihSKSPSesuaian = (skString, spString) => {
         if (!skString || !spString) {
             return { sk: "Standard Kandungan tidak dinyatakan", sp: "Standard Pembelajaran tidak dinyatakan" };
         }
-
         const skList = skString.split('\n').map(s => s.trim()).filter(Boolean);
         const spList = spString.split('\n').map(s => s.trim()).filter(Boolean);
-
         if (spList.length === 0) {
             return { sk: skList.join('<br>'), sp: "Tiada Standard Pembelajaran spesifik" };
         }
-
-        // Pilih satu SP secara rawak dari senarai yang ada untuk minggu tersebut
         const spTerpilih = spList[Math.floor(Math.random() * spList.length)];
-
-        // Cari SK yang sepadan berdasarkan nombor utama (cth: SP 2.1.1 sepadan dengan SK 2.1)
         const spCodeMatch = spTerpilih.match(/^(\d+\.\d+)/);
-        let skSepadan = skList.length > 0 ? skList[0] : "Standard Kandungan tidak dinyatakan"; // Fallback
-
+        let skSepadan = skList.length > 0 ? skList[0] : "Standard Kandungan tidak dinyatakan";
         if (spCodeMatch) {
             const spBaseCode = spCodeMatch[1];
             const foundSk = skList.find(sk => sk.trim().startsWith(spBaseCode));
-            if (foundSk) {
-                skSepadan = foundSk;
-            }
+            if (foundSk) skSepadan = foundSk;
         }
-        
         return { sk: skSepadan, sp: spTerpilih };
     };
     
-    // Fungsi 2: Memilih info buku teks (sedia ada, tidak perlu ubah)
     const pilihInfoBukuTeks = (mukaSuratData, tajuk, sp) => {
         if (!mukaSuratData) return { mukaSurat: 'Rujuk buku teks', aktiviti: 'membaca petikan berkaitan tajuk pembelajaran' };
         if (!mukaSuratData.includes('<br>')) {
             return { mukaSurat: mukaSuratData, aktiviti: 'membaca petikan berkaitan tajuk pembelajaran' };
         }
-        
         const senaraiAktiviti = mukaSuratData.split('<br>').map(line => line.trim()).filter(line => line);
         let pilihanTerbaik = senaraiAktiviti[0]; 
         let skorTerbaik = 0;
-
-        const kataKunci = `${tajuk} ${sp}`.toLowerCase()
-            .replace(/[^\w\s]/gi, '')
-            .split(' ')
-            .filter(k => k.length > 3 && !['unit', 'tema', 'dan', 'atau', 'pada', 'yang', 'dalam', 'untuk'].includes(k));
-
+        const kataKunci = `${tajuk} ${sp}`.toLowerCase().replace(/[^\w\s]/gi, '').split(' ').filter(k => k.length > 3 && !['unit', 'tema', 'dan', 'atau', 'pada', 'yang', 'dalam', 'untuk'].includes(k));
         for (const aktiviti of senaraiAktiviti) {
             let skorSemasa = 0;
             for (const kunci of kataKunci) {
-                if (aktiviti.toLowerCase().includes(kunci)) {
-                    skorSemasa++;
-                }
+                if (aktiviti.toLowerCase().includes(kunci)) skorSemasa++;
             }
             if (skorSemasa > skorTerbaik) {
                 skorTerbaik = skorSemasa;
                 pilihanTerbaik = aktiviti;
             }
         }
-        
         let mukaSurat = 'Rujuk buku teks';
         const match = pilihanTerbaik.match(/mukasurat\s+(\d+)|m\/s\s+(\d+)|halaman\s+(\d+)|hlm\s+(\d+)/i);
         if (match) {
@@ -293,82 +267,56 @@ function generateRPHContent(formData, rptData, bukuTeksData) {
             const nomborPertama = pilihanTerbaik.match(/\d+/);
             if (nomborPertama) mukaSurat = nomborPertama[0];
         }
-
-        let aktivitiTeks = pilihanTerbaik
-            .replace(/mukasurat\s+\d+|m\/s\s+\d+|halaman\s+\d+|hlm\s+\d+/i, '')
-            .replace(/^\s*-\s*/, '')
-            .replace(/\(\)/g, '')
-            .trim();
-
-        if (!aktivitiTeks) {
-            aktivitiTeks = 'membaca petikan berkaitan tajuk pembelajaran';
-        }
-
+        let aktivitiTeks = pilihanTerbaik.replace(/mukasurat\s+\d+|m\/s\s+\d+|halaman\s+\d+|hlm\s+\d+/i, '').replace(/^\s*-\s*/, '').replace(/\(\)/g, '').trim();
+        if (!aktivitiTeks) aktivitiTeks = 'membaca petikan berkaitan tajuk pembelajaran';
         return { mukaSurat: mukaSurat, aktiviti: aktivitiTeks };
     };
 
-    // Fungsi 3: Menjana aktiviti kreatif berdasarkan SK/SP dan tahap kreativiti
-    const generateCreativeActivities = (level, tajuk, sp) => {
-        const aktivitiUmum = `berkaitan topik ${tajuk}`;
-        let langkahLangkah;
-        const kemahiran = sp.toLowerCase();
-        let aktivitiPilihanPAK21;
-
-        // Tentukan jenis aktiviti PAK21 yang sesuai berdasarkan kemahiran dalam SP
-        if (kemahiran.includes('bertutur') || kemahiran.includes('respons') || kemahiran.includes('bercerita') || kemahiran.includes('bersoal jawab')) {
-            aktivitiPilihanPAK21 = ["Hot Seat", "Think-Pair-Share", "Rally Robin"];
-        } else if (kemahiran.includes('menulis') || kemahiran.includes('membina ayat') || kemahiran.includes('penulisan')) {
-            aktivitiPilihanPAK21 = ["Round Table", "Gallery Walk"];
-        } else if (kemahiran.includes('membaca') || kemahiran.includes('memahami')) {
-            aktivitiPilihanPAK21 = ["Jigsaw Reading", "Think-Pair-Share"];
-        } else {
-            // Fallback untuk kemahiran lain (cth: tatabahasa, seni bahasa)
-            aktivitiPilihanPAK21 = ["Fan-N-Pick", "Gallery Walk", "Think-Pair-Share"];
+    // --- FUNGSI BARU: Memanggil backend untuk mendapatkan aktiviti AI ---
+    async function getAIActivities(level, tajuk, sp) {
+        try {
+            const response = await fetch('/api/generate-activities', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ level, tajuk, sp })
+            });
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Ralat tidak diketahui dari server.');
+            }
+            const data = await response.json();
+            return { activities: data.activities, source: 'Groq AI' }; // Berjaya
+        } catch (error) {
+            console.error('Gagal mendapatkan aktiviti dari AI:', error);
+            // Fallback kepada aktiviti statik jika AI gagal
+            return {
+                activities: [
+                    "Guru bersoal jawab dengan murid berkaitan topik.",
+                    "Murid membuat latihan berdasarkan buku teks.",
+                    "Perbincangan jawapan bersama guru.",
+                    "Guru dan murid membuat refleksi tentang pengajaran hari ini."
+                ],
+                source: 'Fallback' // Gagal
+            };
         }
-        
-        if (level === 'Asas') {
-            langkahLangkah = [
-                `Guru bersoal jawab dengan murid ${aktivitiUmum}.`,
-                `Murid membaca petikan atau nota yang diberikan oleh guru secara kelas.`,
-                `Guru memberi penerangan dan contoh tambahan berdasarkan Standard Pembelajaran hari ini.`,
-                `Murid menjawab soalan pemahaman atau membuat latihan bertulis secara individu.`
-            ];
-        } else {
-            // Pilih satu aktiviti PAK21 secara rawak dari senarai yang sesuai
-            const namaAktiviti = aktivitiPilihanPAK21[Math.floor(Math.random() * aktivitiPilihanPAK21.length)];
-            const pak21Obj = senaraiAktivitiPAK21.find(a => a.nama === namaAktiviti);
-            
-            // Bina penerangan aktiviti
-            langkahLangkah = [`Aktiviti PAK21: Murid menjalankan aktiviti <strong>${pak21Obj.nama}</strong>.`];
-            langkahLangkah = langkahLangkah.concat(pak21Obj.langkah);
-        }
+    }
 
-        // Tambah langkah refleksi sebagai langkah terakhir yang wajib
-        langkahLangkah.push("Guru dan murid membuat refleksi tentang pengajaran hari ini.");
-        return langkahLangkah;
-    };
-    
-    // --- PROSES UTAMA PENJANAAN RPH ---
-
-    // 1. Pilih sepasang SK dan SP yang menjadi fokus
     const { sk: skTerpilih, sp: spTerpilih } = pilihSKSPSesuaian(rptData.standardKandungan, rptData.standardPembelajaran);
-
-    // 2. Pilih info buku teks yang relevan
     const infoBukuTeks = pilihInfoBukuTeks(bukuTeksData.mukaSurat, rptData.tajuk, spTerpilih);
     const mukaSuratPilihan = infoBukuTeks.mukaSurat;
     const aktivitiSpesifik = infoBukuTeks.aktiviti;
 
-    // 3. Menjana aktiviti pengajaran berdasarkan tahap kreativiti dan SP yang dipilih
-    const rangkaAktivitiDinamik = generateCreativeActivities(formData.kreativiti, rptData.tajuk, spTerpilih);
+    // Panggil backend untuk menjana aktiviti
+    const hasilAI = await getAIActivities(formData.kreativiti, rptData.tajuk, spTerpilih);
+    const rangkaAktivitiDinamik = hasilAI.activities;
+    const sumberAktiviti = hasilAI.source;
 
-    // 4. Bina ayat Set Induksi yang lebih kemas dan terperinci
     let setInduksiBukuTeks = `Murid membuka buku teks muka surat ${mukaSuratPilihan}`;
     if (aktivitiSpesifik && aktivitiSpesifik !== 'membaca petikan berkaitan tajuk pembelajaran') {
         setInduksiBukuTeks += `, ${aktivitiSpesifik.charAt(0).toLowerCase() + aktivitiSpesifik.slice(1)}`;
     }
     setInduksiBukuTeks += `.`;
 
-    // 5. Bina Objektif Pembelajaran dan Kriteria Kejayaan yang lebih spesifik
     const spTextClean = spTerpilih.replace(/^\d+\.\d+\.\d+\s*/, '').trim();
     const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextClean} berdasarkan aktiviti yang dijalankan.`;
 
@@ -388,17 +336,20 @@ function generateRPHContent(formData, rptData, bukuTeksData) {
             setInduksiBukuTeks
         ],
         rangkaAktiviti: rangkaAktivitiDinamik,
-        bahanBBM: `Buku teks muka surat ${mukaSuratPilihan}, bahan PAK21 (kad aktiviti, kertas mahjong, pen marker), alat multimedia, visual aids berkaitan ${rptData.tajuk}.`,
-        pemulihan: "Bimbingan individu dan aktiviti alternatif yang lebih terstruktur. Guru memberikan panduan langkah demi langkah.",
-        pengayaan: "Tugasan kreatif lanjutan dan projek mini untuk murid yang telah menguasai kemahiran asas. Aktiviti cabaran tinggi."
+        bahanBBM: `Buku teks muka surat ${mukaSuratPilihan}, bahan PAK21, alat multimedia, visual aids berkaitan ${rptData.tajuk}.`,
+        pemulihan: "Bimbingan individu dan aktiviti alternatif yang lebih terstruktur.",
+        pengayaan: "Tugasan kreatif lanjutan dan projek mini.",
+        sumberAktiviti: sumberAktiviti // Tambah status sumber AI
     };
 }
 
-
 function renderRPH(rphData, formData) {
+    // Tentukan warna dan teks status berdasarkan sumber aktiviti
+    const aiStatusColor = rphData.sumberAktiviti === 'Groq AI' ? '#28a745' : '#dc3545';
+    const aiStatusText = rphData.sumberAktiviti === 'Groq AI' ? 'Berjaya (Groq AI)' : 'Gagal (Fallback)';
+
     return `
         <h2 class="rph-title">RANCANGAN PENGAJARAN HARIAN - TAHUN ${formData.tahun}</h2>
-        
         <table class="rph-table">
             <tr><td><strong>Mata Pelajaran:</strong></td><td>BAHASA MELAYU TAHUN ${formData.tahun}</td></tr>
             <tr><td><strong>Kelas:</strong></td><td>${formData.kelas}</td></tr>
@@ -410,17 +361,14 @@ function renderRPH(rphData, formData) {
             <tr><td><strong>Standard Pembelajaran:</strong></td><td>${rphData.standardPembelajaran.replace(/\n/g, '<br>')}</td></tr>
             <tr><td><strong>Muka Surat Buku Teks:</strong></td><td>${rphData.mukaSurat}</td></tr>
         </table>
-
         <h3>📚 Objektif Pembelajaran</h3>
         <p>${rphData.objektif}</p>
-
         <h3>🎯 Kriteria Kejayaan</h3>
         <div class="success-criteria">
             <div class="criteria-item">🏆 <strong>Cemerlang:</strong> ${rphData.kriteriaCemerlang}</div>
             <div class="criteria-item">✅ <strong>Sederhana:</strong> ${rphData.kriteriaSederhana}</div>
             <div class="criteria-item">💡 <strong>Perlu Bimbingan:</strong> ${rphData.kriteriaBimbingan}</div>
         </div>
-
         <h3>🔄 Rangka Pengajaran</h3>
         <div class="teaching-framework">
             <div class="framework-section">
@@ -432,23 +380,30 @@ function renderRPH(rphData, formData) {
                 <ol>${rphData.rangkaAktiviti.map(item => `<li>${item}</li>`).join('')}</ol>
             </div>
         </div>
-
         <h3>📦 Bahan Bantu Mengajar</h3>
         <p>${rphData.bahanBBM}</p>
-        
         <h3>🔧 Pemulihan</h3>
         <p>${rphData.pemulihan}</p>
-        
         <h3>🚀 Pengayaan</h3>
         <p>${rphData.pengayaan}</p>
-
         <div class="ai-notes">
-            <h4>🎯 Enhanced Fallback Mode - TAHUN ${formData.tahun}</h4>
-            <p><strong>Format KK:</strong> 2 dari 3 aktiviti berjaya diselesaikan</p>
-            <p><strong>Aktiviti:</strong> Detail dengan penerangan lengkap</p>
-            <p><strong>Kreativiti Level:</strong> ${formData.kreativiti}</p>
-            <p><strong>Tahap:</strong> Disesuaikan untuk murid TAHUN ${formData.tahun}</p>
+            <h4>🎯 Nota Penjanaan AI</h4>
+            <p><strong>Status Panggilan AI:</strong> <span style="color: ${aiStatusColor}; font-weight: bold;">${aiStatusText}</span></p>
+            <p><strong>Tahap Kreativiti Dipilih:</strong> ${formData.kreativiti}</p>
         </div>
     `;
 }
+```
+
+---
+
+### Fasa 2: Muat Naik Perubahan ke GitHub
+
+1.  **Buka Terminal/Command Prompt** dan navigasi ke folder projek anda.
+2.  Laksanakan arahan-arahan ini satu per satu:
+    ```bash
+    git add .
+    git commit -m "Tambah penunjuk status AI pada RPH"
+    git push
+    
 
