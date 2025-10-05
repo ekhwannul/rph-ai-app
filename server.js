@@ -38,17 +38,17 @@ app.post('/api/generate-activities', async (req, res) => {
             break;
     }
 
-    // Bina arahan (prompt) yang terperinci untuk AI
-    const prompt = `Anda adalah seorang Guru Cemerlang Bahasa Melayu. Reka BENTUK LIMA (5) langkah aktiviti pengajaran yang ${complexity}.
+    // --- PEMBETULAN PROMPT AI DI SINI ---
+    const prompt = `Anda adalah seorang Guru Cemerlang Bahasa Melayu. Reka BENTUK antara LIMA (5) hingga TUJUH (7) langkah aktiviti pengajaran yang ${complexity}.
 
 Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
 Syarat:
-- Hasilkan LIMA langkah pengajaran yang logik.
+- Hasilkan antara 5 hingga 7 langkah pengajaran yang logik, bergantung pada kesesuaian aktiviti.
 - Langkah terakhir WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
 - Jangan sertakan "Set Induksi".
-- Berikan jawapan dalam format senarai bernombor (1., 2., 3., 4., 5.).
+- Berikan jawapan dalam format senarai bernombor.
 - Jangan gunakan sebarang format Markdown atau tajuk. Berikan senarai aktiviti sahaja.`;
 
     try {
