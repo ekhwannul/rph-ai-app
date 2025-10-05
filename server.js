@@ -1,68 +1,101 @@
-// server.js - Ini adalah backend kita.
+// --- VERSI LENGKAP & TERKINI ---
+// Fail ini mengandungi logik backend untuk:
+// 1. Menjalankan pelayan web.
+// 2. Berhubung dengan Groq AI secara selamat menggunakan kunci API dari environment variable.
+// 3. Menjana aktiviti pengajaran berdasarkan permintaan dari frontend.
+
 const express = require('express');
 const path = require('path');
-
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware untuk membenarkan server menerima data JSON
+// Middleware untuk membenarkan parsing JSON
 app.use(express.json());
 
-// Hidangkan fail-fail statik dari folder 'public'
+// Menghidangkan fail statik dari folder 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
-// API Endpoint untuk berhubung dengan Groq
+// API endpoint untuk menjana aktiviti
 app.post('/api/generate-activities', async (req, res) => {
-    // Dapatkan kunci API dari environment variable di Render.com
-    const GROQ_API_KEY = process.env.GROQ_API_KEY;
+    const { level, tajuk, sp } = req.body;
+    const apiKey = process.env.GROQ_API_KEY;
 
-    if (!GROQ_API_KEY) {
+    if (!apiKey) {
         return res.status(500).json({ error: 'Kunci API Groq tidak ditetapkan di server.' });
     }
 
-    const { level, tajuk, sp } = req.body;
-
-    if (!level || !tajuk || !sp) {
-        return res.status(400).json({ error: 'Maklumat tidak lengkap dihantar ke server.' });
+    // Tentukan tahap kerumitan aktiviti berdasarkan input
+    let complexity;
+    switch (level) {
+        case 'Tinggi':
+            complexity = "sangat kreatif dan berpusatkan murid (PAK21)";
+            break;
+        case 'Sederhana':
+            complexity = "melibatkan perbincangan dan interaksi antara murid";
+            break;
+        default:
+            complexity = "asas dan berpandukan arahan guru";
+            break;
     }
 
-    const prompt = `Anda seorang guru pakar Bahasa Melayu di Malaysia. Reka 5 langkah aktiviti pengajaran (PdP) untuk topik "${tajuk}" dengan fokus pada standard pembelajaran "${sp}". Tahap kreativiti yang dikehendaki adalah "${level}". 
-- Jika tahap 'Asas', fokus pada aktiviti berpusatkan guru.
-- Jika tahap 'Sederhana', guna aktiviti berpasangan (cth: Think-Pair-Share).
-- Jika tahap 'Tinggi', guna satu aktiviti PAK21 yang kolaboratif (cth: Gallery Walk, Jigsaw Reading).
-Hasilkan senarai bernombor. Jangan tambah sebarang pengenalan atau penutup, hanya senarai itu. Akhiri dengan langkah refleksi "Guru dan murid membuat refleksi tentang pengajaran hari ini.".`;
+    // Bina arahan (prompt) yang terperinci untuk AI
+    const prompt = `Anda adalah seorang Guru Cemerlang Bahasa Melayu. Reka BENTUK LIMA (5) langkah aktiviti pengajaran yang ${complexity}.
+
+Topik Pengajaran: "${tajuk}"
+Fokus Kemahiran (Standard Pembelajaran): "${sp}"
+
+Syarat:
+- Hasilkan LIMA langkah pengajaran yang logik.
+- Langkah terakhir WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
+- Jangan sertakan "Set Induksi".
+- Berikan jawapan dalam format senarai bernombor (1., 2., 3., 4., 5.).
+- Jangan gunakan sebarang format Markdown atau tajuk. Berikan senarai aktiviti sahaja.`;
 
     try {
-        const groqResponse = await fetch("https://api.groq.com/openai/v1/chat/completions", {
-            method: "POST",
+        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+            method: 'POST',
             headers: {
-                "Authorization": `Bearer ${GROQ_API_KEY}`,
-                "Content-Type": "application/json"
+                'Authorization': `Bearer ${apiKey}`,
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                model: "llama3-8b-8192",
-                messages: [{ role: "user", content: prompt }],
-                temperature: 0.8,
+                messages: [
+                    {
+                        role: 'system',
+                        content: 'Anda adalah pembantu pakar dalam merangka aktiviti pengajaran Bahasa Melayu.'
+                    },
+                    {
+                        role: 'user',
+                        content: prompt
+                    }
+                ],
+                model: 'llama-3.1-8b-instant' // Model AI yang telah dikemas kini
             })
         });
 
-        if (!groqResponse.ok) {
-            const errorData = await groqResponse.json();
-            throw new Error(`Ralat API Groq: ${errorData.error.message}`);
+        if (!response.ok) {
+            const errorBody = await response.json();
+            console.error('Ralat API Groq:', errorBody);
+            throw new Error(`Ralat API Groq: ${errorBody.error.message}`);
         }
 
-        const data = await groqResponse.json();
-        const content = data.choices[0].message.content;
-        const activities = content.split('\n').map(line => line.replace(/^\d+\.\s*/, '').trim()).filter(Boolean);
+        const data = await response.json();
+        const aiResponse = data.choices[0]?.message?.content || '';
         
+        // Memproses jawapan AI untuk dijadikan format senarai (array)
+        const activities = aiResponse.split('\n')
+            .map(line => line.replace(/^\d+\.\s*/, '').trim()) // Buang nombor di hadapan
+            .filter(line => line.length > 0); // Buang baris kosong
+
         res.json({ activities });
 
     } catch (error) {
-        console.error("Gagal memanggil API Groq:", error);
-        res.status(500).json({ error: "Gagal menghubungi AI Groq. Sila cuba sebentar lagi." });
+        console.error('Gagal memanggil API Groq:', error);
+        res.status(500).json({ error: 'Gagal menjana aktiviti dari AI. Sila semak log server.' });
     }
 });
 
+// Jalankan server
 app.listen(PORT, () => {
     console.log(`Server sedang berjalan di port ${PORT}`);
 });
