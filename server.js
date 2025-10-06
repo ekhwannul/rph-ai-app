@@ -45,7 +45,7 @@ Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
 Syarat:
-- Hasilkan antara 5 hingga 7 langkah pengajaran yang logik, bergantung pada kesesuaian aktiviti.  
+- Hasilkan antara 5 langkah pengajaran yang logik, bergantung pada kesesuaian aktiviti. (JANGAN LEBIH DARI LIMA)
 - Bina ayat yang ringkas sahaja untuk setiap aktiviti 
 - Langkah terakhir WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
 - Jangan sertakan "Set Induksi".
