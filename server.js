@@ -145,14 +145,6 @@ async function tryOpenRouter(prompt) {
 app.listen(PORT, () => {
     console.log(`Server sedang berjalan di port ${PORT}`);
 });
-```
 
-### Langkah Seterusnya
 
-1.  **Muat Naik ke GitHub:** Simpan perubahan pada `server.js`, kemudian muat naik ke GitHub:
-    ```bash
-    git add .
-    git commit -m "Tukar model AI untuk Hugging Face & OpenRouter"
-    git push
-    
 
