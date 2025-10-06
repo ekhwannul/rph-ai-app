@@ -1,103 +1,129 @@
-// --- VERSI LENGKAP & TERKINI ---
-// Fail ini mengandungi logik backend untuk:
-// 1. Menjalankan pelayan web.
-// 2. Berhubung dengan Groq AI secara selamat menggunakan kunci API dari environment variable.
-// 3. Menjana aktiviti pengajaran berdasarkan permintaan dari frontend.
+// --- VERSI NAIK TARAF ---
+// 1. Prompt AI dikemas kini (Maks 5 langkah, Bahasa Melayu Malaysia).
+// 2. Melaksanakan sistem fallback: Groq -> Hugging Face -> OpenRouter.
 
 const express = require('express');
 const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware untuk membenarkan parsing JSON
 app.use(express.json());
-
-// Menghidangkan fail statik dari folder 'public'
 app.use(express.static(path.join(__dirname, 'public')));
 
-// API endpoint untuk menjana aktiviti
-app.post('/api/generate-activities', async (req, res) => {
-    const { level, tajuk, sp } = req.body;
-    const apiKey = process.env.GROQ_API_KEY;
-
-    if (!apiKey) {
-        return res.status(500).json({ error: 'Kunci API Groq tidak ditetapkan di server.' });
-    }
-
-    // Tentukan tahap kerumitan aktiviti berdasarkan input
+// Fungsi untuk membina prompt AI
+const buildPrompt = (level, tajuk, sp) => {
     let complexity;
     switch (level) {
-        case 'Tinggi':
-            complexity = "sangat kreatif dan berpusatkan murid (PAK21)";
-            break;
-        case 'Sederhana':
-            complexity = "melibatkan perbincangan dan interaksi antara murid";
-            break;
-        default:
-            complexity = "asas dan berpandukan arahan guru";
-            break;
+        case 'Tinggi': complexity = "sangat kreatif dan berpusatkan murid (PAK21)"; break;
+        case 'Sederhana': complexity = "melibatkan perbincangan dan interaksi antara murid"; break;
+        default: complexity = "asas dan berpandukan arahan guru"; break;
     }
 
-    // --- PEMBETULAN PROMPT AI DI SINI ---
-    const prompt = `Anda adalah seorang Guru Cemerlang Bahasa Melayu. Reka BENTUK antara LIMA 5 langkah aktiviti pengajaran yang ${complexity}.
+    return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia. Reka BENTUK TEPAT LIMA (5) langkah aktiviti pengajaran yang ${complexity}.
 
 Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
-Syarat:
-- Gunakan BAHASA MALAYSIA
-- Hasilkan antara 5 langkah pengajaran yang logik, bergantung pada kesesuaian aktiviti. (JANGAN LEBIH DARI LIMA)
-- Bina ayat yang ringkas sahaja untuk setiap aktiviti 
+Syarat Penting:
+- Hasilkan TEPAT 5 langkah pengajaran. Tidak boleh kurang, tidak boleh lebih.
+- Gunakan Bahasa Melayu standard Malaysia sepenuhnya. Elakkan penggunaan istilah Indonesia.
 - Langkah terakhir WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
 - Jangan sertakan "Set Induksi".
-- Berikan jawapan dalam format senarai bernombor.
+- Berikan jawapan dalam format senarai bernombor (1., 2., 3., 4., 5.).
 - Jangan gunakan sebarang format Markdown atau tajuk. Berikan senarai aktiviti sahaja.`;
+};
 
-    try {
-        const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-            method: 'POST',
-            headers: {
-                'Authorization': `Bearer ${apiKey}`,
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                messages: [
-                    {
-                        role: 'system',
-                        content: 'Anda adalah pembantu pakar dalam merangka aktiviti pengajaran Bahasa Melayu.'
-                    },
-                    {
-                        role: 'user',
-                        content: prompt
-                    }
-                ],
-                model: 'llama-3.1-8b-instant' // Model AI yang telah dikemas kini
-            })
-        });
+// Fungsi untuk memproses jawapan dari API
+const processAIResponse = (responseText) => {
+    return responseText.split('\n')
+        .map(line => line.replace(/^\d+\.\s*/, '').trim())
+        .filter(line => line.length > 0);
+};
 
-        if (!response.ok) {
-            const errorBody = await response.json();
-            console.error('Ralat API Groq:', errorBody);
-            throw new Error(`Ralat API Groq: ${errorBody.error.message}`);
+// API Endpoint Utama
+app.post('/api/generate-activities', async (req, res) => {
+    const { level, tajuk, sp } = req.body;
+    const prompt = buildPrompt(level, tajuk, sp);
+
+    const providers = [
+        { name: 'Groq', try: tryGroq },
+        { name: 'Hugging Face', try: tryHuggingFace },
+        { name: 'OpenRouter', try: tryOpenRouter }
+    ];
+
+    for (const provider of providers) {
+        try {
+            console.log(`Mencuba ${provider.name}...`);
+            const activities = await provider.try(prompt);
+            // Jika berjaya dan ada kandungan, hantar respons
+            if (activities && activities.length > 0) {
+                console.log(`${provider.name} berjaya.`);
+                return res.json({ activities, source: provider.name });
+            }
+        } catch (error) {
+            console.error(`Ralat pada ${provider.name}:`, error.message);
         }
-
-        const data = await response.json();
-        const aiResponse = data.choices[0]?.message?.content || '';
-        
-        // Memproses jawapan AI untuk dijadikan format senarai (array)
-        const activities = aiResponse.split('\n')
-            .map(line => line.replace(/^\d+\.\s*/, '').trim()) // Buang nombor di hadapan
-            .filter(line => line.length > 0); // Buang baris kosong
-
-        res.json({ activities });
-
-    } catch (error) {
-        console.error('Gagal memanggil API Groq:', error);
-        res.status(500).json({ error: 'Gagal menjana aktiviti dari AI. Sila semak log server.' });
     }
+
+    // Jika semua gagal
+    console.log("Semua penyedia AI gagal. Menggunakan fallback statik.");
+    res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi.' });
 });
 
-// Jalankan server
+// --- Fungsi untuk setiap penyedia AI ---
+
+async function tryGroq(prompt) {
+    const apiKey = process.env.GROQ_API_KEY;
+    if (!apiKey) return null;
+
+    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            messages: [{ role: 'user', content: prompt }],
+            model: 'llama-3.1-8b-instant'
+        })
+    });
+    if (!response.ok) throw new Error(`Groq API returned ${response.status}`);
+    const data = await response.json();
+    const content = data.choices[0]?.message?.content;
+    return processAIResponse(content);
+}
+
+async function tryHuggingFace(prompt) {
+    const apiKey = process.env.HUGGINGFACE_API_KEY;
+    if (!apiKey) return null;
+
+    const response = await fetch('https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ inputs: prompt })
+    });
+    if (!response.ok) throw new Error(`Hugging Face API returned ${response.status}`);
+    const data = await response.json();
+    const content = data[0]?.generated_text.replace(prompt, '').trim(); // Buang prompt dari jawapan
+    return processAIResponse(content);
+}
+
+async function tryOpenRouter(prompt) {
+    const apiKey = process.env.OPENROUTER_API_KEY;
+    if (!apiKey) return null;
+
+    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            messages: [{ role: 'user', content: prompt }],
+            model: 'mistralai/mistral-7b-instruct-free'
+        })
+    });
+    if (!response.ok) throw new Error(`OpenRouter API returned ${response.status}`);
+    const data = await response.json();
+    const content = data.choices[0]?.message?.content;
+    return processAIResponse(content);
+}
+
+
 app.listen(PORT, () => {
     console.log(`Server sedang berjalan di port ${PORT}`);
 });
