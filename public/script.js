@@ -235,6 +235,7 @@ async function generateRPHContent(formData, rptData, bukuTeksData) {
     const spTextClean = spTerpilih.replace(/^\d+\.\d+\.\d+\s*/, '').trim();
     const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextClean} berdasarkan aktiviti yang dijalankan.`;
 
+    // --- PEMBETULAN KRITERIA KEJAYAAN DI SINI ---
     return {
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
         standardKandungan: skTerpilih, standardPembelajaran: spTerpilih,
@@ -253,24 +254,11 @@ async function generateRPHContent(formData, rptData, bukuTeksData) {
 
 function renderRPH(rphData, formData) {
     let aiStatusColor, aiStatusText;
-
     switch(rphData.sumberAktiviti) {
-        case 'Groq':
-            aiStatusColor = '#00C7B1'; 
-            aiStatusText = `Berjaya (${rphData.sumberAktiviti})`;
-            break;
-        case 'Hugging Face':
-            aiStatusColor = '#FFD21E';
-            aiStatusText = `Berjaya (${rphData.sumberAktiviti})`;
-            break;
-        case 'OpenRouter':
-            aiStatusColor = '#4F46E5';
-            aiStatusText = `Berjaya (${rphData.sumberAktiviti})`;
-            break;
-        default:
-            aiStatusColor = '#dc3545'; 
-            aiStatusText = 'Gagal (Fallback Statik)';
-            break;
+        case 'Groq': aiStatusColor = '#00C7B1'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
+        case 'Hugging Face': aiStatusColor = '#FFD21E'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
+        case 'OpenRouter': aiStatusColor = '#4F46E5'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
+        default: aiStatusColor = '#dc3545'; aiStatusText = 'Gagal (Fallback)'; break;
     }
 
     return `
