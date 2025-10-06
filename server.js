@@ -19,6 +19,7 @@ const buildPrompt = (level, tajuk, sp) => {
         default: complexity = "asas dan berpandukan arahan guru"; break;
     }
 
+    // --- PROMPT TELAH DIUBAH SUAI DI SINI ---
     return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia. Reka BENTUK TEPAT LIMA (5) langkah aktiviti pengajaran yang ${complexity}.
 
 Topik Pengajaran: "${tajuk}"
@@ -35,6 +36,7 @@ Syarat Penting:
 
 // Fungsi untuk memproses jawapan dari API
 const processAIResponse = (responseText) => {
+    if (!responseText) return [];
     return responseText.split('\n')
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
         .filter(line => line.length > 0);
@@ -60,21 +62,22 @@ app.post('/api/generate-activities', async (req, res) => {
                 console.log(`${provider.name} berjaya.`);
                 return res.json({ activities, source: provider.name });
             }
+            console.log(`${provider.name} tidak mengembalikan kandungan.`);
         } catch (error) {
             console.error(`Ralat pada ${provider.name}:`, error.message);
         }
     }
 
     // Jika semua gagal
-    console.log("Semua penyedia AI gagal. Menggunakan fallback statik.");
-    res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi.' });
+    console.log("Semua penyedia AI gagal. Menghantar mesej ralat.");
+    res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi pada masa ini. Sila cuba lagi sebentar lagi.' });
 });
 
 // --- Fungsi untuk setiap penyedia AI ---
 
 async function tryGroq(prompt) {
     const apiKey = process.env.GROQ_API_KEY;
-    if (!apiKey) return null;
+    if (!apiKey) throw new Error('GROQ_API_KEY tidak ditetapkan');
 
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
@@ -92,29 +95,35 @@ async function tryGroq(prompt) {
 
 async function tryHuggingFace(prompt) {
     const apiKey = process.env.HUGGINGFACE_API_KEY;
-    if (!apiKey) return null;
+    if (!apiKey) throw new Error('HUGGINGFACE_API_KEY tidak ditetapkan');
 
     const response = await fetch('https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ inputs: prompt })
+        body: JSON.stringify({ inputs: prompt, parameters: { max_new_tokens: 250 } })
     });
     if (!response.ok) throw new Error(`Hugging Face API returned ${response.status}`);
     const data = await response.json();
-    const content = data[0]?.generated_text.replace(prompt, '').trim(); // Buang prompt dari jawapan
+    // Hugging Face kadang-kadang mengembalikan prompt bersama jawapan
+    const content = data[0]?.generated_text.replace(prompt, '').trim(); 
     return processAIResponse(content);
 }
 
 async function tryOpenRouter(prompt) {
     const apiKey = process.env.OPENROUTER_API_KEY;
-    if (!apiKey) return null;
+    if (!apiKey) throw new Error('OPENROUTER_API_KEY tidak ditetapkan');
 
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
-        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        headers: { 
+            'Authorization': `Bearer ${apiKey}`, 
+            'Content-Type': 'application/json',
+            'HTTP-Referer': 'https://rph-ai-app.onrender.com', // Sesetengah model memerlukan ini
+            'X-Title': 'RPH AI App'
+        },
         body: JSON.stringify({
             messages: [{ role: 'user', content: prompt }],
-            model: 'mistralai/mistral-7b-instruct-free'
+            model: 'mistralai/mistral-7b-instruct-free' 
         })
     });
     if (!response.ok) throw new Error(`OpenRouter API returned ${response.status}`);
