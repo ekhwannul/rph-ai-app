@@ -1,6 +1,6 @@
 // --- VERSI NAIK TARAF ---
-// 1. Prompt AI dikemas kini (Maks 5 langkah, Bahasa Melayu Malaysia).
-// 2. Melaksanakan sistem fallback: Groq -> Hugging Face -> OpenRouter.
+// 1. Prompt AI diperketatkan untuk TEPAT 5 langkah.
+// 2. Logik pemprosesan ditambah baik untuk memotong paksa lebihan aktiviti.
 
 const express = require('express');
 const path = require('path');
@@ -19,19 +19,17 @@ const buildPrompt = (level, tajuk, sp) => {
         default: complexity = "asas dan berpandukan arahan guru"; break;
     }
 
-    // --- PROMPT TELAH DIUBAH SUAI DI SINI ---
+    // --- PROMPT TELAH DIPERKETATKAN DI SINI ---
     return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia. Reka BENTUK TEPAT LIMA (5) langkah aktiviti pengajaran yang ${complexity}.
 
 Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
-Syarat Penting:
-- Hasilkan TEPAT 5 langkah pengajaran. Tidak boleh kurang, tidak boleh lebih.
+Syarat Paling Penting:
+- Hasilkan TEPAT 5 langkah pengajaran dalam format senarai bernombor (1., 2., 3., 4., 5.). Jangan hasilkan lebih dari 5 langkah.
 - Gunakan Bahasa Melayu standard Malaysia sepenuhnya. Elakkan penggunaan istilah Indonesia.
-- Langkah terakhir WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
-- Jangan sertakan "Set Induksi".
-- Berikan jawapan dalam format senarai bernombor (1., 2., 3., 4., 5.).
-- Jangan gunakan sebarang format Markdown atau tajuk. Berikan senarai aktiviti sahaja.`;
+- Langkah ke-5 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
+- Jangan sertakan sebarang tajuk, pengenalan, atau penutup. Berikan senarai aktiviti sahaja.`;
 };
 
 // Fungsi untuk memproses jawapan dari API
@@ -39,7 +37,8 @@ const processAIResponse = (responseText) => {
     if (!responseText) return [];
     return responseText.split('\n')
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
-        .filter(line => line.length > 0);
+        .filter(line => line.length > 0)
+        .slice(0, 5); // Potong paksa untuk memastikan hanya 5 langkah diambil
 };
 
 // API Endpoint Utama
@@ -57,9 +56,12 @@ app.post('/api/generate-activities', async (req, res) => {
         try {
             console.log(`Mencuba ${provider.name}...`);
             const activities = await provider.try(prompt);
-            // Jika berjaya dan ada kandungan, hantar respons
             if (activities && activities.length > 0) {
                 console.log(`${provider.name} berjaya.`);
+                // Pastikan langkah terakhir adalah refleksi
+                if (activities.length === 5 && !activities[4].includes("refleksi")) {
+                    activities[4] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
+                }
                 return res.json({ activities, source: provider.name });
             }
             console.log(`${provider.name} tidak mengembalikan kandungan.`);
@@ -68,7 +70,6 @@ app.post('/api/generate-activities', async (req, res) => {
         }
     }
 
-    // Jika semua gagal
     console.log("Semua penyedia AI gagal. Menghantar mesej ralat.");
     res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi pada masa ini. Sila cuba lagi sebentar lagi.' });
 });
@@ -100,12 +101,11 @@ async function tryHuggingFace(prompt) {
     const response = await fetch('https://api-inference.huggingface.co/models/meta-llama/Meta-Llama-3-8B-Instruct', {
         method: 'POST',
         headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ inputs: prompt, parameters: { max_new_tokens: 250 } })
+        body: JSON.stringify({ inputs: prompt, parameters: { max_new_tokens: 300, return_full_text: false } })
     });
     if (!response.ok) throw new Error(`Hugging Face API returned ${response.status}`);
     const data = await response.json();
-    // Hugging Face kadang-kadang mengembalikan prompt bersama jawapan
-    const content = data[0]?.generated_text.replace(prompt, '').trim(); 
+    const content = data[0]?.generated_text; 
     return processAIResponse(content);
 }
 
@@ -118,7 +118,7 @@ async function tryOpenRouter(prompt) {
         headers: { 
             'Authorization': `Bearer ${apiKey}`, 
             'Content-Type': 'application/json',
-            'HTTP-Referer': 'https://rph-ai-app.onrender.com', // Sesetengah model memerlukan ini
+            'HTTP-Referer': 'https://rph-ai-app.onrender.com', 
             'X-Title': 'RPH AI App'
         },
         body: JSON.stringify({
