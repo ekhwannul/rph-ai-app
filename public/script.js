@@ -1,6 +1,6 @@
-// --- FAIL INI TELAH DIBAIKI UNTUK MENGURUSKAN RALAT 'REPLACE' & 'MAP' ---
-// 1. [PEMBAIKAN] Logik updateFormFields kini menyemak kewujudan 'mukaSurat' sebelum menggunakan .replace().
-// 2. Logik displayRPH kekal tahan lasak untuk mengelakkan ralat 'map' jika AI gagal.
+// --- FAIL INI TELAH DIBAIKI UNTUK MENGURUSKAN SEMUA RALAT 'REPLACE' & 'MAP' ---
+// 1. [PEMBAIKAN KEDUA] Logik displayRPH kini turut menyemak kewujudan 'formData.mukaSurat' sebelum menggunakan .replace().
+// 2. Logik updateFormFields dan displayRPH kini kedua-duanya tahan lasak.
 
 document.addEventListener('DOMContentLoaded', function () {
     // Pastikan SEMUA_DATA wujud sebelum meneruskan
@@ -42,7 +42,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    // --- FUNGSI INI TELAH DIBAIKI ---
     function updateFormFields(tahun, minggu) {
         const data = SEMUA_DATA[tahun]?.RPT_DATA[minggu];
         document.getElementById('tema').value = data?.tema || '';
@@ -51,11 +50,9 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('sk').value = data?.standardKandungan || '';
         document.getElementById('sp').value = data?.standardPembelajaran || '';
         
-        // [PEMBAIKAN] Semak jika data.mukaSurat wujud sebelum cuba .replace()
         const mukaSuratValue = data?.mukaSurat ? data.mukaSurat.replace(/<br>/g, '\n') : '';
         document.getElementById('mukaSurat').value = mukaSuratValue;
     }
-    // ---------------------------------
 
     tahunSelect?.addEventListener('change', function () {
         populateMingguDropdown(this.value);
@@ -136,7 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
             tajuk: formData.tajuk,
             sk: formData.sk,
             sp: formData.sp,
-            mukaSurat: formData.mukaSurat.replace(/\n/g, '<br>'),
+            // [PEMBAIKAN KEDUA] Semak jika formData.mukaSurat wujud sebelum .replace()
+            mukaSurat: (formData.mukaSurat || '').replace(/\n/g, '<br>'),
             objektif: `Pada akhir pengajaran, murid dapat ${op} dengan baik.`,
             kriteriaCemerlang: `Murid dapat ${kk} 5 daripada 5 ${kataKunci} dengan betul.`,
             kriteriaSederhana: `Murid dapat ${kk} 3 hingga 4 daripada 5 ${kataKunci} dengan bimbingan.`,
