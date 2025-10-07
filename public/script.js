@@ -1,7 +1,5 @@
-// --- LOGIK TELAH DIPERBAIKI ---
-// VERSI TERKINI: 
-// 1. Kriteria Kejayaan (KK) dikemas kini ke format "5 dari 5".
-// 2. Paparan status AI kini menyokong semua penyedia (Groq, Hugging Face, OpenRouter).
+// --- VERSI KEMAS KINI ---
+// Paparan status AI kini menyokong Google Gemini dan Groq.
 
 document.addEventListener('DOMContentLoaded', function () {
     // Pastikan SEMUA_DATA wujud sebelum meneruskan
@@ -40,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
             const selectedTahun = e.target.value;
             populateMingguDropdown(selectedTahun);
         });
-        // Panggil serta-merta untuk mengisi dropdown semasa laman dimuatkan
         populateMingguDropdown(tahunSelect.value);
     }
 
@@ -177,7 +174,7 @@ async function getAIActivities(level, tajuk, sp) {
                 "Perbincangan jawapan bersama guru.",
                 "Guru dan murid membuat refleksi tentang pengajaran hari ini."
             ],
-            source: 'Fallback'
+            source: 'Fallback Statik'
         };
     }
 }
@@ -235,7 +232,6 @@ async function generateRPHContent(formData, rptData, bukuTeksData) {
     const spTextClean = spTerpilih.replace(/^\d+\.\d+\.\d+\s*/, '').trim();
     const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextClean} berdasarkan aktiviti yang dijalankan.`;
 
-    // --- PEMBETULAN KRITERIA KEJAYAAN DI SINI ---
     return {
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
         standardKandungan: skTerpilih, standardPembelajaran: spTerpilih,
@@ -255,10 +251,18 @@ async function generateRPHContent(formData, rptData, bukuTeksData) {
 function renderRPH(rphData, formData) {
     let aiStatusColor, aiStatusText;
     switch(rphData.sumberAktiviti) {
-        case 'Groq': aiStatusColor = '#00C7B1'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
-        case 'Hugging Face': aiStatusColor = '#FFD21E'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
-        case 'OpenRouter': aiStatusColor = '#4F46E5'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
-        default: aiStatusColor = '#dc3545'; aiStatusText = 'Gagal (Fallback)'; break;
+        case 'Google Gemini':
+            aiStatusColor = '#4285F4'; 
+            aiStatusText = `Berjaya (${rphData.sumberAktiviti})`;
+            break;
+        case 'Groq':
+            aiStatusColor = '#00C7B1'; 
+            aiStatusText = `Berjaya (${rphData.sumberAktiviti})`;
+            break;
+        default:
+            aiStatusColor = '#dc3545'; 
+            aiStatusText = 'Gagal (Fallback Statik)';
+            break;
     }
 
     return `
@@ -300,3 +304,4 @@ function renderRPH(rphData, formData) {
         </div>
     `;
 }
+
