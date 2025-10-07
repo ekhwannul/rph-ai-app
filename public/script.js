@@ -1,7 +1,6 @@
-// --- FAIL INI TELAH DIBAIKI UNTUK MENGURUSKAN RALAT 'MAP' ---
-// 1. Kriteria Kejayaan (KK) dikemas kini ke format "5 dari 5".
-// 2. Paparan status AI kini menyokong semua penyedia (Groq, Hugging Face, OpenRouter).
-// 3. [PEMBAIKAN] Logik displayRPH kini lebih tahan lasak untuk mengelakkan ralat 'map' jika AI gagal.
+// --- FAIL INI TELAH DIBAIKI UNTUK MENGURUSKAN RALAT 'REPLACE' & 'MAP' ---
+// 1. [PEMBAIKAN] Logik updateFormFields kini menyemak kewujudan 'mukaSurat' sebelum menggunakan .replace().
+// 2. Logik displayRPH kekal tahan lasak untuk mengelakkan ralat 'map' jika AI gagal.
 
 document.addEventListener('DOMContentLoaded', function () {
     // Pastikan SEMUA_DATA wujud sebelum meneruskan
@@ -43,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+    // --- FUNGSI INI TELAH DIBAIKI ---
     function updateFormFields(tahun, minggu) {
         const data = SEMUA_DATA[tahun]?.RPT_DATA[minggu];
         document.getElementById('tema').value = data?.tema || '';
@@ -50,8 +50,12 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('tajuk').value = data?.tajuk || '';
         document.getElementById('sk').value = data?.standardKandungan || '';
         document.getElementById('sp').value = data?.standardPembelajaran || '';
-        document.getElementById('mukaSurat').value = data?.mukaSurat?.replace(/<br>/g, '\n') || '';
+        
+        // [PEMBAIKAN] Semak jika data.mukaSurat wujud sebelum cuba .replace()
+        const mukaSuratValue = data?.mukaSurat ? data.mukaSurat.replace(/<br>/g, '\n') : '';
+        document.getElementById('mukaSurat').value = mukaSuratValue;
     }
+    // ---------------------------------
 
     tahunSelect?.addEventListener('change', function () {
         populateMingguDropdown(this.value);
@@ -105,12 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function displayRPH(formData) {
         const aiData = formData.aiResponse;
-
-        // --- INI ADALAH BARIS KOD YANG DIBAIKI ---
-        // Jika aiData.langkah tidak wujud, kita gunakan array kosong [] sebagai ganti.
-        // Ini akan mengelakkan ralat .map pada undefined.
         const aiSteps = aiData.langkah || [];
-        // ------------------------------------------
 
         const spText = formData.sp || "";
         const matchOp = spText.match(/(\d+\.\d+\.\d+)\s*(.*)/);
