@@ -1,10 +1,12 @@
-// --- VERSI KEMAS KINI ---
-// Paparan status AI kini menyokong Google Gemini dan Groq.
+// --- VERSI NAIK TARAF ---
+// 1. Menambah 'ingatan' untuk menyimpan aktiviti yang lepas.
+// 2. Menghantar 'ingatan' ini ke backend untuk menjana aktiviti baharu.
+
+let lastGeneratedActivities = null; // Pembolehubah untuk "ingatan" AI
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Pastikan SEMUA_DATA wujud sebelum meneruskan
     if (typeof SEMUA_DATA === 'undefined') {
-        alert("RALAT KRITIKAL: Fail data_semua_tahun.js gagal dimuatkan atau mempunyai ralat. Sila pastikan fail tersebut wujud dan tiada kesilapan sintaks.");
+        alert("RALAT KRITIKAL: Fail data_semua_tahun.js gagal dimuatkan atau mempunyai ralat.");
         return;
     }
 
@@ -56,7 +58,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 minggu: document.getElementById('minggu').value,
                 kreativiti: document.getElementById('kreativiti').value
             };
+            
+            // Logik untuk 'ingatan': Jika input sama, anggap sebagai 'Jana Semula'. Jika berbeza, reset 'ingatan'.
+            if (JSON.stringify(currentFormData) !== JSON.stringify(formData)) {
+                lastGeneratedActivities = null;
+            }
             currentFormData = formData;
+
 
             if (!formData.minggu || isNaN(formData.minggu)) {
                 showError("Sila pilih minggu yang sah.");
@@ -65,15 +73,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }
 
             try {
-                if (!rphContentDiv) {
-                    throw new Error("Elemen HTML dengan id='rphContent' tidak ditemui.");
-                }
-
+                if (!rphContentDiv) throw new Error("Elemen HTML dengan id='rphContent' tidak ditemui.");
+                
                 const dataTahunIni = SEMUA_DATA[formData.tahun];
-                if (!dataTahunIni) {
-                    throw new Error(`Data untuk Tahun ${formData.tahun} tidak wujud.`);
-                }
-
+                if (!dataTahunIni) throw new Error(`Data untuk Tahun ${formData.tahun} tidak wujud.`);
+                
                 const rptData = dataTahunIni.RPT_DATA[formData.minggu];
                 const bukuTeksData = (dataTahunIni.BUKU_TEKS_DATA && dataTahunIni.BUKU_TEKS_DATA[formData.minggu]) 
                                      ? dataTahunIni.BUKU_TEKS_DATA[formData.minggu] 
@@ -81,8 +85,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (!rptData) {
                     rphContentDiv.innerHTML = generateTiadaDataContent(formData.minggu, formData.tahun);
+                    lastGeneratedActivities = null; // Reset ingatan jika tiada data
                 } else {
-                    const rphData = await generateRPHContent(formData, rptData, bukuTeksData);
+                    // Hantar aktiviti lepas ke fungsi penjanaan
+                    const rphData = await generateRPHContent(formData, rptData, bukuTeksData, lastGeneratedActivities);
+                    // Simpan aktiviti baharu ke dalam 'ingatan'
+                    lastGeneratedActivities = rphData.rangkaAktiviti; 
                     rphContentDiv.innerHTML = renderRPH(rphData, formData);
                 }
 
@@ -109,55 +117,20 @@ document.addEventListener('DOMContentLoaded', function () {
         if (resultDiv) resultDiv.style.display = 'none';
     }
     
-    window.downloadDOCX = function() {
-        if (!currentFormData || !rphContentDiv) return;
-        const tahun = currentFormData.tahun;
-        const kelas = currentFormData.kelas;
-        const tarikh = currentFormData.tarikh;
-        const sourceHTML = rphContentDiv.innerHTML;
-        const converted = htmlDocx.asBlob(sourceHTML);
-        
-        saveAs(converted, `RPH_BM_Tahun${tahun}_${kelas}_${tarikh}.docx`);
-    };
-
-    window.copyToClipboard = function() {
-        if (!rphContentDiv) return;
-        const el = document.createElement('textarea');
-        el.value = rphContentDiv.innerText;
-        document.body.appendChild(el);
-        el.select();
-        document.execCommand('copy');
-        document.body.removeChild(el);
-        alert("RPH telah disalin ke clipboard!");
-    };
-
-    window.generateAgain = function() {
-        if (currentFormData && form) {
-            form.dispatchEvent(new Event('submit'));
-        }
-    };
+    window.downloadDOCX = function() { if (!currentFormData || !rphContentDiv) return; const {tahun, kelas, tarikh} = currentFormData; const sourceHTML = rphContentDiv.innerHTML; const converted = htmlDocx.asBlob(sourceHTML); saveAs(converted, `RPH_BM_Tahun${tahun}_${kelas}_${tarikh}.docx`); };
+    window.copyToClipboard = function() { if (!rphContentDiv) return; const el = document.createElement('textarea'); el.value = rphContentDiv.innerText; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el); alert("RPH telah disalin ke clipboard!"); };
+    window.generateAgain = function() { if (currentFormData && form) form.dispatchEvent(new Event('submit')); };
 });
 
-function formatTarikh(tarikhISO) {
-    if (!tarikhISO) return 'Tarikh tidak ditetapkan';
-    const tarikh = new Date(tarikhISO);
-    return tarikh.toLocaleDateString('ms-MY', { day: '2-digit', month: 'long', year: 'numeric' });
-}
+function formatTarikh(tarikhISO) { if (!tarikhISO) return 'Tarikh tidak ditetapkan'; const tarikh = new Date(tarikhISO); return tarikh.toLocaleDateString('ms-MY', { day: '2-digit', month: 'long', year: 'numeric' }); }
+function generateTiadaDataContent(minggu, tahun) { return `<div style="text-align: center; padding: 40px; background-color: #fff3cd; border-radius: 8px;"><h2 style="color: #856404;">📝 Tiada Data RPH Ditemui</h2><p>Tiada data pengajaran formal ditemui untuk <strong>Minggu ${minggu} (Tahun ${tahun})</strong>.</p><p style="margin-top: 20px; font-size: 0.9em;"><em>Sila semak semula data RPT anda atau rujuk takwim sekolah.</em></p></div>`; }
 
-function generateTiadaDataContent(minggu, tahun) {
-    return `<div style="text-align: center; padding: 40px; background-color: #fff3cd; border-radius: 8px;">
-            <h2 style="color: #856404;">📝 Tiada Data RPH Ditemui</h2>
-            <p>Tiada data pengajaran formal ditemui untuk <strong>Minggu ${minggu} (Tahun ${tahun})</strong>.</p>
-            <p style="margin-top: 20px; font-size: 0.9em;"><em>Sila semak semula data RPT anda atau rujuk takwim sekolah.</em></p>
-        </div>`;
-}
-
-async function getAIActivities(level, tajuk, sp) {
+async function getAIActivities(level, tajuk, sp, previousActivities) { // Terima 'previousActivities'
     try {
         const response = await fetch('/api/generate-activities', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ level, tajuk, sp })
+            body: JSON.stringify({ level, tajuk, sp, previousActivities }) // Hantar ke backend
         });
         if (!response.ok) {
             const errorData = await response.json();
@@ -168,18 +141,13 @@ async function getAIActivities(level, tajuk, sp) {
     } catch (error) {
         console.error('Gagal mendapatkan aktiviti dari AI:', error);
         return {
-            activities: [
-                "Guru bersoal jawab dengan murid berkaitan topik.",
-                "Murid membuat latihan berdasarkan buku teks.",
-                "Perbincangan jawapan bersama guru.",
-                "Guru dan murid membuat refleksi tentang pengajaran hari ini."
-            ],
-            source: 'Fallback Statik'
+            activities: [ "Maaf, perkhidmatan AI sedang mengalami masalah. Sila cuba lagi." ],
+            source: 'Fallback Gagal'
         };
     }
 }
 
-async function generateRPHContent(formData, rptData, bukuTeksData) {
+async function generateRPHContent(formData, rptData, bukuTeksData, previousActivities) { // Terima 'previousActivities'
     const pilihSKSPSesuaian = (skString, spString) => {
         if (!skString || !spString) return { sk: "Standard Kandungan tidak dinyatakan", sp: "Standard Pembelajaran tidak dinyatakan" };
         const skList = skString.split('\n').map(s => s.trim()).filter(Boolean);
@@ -220,7 +188,7 @@ async function generateRPHContent(formData, rptData, bukuTeksData) {
     const infoBukuTeks = pilihInfoBukuTeks(bukuTeksData.mukaSurat, rptData.tajuk, spTerpilih);
     const { mukaSurat: mukaSuratPilihan, aktiviti: aktivitiSpesifik } = infoBukuTeks;
 
-    const hasilAI = await getAIActivities(formData.kreativiti, rptData.tajuk, spTerpilih);
+    const hasilAI = await getAIActivities(formData.kreativiti, rptData.tajuk, spTerpilih, previousActivities);
     const { activities: rangkaAktivitiDinamik, source: sumberAktiviti } = hasilAI;
 
     let setInduksiBukuTeks = `Murid membuka buku teks muka surat ${mukaSuratPilihan}`;
@@ -251,18 +219,10 @@ async function generateRPHContent(formData, rptData, bukuTeksData) {
 function renderRPH(rphData, formData) {
     let aiStatusColor, aiStatusText;
     switch(rphData.sumberAktiviti) {
-        case 'Google Gemini':
-            aiStatusColor = '#4285F4'; 
-            aiStatusText = `Berjaya (${rphData.sumberAktiviti})`;
-            break;
-        case 'Groq':
-            aiStatusColor = '#00C7B1'; 
-            aiStatusText = `Berjaya (${rphData.sumberAktiviti})`;
-            break;
-        default:
-            aiStatusColor = '#dc3545'; 
-            aiStatusText = 'Gagal (Fallback Statik)';
-            break;
+        case 'Google Gemini': aiStatusColor = '#4285F4'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
+        case 'Groq': aiStatusColor = '#00C7B1'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
+        case 'Fallback Statik': aiStatusColor = '#ffc107'; aiStatusText = `Berjaya (${rphData.sumberAktiviti})`; break;
+        default: aiStatusColor = '#dc3545'; aiStatusText = 'Gagal (Hubungi AI)'; break;
     }
 
     return `
@@ -304,4 +264,6 @@ function renderRPH(rphData, formData) {
         </div>
     `;
 }
+
+
 
