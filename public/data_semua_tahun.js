@@ -40,184 +40,230 @@ const SEMUA_DATA = {
 			"36": { tema: "TEMA 8 : EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN", unit: "UNIT 23 :", tajuk: "Perniaga Berjaya", standardKandungan: "1.1 Mendengar dan memberikan respons | 2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera | 3.3 Menghasilkan penulisan | 4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera. | 5.3 Memahami dan membina ayat mengikut konteks.", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons terhadap; iii) pesanan | 2.3.1 Membaca dan mengenal pasti kandungan teks bahan sastera dan bukan sastera; i) cerita | 3.3.1 Menghasilkan penulisan naratif dan bukan naratif secara; i) terkawal | 4.2.2 Menyanyikan lagu dengan sebutan dan intonasi yang betul; (ii) lagu rakyat | 5.3.1 Memahami dan mengenal pasti jenis ayat mengikut konteks; iii) ayat perintah iv) ayat seruan" },
 			"37": { tema: "TEMA 8 : EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN", unit: "UNIT 24 :", tajuk: "Mengurus Belanja", standardKandungan: "1.1 Mendengar dan memberikan respons | 2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera | 3.2 Menulis perkataan, frasa, dan ayat yang bermakna | 4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif. | 5.3 Memahami dan membina ayat mengikut konteks.", standardPembelajaran: "1.2.2 Menyampaikan maklumat daripada bahan. | 2.3.2 Membaca, memahami, dan mempersembahkan karya sastera. | 3.2.3 Mencatat maklumat tentang sesuatu perkara. | 4.3.1 Mencipta puisi secara terkawal dan mempersembahkan; (iii) syair-irama Selendang Delima | 5.3.2 Memahami, mengenal pasti dan menggunakan bentuk ayat mengikut konteks. (i) ayat tunggal (ii) ayat majmuk" },
 			"38": { tema: "TEMA 8 : EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN", unit: "UNIT 24 :", tajuk: "Mengurus Belanja", standardKandungan: "1.1 Mendengar dan memberikan respons | 2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera | 3.2 Menulis perkataan, frasa, dan ayat yang bermakna | 4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif. | 5.3 Memahami dan membina ayat mengikut konteks.", standardPembelajaran: "1.2.2 Menyampaikan maklumat daripada bahan. | 2.3.2 Membaca, memahami, dan mempersembahkan karya sastera. | 3.2.3 Mencatat maklumat tentang sesuatu perkara. | 4.3.1 Mencipta puisi secara terkawal dan mempersembahkan; (iii) syair-irama Selendang Delima | 5.3.2 Memahami, mengenal pasti dan menggunakan bentuk ayat mengikut konteks. (i) ayat tunggal (ii) ayat majmuk" }
-		},
+		}
 		BUKU_TEKS_DATA: {
-		const rphData = {
-  "TEMA 1 Keluarga Penyayang": [
-    { page: 1, mainTitle: "Keluarga Penyayang", activity: "Berbual tentang gambar" },
-    { page: 2, mainTitle: "Pandainya Arif", activity: "Membaca huruf" },
-    { page: 4, mainTitle: "Belajar Menulis", activity: "Menulis huruf kecil" },
-    { page: 5, mainTitle: "Cantiknya Tulisan", activity: "Menulis huruf besar" },
-    { page: 6, mainTitle: "Sebutlah Arif", activity: "Menyebut perkataan vokal" },
-    { page: 7, mainTitle: "Ajari Arif", activity: "Menyebut frasa dan ayat vokal" },
-    { page: 8, mainTitle: "Taman Mini", activity: "Menyebut perkataan konsonan" },
-    { page: 9, mainTitle: "Bergembira dengan Keluarga", activity: "Menyebut perkataan diftong dan vokal berganding" },
-    { page: 10, mainTitle: "Sehari di Putrajaya", activity: "Menyebut frasa dan ayat" },
-    { page: 11, mainTitle: "Rajin Membaca", activity: "Membaca suku kata" },
-    { page: 12, mainTitle: "Harmoninya Saudara-mara", activity: "Menulis perkataan" },
-    { page: 13, mainTitle: "Keluarga Bahagia", activity: "Menyanyikan lagu" },
-    { page: 14, mainTitle: "Selamat Bercuti", activity: "Bercerita menggunakan kata nama am" },
-    { page: 15, mainTitle: "Dapur Nenek", activity: "Menyebut perkataan, frasa dan ayat" },
-    { page: 16, mainTitle: "Enaknya Kelupis", activity: "Membaca perkataan, frasa dan ayat" },
-    { page: 17, mainTitle: "Tarian Sumazau", activity: "Menulis frasa" },
-    { page: 18, mainTitle: "Lawatan ke Muzium Labuan", activity: "Menulis ayat" },
-    { page: 19, mainTitle: "Pemulihan dan Pengayaan", activity: "Menyebut dan menulis perkataan" },
-    { page: 20, mainTitle: "Penilaian 1", activity: "Menjawab soalan penilaian" }
-  ]
-  const rphData = {
-  "TEMA 2 MASYARAKAT MUHIBAH": [
-    { page: 21, mainTitle: "MASYARAKAT MUHIBAH", activity: "Bersoal jawab berdasarkan gambar" },
-    { page: 22, mainTitle: "Kawan Baharu", activity: "Memberikan respons terhadap soalan" },
-    { page: 23, mainTitle: "Membaca", activity: "Membaca perkataan" },
-    { page: 24, mainTitle: "Hadiah untuk Sahabat", activity: "Membina dan menulis perkataan" },
-    { page: 25, mainTitle: "Kata Nama Khas", activity: "Menulis ayat menggunakan kata nama khas" },
-    { page: 26, mainTitle: "Kata Ganti Nama", activity: "Melengkapkan dialog" },
-    { page: 27, mainTitle: "Ringan Tulang Amalan Mulia", activity: "Memberikan respons terhadap suruhan" },
-    { page: 28, mainTitle: "Bersatu Hati", activity: "Membaca dan memahami frasa" },
-    { page: 29, mainTitle: "Jiran yang Baik", activity: "Membina dan menulis frasa" },
-    { page: 30, mainTitle: "Mari Berpantun", activity: "Membina dan melafazkan pantun" },
-    { page: 31, mainTitle: "Sampaikan Pesan", activity: "Memberikan respons terhadap pesanan" },
-    { page: 32, mainTitle: "Perpustakaan Mini Pak Cik Lokman", activity: "Membaca dan memahami teks" },
-    { page: 33, mainTitle: "Buku Merapatkan Kita", activity: "Membina dan menulis ayat" },
-    { page: 34, mainTitle: "Melafazkan Pantun", activity: "Melafazkan pantun" },
-    { page: 35, mainTitle: "Padankan Saya", activity: "Menggunakan penjodoh bilangan" },
-    { page: 36, mainTitle: "Hargai Buku", activity: "Menggunakan kata kerja" },
-    { page: 37, mainTitle: "Pemulihan", activity: "Mengisi tempat kosong" },
-    { page: 38, mainTitle: "Penilaian 2", activity: "Menjawab soalan penilaian" }
-  ]
-  const rphData = {
-  "TEMA 3 PENTINGKAN KEBERSIHAN DAN KESIHATAN": [
-    { page: 39, mainTitle: "AMALAN YANG BAIK", activity: "Bersoal jawab berdasarkan gambar" },
-    { page: 40, mainTitle: "Kemasnya Rambut Rizal", activity: "Bertutur dengan sebutan dan intonasi yang sesuai" },
-    { page: 41, mainTitle: "Nasihat Abang Geraham", activity: "Memberikan makna perkataan merujuk kamus" },
-    { page: 42, mainTitle: "Panduan Membeli Kasut", activity: "Menjawab soalan berdasarkan teks" },
-    { page: 43, mainTitle: "TATABAHASA Kata Adjektif", activity: "Membina ayat menggunakan kata adjektif" },
-    { page: 44, mainTitle: "TATABAHASA Kata Kerja Pasif", activity: "Membina ayat menggunakan kata kerja pasif" },
-    { page: 45, mainTitle: "Masakan Ibu", activity: "Menyampaikan maklumat berdasarkan bahan" },
-    { page: 46, mainTitle: "Makanan Kesukaan Rizal", activity: "Menyatakan idea tersurat dalam teks" },
-    { page: 47, mainTitle: "Lazatnya Sayur", activity: "Membina ayat berdasarkan gambar" },
-    { page: 48, mainTitle: "Tembikai", activity: "Mencatat maklumat berdasarkan bahan" },
-    { page: 49, mainTitle: "TATABAHASA Kata Hubung", activity: "Menggunakan kata hubung dalam ayat" },
-    { page: 50, mainTitle: "TATABAHASA Kata Seru", activity: "Menggunakan kata seru dalam ayat" },
-    { page: 51, mainTitle: "Bagusnya Bersenam", activity: "Memberikan respons terhadap soalan" },
-    { page: 52, mainTitle: "Mari Berehat", activity: "Menyatakan isi tersirat berdasarkan bahan" },
-    { page: 53, mainTitle: "Cergaskan Diri", activity: "Menulis jawapan soalan bercapah" },
-    { page: 54, mainTitle: "Nazri Boleh", activity: "Bercerita dan menuturkan dialog" },
-    { page: 55, mainTitle: "TATABAHASA Kata Perintah", activity: "Menggunakan kata perintah dalam ayat" },
-    { page: 56, mainTitle: "Pemulihan", activity: "Memilih idea tersurat berdasarkan teks" },
-    { page: 57, mainTitle: "Penilaian 3", activity: "Menjawab soalan penilaian" },
-    { page: 58, mainTitle: "Sayur", activity: "Membaca petikan luas" }
-  ]
-  const rphData = {
-  "TEMA 4 KESELAMATAN": [
-    { page: 59, mainTitle: "Utamakan Keselamatan", activity: "Melafazkan pantun dan berbual" },
-    { page: 60, mainTitle: "Wah, Rajinnya Anak Ibu!", activity: "Memberikan respons terhadap suruhan" },
-    { page: 61, mainTitle: "Kita Harus Berwaspada", activity: "Menyatakan kandungan cerita" },
-    { page: 62, mainTitle: "Rumah Kita Selamat", activity: "Menulis perkataan secara imlak" },
-    { page: 63, mainTitle: "Naik Kapal Terbang", activity: "Membina ayat kata sendi nama" },
-    { page: 64, mainTitle: "Selamat dalam Pesawat", activity: "Membina ayat kata arah" },
-    { page: 65, mainTitle: "Ingatlah Pesanan Guru", activity: "Memberikan respons terhadap pesanan" },
-    { page: 66, mainTitle: "Jauhi Kawasan Ini", activity: "Berbual dan menjawab soalan" },
-    { page: 67, mainTitle: "Keselamatan Diri Diutamakan", activity: "Menyatakan maksud pantun" },
-    { page: 68, mainTitle: "Kita Waspada Kita Selamat", activity: "Menulis ayat secara imlak" },
-    { page: 69, mainTitle: "Beringat Sentiasa", activity: "Membina ayat menggunakan kata tanya" },
-    { page: 70, mainTitle: "Bomba Sukarela", activity: "Membina ayat menggunakan kata perintah" },
-    { page: 71, mainTitle: "Melintas dengan Selamatnya", activity: "Bertutur berdasarkan gambar dan frasa" },
-    { page: 72, mainTitle: "Lampu Isyarat", activity: "Menyanyikan dan menyatakan kandungan lagu" },
-    { page: 73, mainTitle: "Beginilah Caranya", activity: "Menulis karangan berdasarkan gambar" },
-    { page: 74, mainTitle: "Pemulihan dan Pengayaan", activity: "Membina ayat tanya" },
-    { page: 75, mainTitle: "Aku Cerek Elektrik", activity: "Membaca, menulis imlak dan melengkapkan ayat" },
-    { page: 76, mainTitle: "Pengukuhan", activity: "Menjawab soalan pemahaman dan membina ayat" }
-  ]
-  const rphData = {
-  "TEMA 5 NEGARAKU TERCINTA": [
-    { page: 77, mainTitle: "Negaraku Tercinta", activity: "Menyatakan maklumat" },
-    { page: 79, mainTitle: "Pakaian Tradisi", activity: "Menyampaikan maklumat" },
-    { page: 80, mainTitle: "Penganan Kak Doli", activity: "Menaakul gambar dan membina ayat" },
-    { page: 81, mainTitle: "Tarian Datun Julud", activity: "Mengedit kesalahan ejaan" },
-    { page: 82, mainTitle: "Pesta Tamu Besar", activity: "Menggunakan kata berimbuhan akhiran" },
-    { page: 83, mainTitle: "Bunga Kebanggaan", activity: "Memberikan respons terhadap soalan" },
-    { page: 84, mainTitle: "Burung Kenyalang", activity: "Menyatakan idea tersurat" },
-    { page: 85, mainTitle: "Pondok Malaysia", activity: "Mengedit teks dengan tanda baca" },
-    { page: 86, mainTitle: "Syair Tiga Sahabat", activity: "Melagukan syair" },
-    { page: 87, mainTitle: "Sambutan Hari Kebangsaan", activity: "Membina dan menggunakan kata majmuk" },
-    { page: 88, mainTitle: "Indahnya Pulau Manukan", activity: "Bercerita menggunakan kata ganda" },
-    { page: 89, mainTitle: "Hargai Kemudahan", activity: "Memberikan respons terhadap pesanan" },
-    { page: 91, mainTitle: "Terperangkap di Terowong", activity: "Memahami dan melakonkan cerita" },
-    { page: 92, mainTitle: "Perhimpunan Mingguan", activity: "Menjawab soalan" },
-    { page: 93, mainTitle: "Bersopan Santun", activity: "Membina ayat penyata" },
-    { page: 94, mainTitle: "Bantu-membantu", activity: "Membina ayat tanya" },
-    { page: 95, mainTitle: "Pemulihan dan Pengayaan", activity: "Membina ayat" },
-    { page: 96, mainTitle: "Penilaian 5", activity: "Menjawab soalan penilaian" }
-  ]
-  const rphData = {
-  "TEMA  6 TEMA SAINS, TEKNOLOGI DAN INOVASI": [
-    { page: 97, mainTitle: "TSAINS, TEKNOLOGI DAN INOVASI", activity: "Bersoal jawab berdasarkan bahan grafik" },
-    { page: 98, mainTitle: "Ingat Pesanan Cikgu", activity: "Memberikan respons terhadap pesanan" },
-    { page: 99, mainTitle: "Tenggelam dan Timbul", activity: "Menyatakan maklumat tersirat" },
-    { page: 100, mainTitle: "Kenali Anggota Badan Kita", activity: "Membina dan menulis perkataan" },
-    { page: 101, mainTitle: "Menulis", activity: "Membina dan menulis frasa" },
-    { page: 102, mainTitle: "Sains Perubatan", activity: "Membina ayat perintah" },
-    { page: 103, mainTitle: "Kamus Elektronik", activity: "Bertutur berdasarkan gambar" },
-    { page: 104, mainTitle: "Kami Memudahkan Kerja", activity: "Membaca dan memahami petikan" },
-    { page: 105, mainTitle: "Kami Memudahkan Kerja", activity: "Menyatakan kandungan teks" },
-    { page: 106, mainTitle: "Pintu Pagar Automatik", activity: "Membina dan menulis ayat" },
-    { page: 107, mainTitle: "Hebat Teknologi", activity: "Membina dan melafazkan pantun" },
-    { page: 108, mainTitle: "Basikal Solar", activity: "Membina ayat seruan" },
-    { page: 109, mainTitle: "Penyiram Pokok Inovasi", activity: "Menyampaikan maklumat berdasarkan gambar" },
-    { page: 110, mainTitle: "Treler Motosikal Datuk", activity: "Menyatakan maksud pantun" },
-    { page: 111, mainTitle: "Wah, Mudahnya!", activity: "Membina dan menulis ayat" },
-    { page: 112, mainTitle: "Berus Gigiku Hebat", activity: "Menyanyikan lagu" },
-    { page: 113, mainTitle: "Perangkap Nyamuk", activity: "Memahami ayat tunggal" },
-    { page: 114, mainTitle: "Mari Kutip Durian", activity: "Membina ayat majmuk" },
-    { page: 115, mainTitle: "Bina ayat majmuk", activity: "Membina ayat majmuk" },
-    { page: 116, mainTitle: "Penilaian 6", activity: "Menjawab soalan penilaian" }
-  ]
-  const rphData = {
-  "TEMA 7 LINDUNGI ALAM": [
-    { page: 117, mainTitle: "LINDUNGI ALAM", activity: "Berbincang tentang gambar" },
-    { page: 118, mainTitle: "Uruslah Saya", activity: "Memberikan respons terhadap soalan" },
-    { page: 119, mainTitle: "Sungai", activity: "Membuat gerakan berdasarkan lagu" },
-    { page: 120, mainTitle: "Kolam Ikan Indira", activity: "Menjawab soalan pemahaman" },
-    { page: 121, mainTitle: "Kegunaan Rumput", activity: "Menulis ayat menggunakan kata majmuk" },
-    { page: 122, mainTitle: "Kebun Mini", activity: "Membina ayat menggunakan kata ganda" },
-    { page: 123, mainTitle: "Sayangi Haiwan", activity: "Melakonkan dialog" },
-    { page: 125, mainTitle: "Haiwan yang Prihatin", activity: "Menyampaikan cerita" },
-    { page: 126, mainTitle: "Diari Abang", activity: "Menulis maklumat" },
-    { page: 127, mainTitle: "Taman Botani", activity: "Membina ayat menggunakan kata hubung" },
-    { page: 128, mainTitle: "Buku Skrap Kakak", activity: "Membina ayat penyata" },
-    { page: 129, mainTitle: "Program Hari Hijau", activity: "Memberikan respons terhadap pesanan" },
-    { page: 130, mainTitle: "Jimatkan Tenaga", activity: "Menceritakan cara menjimatkan tenaga" },
-    { page: 131, mainTitle: "Beg Mesra Alam", activity: "Menulis karangan" },
-    { page: 132, mainTitle: "Menaiki Komuter", activity: "Membina ayat perintah" },
-    { page: 133, mainTitle: "Aku Senaskhah Surat Khabar", activity: "Mengenal pasti ayat seruan" },
-    { page: 134, mainTitle: "Pemulihan", activity: "Menulis ayat penyata" },
-    { page: 135, mainTitle: "Penilaian 7", activity: "Menjawab soalan penilaian" },
-    { page: 136, mainTitle: "Tong Kitar Semula", activity: "Bacaan" }
-  ]
-  const rphData = {
-  "TEMA 8 EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN": [
-    { page: 137, mainTitle: "EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN", activity: "Berbual tentang gambar" },
-    { page: 138, mainTitle: "Wang untuk Aimi", activity: "Bertutur secara bertatasusila" },
-    { page: 139, mainTitle: "Rajin Menabung", activity: "Menyatakan idea tersurat dan tersirat" },
-    { page: 140, mainTitle: "Membeli Alat Tulis", activity: "Mengedit ejaan dalam teks" },
-    { page: 141, mainTitle: "Di Pejabat Pos", activity: "Berbual menggunakan imbuhan" },
-    { page: 142, mainTitle: "Barangan dan Perkhidmatan", activity: "Membina ayat menggunakan kata majmuk" },
-    { page: 143, mainTitle: "Jadikan Teladan", activity: "Menyampaikan maklumat" },
-    { page: 144, mainTitle: "Sikap Baik dalam Berniaga", activity: "Menyatakan maksud pantun" },
-    { page: 145, mainTitle: "Cita-cita Saya", activity: "Mengedit tanda baca" },
-    { page: 146, mainTitle: "Restoran Keluarga", activity: "Membina ayat penyata" },
-    { page: 147, mainTitle: "Membeli Baju Sukan", activity: "Menyampaikan maklumat" },
-    { page: 148, mainTitle: "Membuat Pilihan", activity: "Menceritakan kandungan teks" },
-    { page: 149, mainTitle: "Catatan Jamil", activity: "Mencatatkan jumlah wang" },
-    { page: 150, mainTitle: "Ayat Tunggal dan Ayat Majmuk", activity: "Membina ayat tunggal dan majmuk" },
-    { page: 151, mainTitle: "Beringat Semasa Membeli", activity: "Melengkapkan syair" },
-    { page: 152, mainTitle: "Pemulihan dan Pengayaan", activity: "Mengisi tempat kosong dan mengedit ejaan" },
-    { page: 153, mainTitle: "Penilaian 8", activity: "Menjawab soalan penilaian" },
-    { page: 154, mainTitle: "Pengukuhan 2", activity: "Menjawab soalan pengukuhan" }
-	}
-  ]
-    },
+		1: {
+    mukaSurat: "<strong>Unit 1: Keluarga Penyayang (m/s 1-20)</strong><br><br>" +
+               "<strong>- Kemahiran Mendengar & Bertutur</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 1) <b>Keluarga Penyayang:</b> Berbual tentang gambar [cite: 1]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 6) <b>Sebutlah Arif:</b> Menyebut perkataan vokal [cite: 1]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 7) <b>Ajari Arif:</b> Menyebut frasa dan ayat vokal [cite: 1]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 8) <b>Taman Mini:</b> Menyebut perkataan konsonan [cite: 2]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 9) <b>Bergembira dengan Keluarga:</b> Menyebut perkataan diftong dan vokal berganding [cite: 2]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 10) <b>Sehari di Putrajaya:</b> Menyebut frasa dan ayat [cite: 2]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 15) <b>Dapur Nenek:</b> Menyebut perkataan, frasa dan ayat [cite: 3]<br>" +
+               "<strong>- Kemahiran Membaca</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 2) <b>Pandainya Arif:</b> Membaca huruf [cite: 1]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 11) <b>Rajin Membaca:</b> Membaca suku kata [cite: 2]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 16) <b>Enaknya Kelupis:</b> Membaca perkataan, frasa dan ayat [cite: 3]<br>" +
+               "<strong>- Kemahiran Menulis</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 4) <b>Belajar Menulis:</b> Menulis huruf kecil [cite: 1]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 5) <b>Cantiknya Tulisan:</b> Menulis huruf besar [cite: 1]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 12) <b>Harmoninya Saudara-mara:</b> Menulis perkataan [cite: 2]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 17) <b>Tarian Sumazau:</b> Menulis frasa [cite: 3]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 18) <b>Lawatan ke Muzium Labuan:</b> Menulis ayat [cite: 3]<br>" +
+               "<strong>- Tatabahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 14) <b>Selamat Bercuti:</b> Bercerita menggunakan kata nama am [cite: 2]<br>" +
+               "<strong>- Aspek Seni Bahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 13) <b>Keluarga Bahagia:</b> Menyanyikan lagu [cite: 2]<br>" +
+               "<strong>- Aktiviti Tambahan</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 19) <b>Pemulihan dan Pengayaan:</b> Menyebut dan menulis perkataan [cite: 3]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 20) <b>Penilaian 1:</b> Menjawab soalan penilaian [cite: 3]<br>"
+  },
+  2: {
+    mukaSurat: "<strong>Unit 2: Masyarakat Muhibah (m/s 21-38)</strong><br><br>" +
+               "<strong>- Kemahiran Mendengar & Bertutur</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 21) <b>Masyarakat Muhibah:</b> Bersoal jawab berdasarkan gambar [cite: 4]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 22) <b>Kawan Baharu:</b> Memberikan respons terhadap soalan [cite: 4]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 27) <b>Ringan Tulang Amalan Mulia:</b> Memberikan respons terhadap suruhan [cite: 5]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 31) <b>Sampaikan Pesan:</b> Memberikan respons terhadap pesanan [cite: 5]<br>" +
+               "<strong>- Kemahiran Membaca</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 23) <b>Membaca:</b> Membaca perkataan [cite: 4]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 28) <b>Bersatu Hati:</b> Membaca dan memahami frasa [cite: 5]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 32) <b>Perpustakaan Mini Pak Cik Lokman:</b> Membaca dan memahami teks [cite: 5]<br>" +
+               "<strong>- Kemahiran Menulis</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 24) <b>Hadiah untuk Sahabat:</b> Membina dan menulis perkataan [cite: 4]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 29) <b>Jiran yang Baik:</b> Membina dan menulis frasa [cite: 5]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 33) <b>Buku Merapatkan Kita:</b> Membina dan menulis ayat [cite: 6]<br>" +
+               "<strong>- Tatabahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 25) <b>Kata Nama Khas:</b> Menulis ayat menggunakan kata nama khas [cite: 4]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 26) <b>Kata Ganti Nama:</b> Melengkapkan dialog [cite: 4]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 35) <b>Padankan Saya:</b> Menggunakan penjodoh bilangan [cite: 6]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 36) <b>Hargai Buku:</b> Menggunakan kata kerja [cite: 6]<br>" +
+               "<strong>- Aspek Seni Bahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 30) <b>Mari Berpantun:</b> Membina dan melafazkan pantun [cite: 5]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 34) <b>Melafazkan Pantun:</b> Melafazkan pantun [cite: 6]<br>" +
+               "<strong>- Aktiviti Tambahan</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 37) <b>Pemulihan:</b> Mengisi tempat kosong [cite: 6]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 38) <b>Penilaian 2:</b> Menjawab soalan penilaian [cite: 6]<br>"
+  },
+  3: {
+    mukaSurat: "<strong>Unit 3: Pentingkan Kebersihan dan Kesihatan (m/s 39-58)</strong><br><br>" +
+               "<strong>- Kemahiran Mendengar & Bertutur</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 39) <b>Amalan Yang Baik:</b> Bersoal jawab berdasarkan gambar [cite: 7]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 40) <b>Kemasnya Rambut Rizal:</b> Bertutur dengan sebutan dan intonasi yang sesuai [cite: 7]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 45) <b>Masakan Ibu:</b> Menyampaikan maklumat berdasarkan bahan [cite: 8]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 51) <b>Bagusnya Bersenam:</b> Memberikan respons terhadap soalan [cite: 9]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 54) <b>Nazri Boleh:</b> Bercerita dan menuturkan dialog [cite: 9]<br>" +
+               "<strong>- Kemahiran Membaca</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 41) <b>Nasihat Abang Geraham:</b> Memberikan makna perkataan merujuk kamus [cite: 7]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 42) <b>Panduan Membeli Kasut:</b> Menjawab soalan berdasarkan teks [cite: 7]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 46) <b>Makanan Kesukaan Rizal:</b> Menyatakan idea tersurat dalam teks [cite: 8]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 52) <b>Mari Berehat:</b> Menyatakan isi tersirat berdasarkan bahan [cite: 9]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 58) <b>Sayur:</b> Membaca petikan luas [cite: 10]<br>" +
+               "<strong>- Kemahiran Menulis</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 47) <b>Lazatnya Sayur:</b> Membina ayat berdasarkan gambar [cite: 8]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 48) <b>Tembikai:</b> Mencatat maklumat berdasarkan bahan [cite: 8]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 53) <b>Cergaskan Diri:</b> Menulis jawapan soalan bercapah [cite: 9]<br>" +
+               "<strong>- Tatabahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 43) <b>Kata Adjektif:</b> Membina ayat menggunakan kata adjektif [cite: 7]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 44) <b>Kata Kerja Pasif:</b> Membina ayat menggunakan kata kerja pasif [cite: 7]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 49) <b>Kata Hubung:</b> Menggunakan kata hubung dalam ayat [cite: 8]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 50) <b>Kata Seru:</b> Menggunakan kata seru dalam ayat [cite: 8]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 55) <b>Kata Perintah:</b> Menggunakan kata perintah dalam ayat [cite: 9]<br>" +
+               "<strong>- Aktiviti Tambahan</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 56) <b>Pemulihan:</b> Memilih idea tersurat berdasarkan teks [cite: 9]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 57) <b>Penilaian 3:</b> Menjawab soalan penilaian [cite: 9]<br>"
+  },
+  4: {
+    mukaSurat: "<strong>Unit 4: Keselamatan (m/s 59-76)</strong><br><br>" +
+               "<strong>- Kemahiran Mendengar & Bertutur</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 60) <b>Wah, Rajinnya Anak Ibu!:</b> Memberikan respons terhadap suruhan [cite: 10]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 61) <b>Kita Harus Berwaspada:</b> Menyatakan kandungan cerita [cite: 10]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 65) <b>Ingatlah Pesanan Guru:</b> Memberikan respons terhadap pesanan [cite: 11]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 66) <b>Jauhi Kawasan Ini:</b> Berbual dan menjawab soalan [cite: 11]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 71) <b>Melintas dengan Selamatnya:</b> Bertutur berdasarkan gambar dan frasa [cite: 12]<br>" +
+               "<strong>- Kemahiran Membaca</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 75) <b>Aku Cerek Elektrik:</b> Membaca, menulis imlak dan melengkapkan ayat [cite: 13]<br>" +
+               "<strong>- Kemahiran Menulis</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 62) <b>Rumah Kita Selamat:</b> Menulis perkataan secara imlak [cite: 10]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 68) <b>Kita Waspada Kita Selamat:</b> Menulis ayat secara imlak [cite: 11]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 73) <b>Beginilah Caranya:</b> Menulis karangan berdasarkan gambar [cite: 12]<br>" +
+               "<strong>- Tatabahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 63) <b>Naik Kapal Terbang:</b> Membina ayat kata sendi nama [cite: 10]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 64) <b>Selamat dalam Pesawat:</b> Membina ayat kata arah [cite: 11]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 69) <b>Beringat Sentiasa:</b> Membina ayat menggunakan kata tanya [cite: 11]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 70) <b>Bomba Sukarela:</b> Membina ayat menggunakan kata perintah [cite: 12]<br>" +
+               "<strong>- Aspek Seni Bahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 59) <b>Utamakan Keselamatan:</b> Melafazkan pantun dan berbual [cite: 10]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 67) <b>Keselamatan Diri Diutamakan:</b> Menyatakan maksud pantun [cite: 11]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 72) <b>Lampu Isyarat:</b> Menyanyikan dan menyatakan kandungan lagu [cite: 12]<br>" +
+               "<strong>- Aktiviti Tambahan</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 74) <b>Pemulihan dan Pengayaan:</b> Membina ayat tanya [cite: 12]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 76) <b>Pengukuhan:</b> Menjawab soalan pemahaman dan membina ayat [cite: 13]<br>"
+  },
+  5: {
+    mukaSurat: "<strong>Unit 5: Negaraku Tercinta (m/s 77-96)</strong><br><br>" +
+               "<strong>- Kemahiran Mendengar & Bertutur</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 77) <b>Negaraku Tercinta:</b> Menyatakan maklumat [cite: 13]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 79) <b>Pakaian Tradisi:</b> Menyampaikan maklumat [cite: 13]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 84) <b>Bunga Kebanggaan:</b> Memberikan respons terhadap soalan [cite: 14]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 89) <b>Hargai Kemudahan:</b> Memberikan respons terhadap pesanan [cite: 15]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 91) <b>Terperangkap di Terowong:</b> Memahami dan melakonkan cerita [cite: 15]<br>" +
+               "<strong>- Kemahiran Membaca</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 84) <b>Burung Kenyalang:</b> Menyatakan idea tersurat [cite: 14]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 92) <b>Perhimpunan Mingguan:</b> Menjawab soalan [cite: 15]<br>" +
+               "<strong>- Kemahiran Menulis</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 80) <b>Penganan Kak Doli:</b> Menaakul gambar dan membina ayat [cite: 13]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 81) <b>Tarian Datun Julud:</b> Mengedit kesalahan ejaan [cite: 13]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 85) <b>Pondok Malaysia:</b> Mengedit teks dengan tanda baca [cite: 14]<br>" +
+               "<strong>- Tatabahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 82) <b>Pesta Tamu Besar:</b> Menggunakan kata berimbuhan akhiran [cite: 13]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 87) <b>Sambutan Hari Kebangsaan:</b> Membina dan menggunakan kata majmuk [cite: 14]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 88) <b>Indahnya Pulau Manukan:</b> Bercerita menggunakan kata ganda [cite: 14]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 93) <b>Bersopan Santun:</b> Membina ayat penyata [cite: 15]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 94) <b>Bantu-membantu:</b> Membina ayat tanya [cite: 15]<br>" +
+               "<strong>- Aspek Seni Bahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 86) <b>Syair Tiga Sahabat:</b> Melagukan syair [cite: 14]<br>" +
+               "<strong>- Aktiviti Tambahan</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 95) <b>Pemulihan dan Pengayaan:</b> Membina ayat [cite: 15]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 96) <b>Penilaian 5:</b> Menjawab soalan penilaian [cite: 15]<br>"
+  },
+  6: {
+    mukaSurat: "<strong>Unit 6: Sains, Teknologi dan Inovasi (m/s 97-116)</strong><br><br>" +
+               "<strong>- Kemahiran Mendengar & Bertutur</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 97) <b>Sains, Teknologi dan Inovasi:</b> Bersoal jawab berdasarkan bahan grafik [cite: 16]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 98) <b>Ingat Pesanan Cikgu:</b> Memberikan respons terhadap pesanan [cite: 16]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 103) <b>Kamus Elektronik:</b> Bertutur berdasarkan gambar [cite: 17]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 109) <b>Penyiram Pokok Inovasi:</b> Menyampaikan maklumat berdasarkan gambar [cite: 18]<br>" +
+               "<strong>- Kemahiran Membaca</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 99) <b>Tenggelam dan Timbul:</b> Menyatakan maklumat tersirat [cite: 16]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 104) <b>Kami Memudahkan Kerja:</b> Membaca dan memahami petikan [cite: 17]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 105) <b>Kami Memudahkan Kerja:</b> Menyatakan kandungan teks [cite: 17]<br>" +
+               "<strong>- Kemahiran Menulis</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 100) <b>Kenali Anggota Badan Kita:</b> Membina dan menulis perkataan [cite: 16]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 101) <b>Menulis:</b> Membina dan menulis frasa [cite: 16]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 106) <b>Pintu Pagar Automatik:</b> Membina dan menulis ayat [cite: 17]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 111) <b>Wah, Mudahnya!:</b> Membina dan menulis ayat [cite: 18]<br>" +
+               "<strong>- Tatabahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 102) <b>Sains Perubatan:</b> Membina ayat perintah [cite: 16]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 108) <b>Basikal Solar:</b> Membina ayat seruan [cite: 17]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 113) <b>Perangkap Nyamuk:</b> Memahami ayat tunggal [cite: 18]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 114) <b>Mari Kutip Durian:</b> Membina ayat majmuk [cite: 18]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 115) <b>Bina ayat majmuk:</b> Membina ayat majmuk [cite: 18]<br>" +
+               "<strong>- Aspek Seni Bahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 107) <b>Hebat Teknologi:</b> Membina dan melafazkan pantun [cite: 17]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 110) <b>Treler Motosikal Datuk:</b> Menyatakan maksud pantun [cite: 18]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 112) <b>Berus Gigiku Hebat:</b> Menyanyikan lagu [cite: 18]<br>" +
+               "<strong>- Aktiviti Tambahan</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 116) <b>Penilaian 6:</b> Menjawab soalan penilaian [cite: 19]<br>"
+  },
+  7: {
+    mukaSurat: "<strong>Unit 7: Lindungi Alam (m/s 117-136)</strong><br><br>" +
+               "<strong>- Kemahiran Mendengar & Bertutur</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 117) <b>Lindungi Alam:</b> Berbincang tentang gambar [cite: 19]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 118) <b>Uruslah Saya:</b> Memberikan respons terhadap soalan [cite: 19]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 123) <b>Sayangi Haiwan:</b> Melakonkan dialog [cite: 20]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 125) <b>Haiwan yang Prihatin:</b> Menyampaikan cerita [cite: 20]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 129) <b>Program Hari Hijau:</b> Memberikan respons terhadap pesanan [cite: 20]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 130) <b>Jimatkan Tenaga:</b> Menceritakan cara menjimatkan tenaga [cite: 21]<br>" +
+               "<strong>- Kemahiran Membaca</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 120) <b>Kolam Ikan Indira:</b> Menjawab soalan pemahaman [cite: 19]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 136) <b>Tong Kitar Semula:</b> Bacaan [cite: 21]<br>" +
+               "<strong>- Kemahiran Menulis</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 121) <b>Kegunaan Rumput:</b> Menulis ayat menggunakan kata majmuk [cite: 19]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 126) <b>Diari Abang:</b> Menulis maklumat [cite: 20]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 131) <b>Beg Mesra Alam:</b> Menulis karangan [cite: 21]<br>" +
+               "<strong>- Tatabahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 122) <b>Kebun Mini:</b> Membina ayat menggunakan kata ganda [cite: 20]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 127) <b>Taman Botani:</b> Membina ayat menggunakan kata hubung [cite: 20]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 128) <b>Buku Skrap Kakak:</b> Membina ayat penyata [cite: 20]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 132) <b>Menaiki Komuter:</b> Membina ayat perintah [cite: 21]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 133) <b>Aku Senaskhah Surat Khabar:</b> Mengenal pasti ayat seruan [cite: 21]<br>" +
+               "<strong>- Aspek Seni Bahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 119) <b>Sungai:</b> Membuat gerakan berdasarkan lagu [cite: 19]<br>" +
+               "<strong>- Aktiviti Tambahan</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 134) <b>Pemulihan:</b> Menulis ayat penyata [cite: 21]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 135) <b>Penilaian 7:</b> Menjawab soalan penilaian [cite: 21]<br>"
+  },
+  8: {
+    mukaSurat: "<strong>Unit 8: Ekonomi, Keusahawanan dan Pengurusan Kewangan (m/s 137-154)</strong><br><br>" +
+               "<strong>- Kemahiran Mendengar & Bertutur</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 137) <b>Ekonomi, Keusahawanan dan Pengurusan Kewangan:</b> Berbual tentang gambar [cite: 22]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 138) <b>Wang untuk Aimi:</b> Bertutur secara bertatasusila [cite: 22]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 141) <b>Di Pejabat Pos:</b> Berbual menggunakan imbuhan [cite: 22]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 143) <b>Jadikan Teladan:</b> Menyampaikan maklumat [cite: 23]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 147) <b>Membeli Baju Sukan:</b> Menyampaikan maklumat [cite: 23]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 148) <b>Membuat Pilihan:</b> Menceritakan kandungan teks [cite: 23]<br>" +
+               "<strong>- Kemahiran Membaca</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 139) <b>Rajin Menabung:</b> Menyatakan idea tersurat dan tersirat [cite: 22]<br>" +
+               "<strong>- Kemahiran Menulis</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 140) <b>Membeli Alat Tulis:</b> Mengedit ejaan dalam teks [cite: 22]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 145) <b>Cita-cita Saya:</b> Mengedit tanda baca [cite: 23]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 149) <b>Catatan Jamil:</b> Mencatatkan jumlah wang [cite: 24]<br>" +
+               "<strong>- Tatabahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 142) <b>Barangan dan Perkhidmatan:</b> Membina ayat menggunakan kata majmuk [cite: 23]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 146) <b>Restoran Keluarga:</b> Membina ayat penyata [cite: 23]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 150) <b>Ayat Tunggal dan Ayat Majmuk:</b> Membina ayat tunggal dan majmuk [cite: 24]<br>" +
+               "<strong>- Aspek Seni Bahasa</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 144) <b>Sikap Baik dalam Berniaga:</b> Menyatakan maksud pantun [cite: 23]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 151) <b>Beringat Semasa Membeli:</b> Melengkapkan syair [cite: 24]<br>" +
+               "<strong>- Aktiviti Tambahan</strong><br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 152) <b>Pemulihan dan Pengayaan:</b> Mengisi tempat kosong dan mengedit ejaan [cite: 24]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 153) <b>Penilaian 8:</b> Menjawab soalan penilaian [cite: 24]<br>" +
+               [cite_start]"&nbsp;&nbsp;&nbsp;--- (m/s 154) <b>Pengukuhan 2:</b> Menjawab soalan pengukuhan [cite: 24]<br>" }
+			}
+		},
     // Data untuk Tahun 2 (Dikemaskini)
     2: {
         RPT_DATA: {
