@@ -169,6 +169,7 @@ const SEMUA_DATA = {
       unit: "TAJUK 19 - Hargailah Pokok",
       standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.3 Menghasilkan bahan sastera secara kreatif\n5.3 Memahami dan membina ayat mengikut konteks",
       standardPembelajaran: "1.2.1 Bertutur untuk menjelaskan sesuatu perkara secara bertatasusila mengikut konteks\n2.2.1 Mengenal pasti kosa kata\n3.2.3 Mencatat maklumat yang bermakna\n4.3.2 Mempersembahkan cerita haiwan\n5.3.1 Menggunakan ayat perintah"
+	},
     31: {
       tema: "PERTANIAN DAN PENTERNAKAN",
       unit: "TAJUK 26 - Tani Moden",
@@ -1550,7 +1551,7 @@ const SEMUA_DATA = {
         "4.3.3 Mengubah suai seni kata lagu dengan menggunakan diksi yang sesuai dan mempersembahkannya dengan gaya yang kreatif\n" +
         "5.2.2(i-ii) Memahami dan menggunakan kata majmuk bebas, kata majmuk mantap dan kata majmuk kiasan mengikut konteks\n" +
         "5.2.3(i-iii) Memahami dan menggunakan kata ganda penuh, kata ganda separa dan kata ganda berentak mengikut konteks"
-    }
+    },
     "29": {
       tema: "Tema 8: Ekonomi, Keusahawanan dan Pengurusan Kewangan",
       unit: "Unit 24: Pintar Kewangan",
@@ -1568,7 +1569,7 @@ const SEMUA_DATA = {
         "4.3.3 Mengubah suai seni kata lagu dengan menggunakan diksi yang sesuai dan mempersembahkannya dengan gaya yang kreatif\n" +
         "5.2.2(i-ii) Memahami dan menggunakan kata majmuk bebas, kata majmuk mantap dan kata majmuk kiasan mengikut konteks\n" +
         "5.2.3(i-iii) Memahami dan menggunakan kata ganda penuh, kata ganda separa dan kata ganda berentak mengikut konteks"
-     }  
+     },  
     "30": {
     tema: "Tema 9: Integriti",
     unit: "Unit 25: Insan Berketerampilan",
