@@ -103,6 +103,7 @@ const SEMUA_DATA = {
       unit: "TAJUK 7 - Kebersihan Bermula dari Rumah",
       standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
       standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iv) permintaan\n2.2.1 Membaca, memahami dan mengenal pasti; (iii) isi tersirat\n3.2.2 Menulis jawapan pemahaman berdasarkan soalan; (i) bertumpu (ii)
+	},  
     11: {
       tema: "KEBERSIHAN DAN KESIHATAN",
       unit: "TAJUK 8 - Jadikan Amalan",
