@@ -56,47 +56,153 @@ const SEMUA_DATA = {
     2: {
         RPT_DATA: {
             1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." },
-            2: { tema: "KEKELUARGAAN", unit: "UNIT 1", tajuk: "Hari Minggu Dengan Keluarga", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.1.1 Mendengar, mengecam, memahami dan menyebut dengan betul dan tepat; (i) frasa (ii) ayat tunggal.\n2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) perkataan (ii) ayat.\n3.1.1 Menulis secara mekanis; (i) perkataan (ii) frasa.\n5.1.1 Memahami, mengenal pasti dan menggunakan kata nama am mengikut konteks." },
-            3: { tema: "KEKELUARGAAN", unit: "UNIT 2", tajuk: "Cerita Keluarga", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (i) soalan.\n2.1.2 Membaca dan memahami; (i) perkataan (ii) frasa.\n3.2.1 Membina dan menulis; (i) perkataan (ii) frasa.\n5.1.1 Memahami, mengenal pasti dan menggunakan kata nama khas mengikut konteks." },
-            4: { tema: "KEKELUARGAAN", unit: "UNIT 3", tajuk: "Kenangan Manis", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (ii) suruhan.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (i) kosa kata.\n3.2.1 Membina dan menulis; (iii) ayat.\n5.1.1 Memahami, mengenal pasti dan menggunakan kata ganti nama diri mengikut konteks." },
-            5: { tema: "KESIHATAN DAN KEBERSIHAN", unit: "UNIT 4", tajuk: "Pentingnya Kesihatan", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iii) permintaan.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (ii) idea tersurat.\n3.2.2 Membina dan menulis jawapan pemahaman berdasarkan soalan; (i) bertumpu.\n5.1.2 Memahami, mengenal pasti dan menggunakan kata kerja mengikut konteks." },
-            6: { tema: "KESIHATAN DAN KEBERSIHAN", unit: "UNIT 5", tajuk: "Kebersihan Diri", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iv) pesanan.\n2.3.1 Membaca dan mengenal pasti kandungan teks karya sastera dan karya bukan sastera; (i) cerita.\n3.2.3 Mencatat maklumat tentang sesuatu perkara.\n5.1.3 Memahami, mengenal pasti dan menggunakan kata adjektif mengikut konteks." },
-            7: { tema: "KESIHATAN DAN KEBERSIHAN", unit: "UNIT 6", tajuk: "Makan Secara Sihat", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.2.1 Bertutur untuk meramal tentang sesuatu perkara dengan sebutan yang betul dan intonasi yang sesuai.\n2.3.1 Membaca dan mengenal pasti kandungan teks karya sastera dan karya bukan sastera; (ii) pantun.\n3.2.4 Menulis sesuatu yang diimlakkan; (i) perkataan.\n5.1.4 Memahami, mengenal pasti dan menggunakan kata tugas mengikut konteks." },
-            8: { tema: "KESELAMATAN", unit: "UNIT 7", tajuk: "Waspada Selalu", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks", standardPembelajaran: "1.2.2 Bertutur dan menjelaskan maklumat yang tersurat dan tersirat.\n2.1.2 Membaca dan memahami; (iii) ayat.\n3.3.1 Menghasilkan penulisan naratif dan bukan naratif secara; (i) terkawal.\n5.2.1 Memahami, mengenal pasti dan menggunakan kata berimbuhan awalan." },
-            9: { tema: "KESELAMATAN", unit: "UNIT 8", tajuk: "Jaga Diri", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana dan mengembangkan idea dengan betul.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (iii) idea tersirat.\n3.3.1 Menghasilkan penulisan naratif dan bukan naratif secara; (ii) separa terkawal.\n5.2.1 Memahami, mengenal pasti dan menggunakan kata berimbuhan akhiran." },
-            10: { tema: "KESELAMATAN", unit: "UNIT 9", tajuk: "Oh, Ngerinya!", standardKandungan: "1.3 Bercerita, dan menceritakan semula perkara yang didengar, ditonton dan dibaca\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks", standardPembelajaran: "1.3.1 Bercerita dengan sebutan yang betul, intonasi, gaya dan ekspresi yang sesuai.\n2.3.1 Membaca dan mengenal pasti kandungan teks karya sastera dan karya bukan sastera; (iii) lagu kanak-kanak.\n3.3.2 Mengedit dan memurnikan hasil penulisan daripada aspek; (i) ejaan.\n5.2.2 Memahami, mengenal pasti dan menggunakan kata majmuk." },
-            11: { tema: "ULANGKAJI", unit: "Ulangkaji", tajuk: "Ulangkaji Tema 1-3", standardKandungan: "Mengulang kaji dan menilai kefahaman murid terhadap unit-unit yang telah dipelajari.", standardPembelajaran: "Aktiviti pengukuhan dan penilaian berdasarkan kemahiran yang telah diajar." },
-            12: { tema: "PERPADUAN", unit: "UNIT 10", tajuk: "Sahabat Karib", standardKandungan: "1.3 Bercerita, dan menceritakan semula perkara yang didengar, ditonton dan dibaca\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks", standardPembelajaran: "1.3.2 Menceritakan semula bahan yang dibaca dengan sebutan yang betul dan intonasi yang sesuai.\n2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (iii) perenggan.\n3.1.1 Menulis secara mekanis; (iii) ayat.\n5.2.3 Memahami, mengenal pasti dan menggunakan kata ganda." },
-            13: { tema: "PERPADUAN", unit: "UNIT 11", tajuk: "Hidup Bermasyarakat", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.3 Memahami dan membina ayat mengikut konteks", standardPembelajaran: "1.1.1 Mendengar, mengecam, memahami dan menyebut dengan betul dan tepat; (iii) ayat majmuk.\n2.1.2 Membaca dan memahami; (iv) petikan.\n3.2.1 Membina dan menulis; (iii) ayat.\n5.3.1 Memahami, mengenal pasti dan menggunakan ayat penyata." },
-            14: { tema: "PERPADUAN", unit: "UNIT 12", tajuk: "Kejiranan", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.3 Memahami dan membina ayat mengikut konteks", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (i) soalan.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (i) kosa kata.\n3.2.2 Membina dan menulis jawapan pemahaman berdasarkan soalan; (ii) bercapah.\n5.3.1 Memahami, mengenal pasti dan menggunakan ayat tanya." },
-            15: { tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA", unit: "UNIT 13", tajuk: "Seni dan Budaya", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.3 Memahami dan membina ayat mengikut konteks", standardPembelajaran: "1.2.1 Bertutur untuk meramal tentang sesuatu perkara dengan sebutan yang betul dan intonasi yang sesuai.\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera dengan sebutan yang betul; (i) cerita.\n3.2.4 Menulis sesuatu yang diimlakkan; (ii) frasa.\n5.3.1 Memahami, mengenal pasti dan menggunakan ayat perintah dan seruan." },
-            16: { tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA", unit: "UNIT 14", tajuk: "Pakaian Tradisional", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera", standardPembelajaran: "1.2.2 Bertutur dan menjelaskan maklumat yang tersurat dan tersirat.\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera dengan sebutan yang betul; (ii) pantun.\n3.3.2 Mengedit dan memurnikan hasil penulisan daripada aspek; (ii) tanda baca.\n4.1.1 Bercerita dengan menggunakan bahasa yang indah dan santun; (i) simpulan bahasa." },
-            17: { tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA", unit: "UNIT 15", tajuk: "Permainan Tradisional", standardKandungan: "1.3 Bercerita, dan menceritakan semula perkara yang didengar, ditonton dan dibaca\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera", standardPembelajaran: "1.3.1 Bercerita dengan sebutan yang betul, intonasi, gaya dan ekspresi yang sesuai.\n2.1.2 Membaca dan memahami; (iv) petikan.\n3.3.2 Mengedit dan memurnikan hasil penulisan daripada aspek; (iii) penggunaan kata.\n4.2.1 Melafazkan pantun yang mengandungi bahasa yang indah; (i) pantun dua kerat." },
-            18: { tema: "PENTAKSIRAN", unit: "UASA", tajuk: "Ujian Akhir Sesi Akademik", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-            19: { tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN", unit: "UNIT 16", tajuk: "Tokoh Negara", standardKandungan: "1.3 Bercerita, dan menceritakan semula perkara yang didengar, ditonton dan dibaca\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera", standardPembelajaran: "1.3.2 Menceritakan semula bahan yang dibaca dengan sebutan yang betul dan intonasi yang sesuai.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (ii) idea tersurat.\n3.2.2 Membina dan menulis jawapan pemahaman berdasarkan soalan; (i) bertumpu.\n4.2.2 Menyanyikan lagu dengan sebutan dan intonasi yang betul." },
-            20: { tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN", unit: "UNIT 17", tajuk: "Bendera Malaysia", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (ii) suruhan.\n2.3.1 Membaca dan mengenal pasti kandungan teks karya sastera dan karya bukan sastera; (iv) rencana.\n3.2.4 Menulis sesuatu yang diimlakkan; (iii) ayat.\n4.3.1 Mencipta secara separa terkawal dan mempersembahkan; (i) pantun empat kerat." },
-            21: { tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN", unit: "UNIT 18", tajuk: "Negaraku", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana dan mengembangkan idea dengan betul.\n2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (iv) petikan.\n3.3.1 Menghasilkan penulisan naratif dan bukan naratif secara; (i) terkawal.\n4.3.2 Mempersembahkan cerita dengan sebutan, intonasi, gaya dan ekspresi yang sesuai." },
-            22: { tema: "SAINS DAN TEKNOLOGI", unit: "UNIT 19", tajuk: "Ciptaan Sains", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.3 Menghasilkan penulisan\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.1.1 Mendengar, mengecam, memahami dan menyebut dengan betul dan tepat; (iv) pelbagai jenis ayat.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (iii) idea tersirat.\n3.3.1 Menghasilkan penulisan naratif dan bukan naratif secara; (ii) separa terkawal.\n5.1.4 Memahami, mengenal pasti dan menggunakan kata tugas mengikut konteks." },
-            23: { tema: "SAINS DAN TEKNOLOGI", unit: "UNIT 20", tajuk: "Internet", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.1 Asas menulis\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks", standardPembelajaran: "1.2.1 Bertutur untuk meramal tentang sesuatu perkara dengan sebutan yang betul dan intonasi yang sesuai.\n2.3.1 Membaca dan mengenal pasti kandungan teks karya sastera dan karya bukan sastera; (i) cerita.\n3.1.1 Menulis secara mekanis; (iv) perenggan.\n5.2.1 Memahami, mengenal pasti dan menggunakan kata berimbuhan awalan dan akhiran." },
-            24: { tema: "SAINS DAN TEKNOLOGI", unit: "UNIT 21", tajuk: "Komputer", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks", standardPembelajaran: "1.2.2 Bertutur dan menjelaskan maklumat yang tersurat dan tersirat.\n2.1.2 Membaca dan memahami; (iv) petikan.\n3.2.2 Membina dan menulis jawapan pemahaman berdasarkan soalan; (ii) bercapah.\n5.2.2 Memahami, mengenal pasti dan menggunakan kata majmuk." },
-            25: { tema: "ULANGKAJI", unit: "Ulangkaji", tajuk: "Ulangkaji Tema 4-6", standardKandungan: "Mengulang kaji dan menilai kefahaman murid terhadap unit-unit yang telah dipelajari.", standardPembelajaran: "Aktiviti pengukuhan dan penilaian berdasarkan kemahiran yang telah diajar." },
-            26: { tema: "KELESTARIAN ALAM", unit: "UNIT 22", tajuk: "Sumber Air", standardKandungan: "1.3 Bercerita, dan menceritakan semula perkara yang didengar, ditonton dan dibaca\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks", standardPembelajaran: "1.3.1 Bercerita dengan sebutan yang betul, intonasi, gaya dan ekspresi yang sesuai.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (i) kosa kata.\n3.2.3 Mencatat maklumat tentang sesuatu perkara.\n5.2.3 Memahami, mengenal pasti dan menggunakan kata ganda." },
-            27: { tema: "KELESTARIAN ALAM", unit: "UNIT 23", tajuk: "Udara Bersih", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat mengikut konteks", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iii) permintaan.\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera dengan sebutan yang betul; (iii) lagu kanak-kanak.\n3.3.2 Mengedit dan memurnikan hasil penulisan daripada aspek; (i) ejaan.\n5.3.2 Memahami, mengenal pasti dan menggunakan ayat tunggal dan ayat majmuk." },
-            28: { tema: "KELESTARIAN ALAM", unit: "UNIT 24", tajuk: "Selamatkan Haiwan", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana dan mengembangkan idea dengan betul.\n2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (iv) petikan.\n3.1.1 Menulis secara mekanis; (iv) perenggan.\n4.1.1 Bercerita dengan menggunakan bahasa yang indah dan santun; (ii) peribahasa." },
-            29: { tema: "PERTANIAN DAN PENTERNAKAN", unit: "UNIT 25", tajuk: "Berkebun di Rumah", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iv) pesanan.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (ii) idea tersurat.\n3.2.1 Membina dan menulis; (iii) ayat.\n4.2.1 Melafazkan pantun yang mengandungi bahasa yang indah; (ii) pantun empat kerat." },
-            30: { tema: "PERTANIAN DAN PENTERNAKAN", unit: "UNIT 26", tajuk: "Haiwan Ternakan", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera", standardPembelajaran: "1.2.1 Bertutur untuk meramal tentang sesuatu perkara dengan sebutan yang betul dan intonasi yang sesuai.\n2.3.1 Membaca dan mengenal pasti kandungan teks karya sastera dan karya bukan sastera; (i) cerita.\n3.2.2 Membina dan menulis jawapan pemahaman berdasarkan soalan; (i) bertumpu.\n4.2.2 Menyanyikan lagu dengan sebutan dan intonasi yang betul." },
-            31: { tema: "PERTANIAN DAN PENTERNAKAN", unit: "UNIT 27", tajuk: "Tanaman", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa", standardPembelajaran: "1.2.2 Bertutur dan menjelaskan maklumat yang tersurat dan tersirat.\n2.1.2 Membaca dan memahami; (iv) petikan.\n3.3.1 Menghasilkan penulisan naratif dan bukan naratif secara; (ii) separa terkawal.\n4.3.1 Mencipta secara separa terkawal dan mempersembahkan; (i) pantun empat kerat." },
-            32: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "UNIT 28", tajuk: "Peniaga Berjaya", standardKandungan: "1.3 Bercerita, dan menceritakan semula perkara yang didengar, ditonton dan dibaca\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa", standardPembelajaran: "1.3.1 Bercerita dengan sebutan yang betul, intonasi, gaya dan ekspresi yang sesuai.\n2.2.1 Membaca, memahami, dan menaakul bahan untuk mendapatkan; (iii) idea tersirat.\n3.2.3 Mencatat maklumat tentang sesuatu perkara.\n4.3.2 Mempersembahkan cerita dengan sebutan, intonasi, gaya dan ekspresi yang sesuai." },
-            33: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "UNIT 29", tajuk: "Rajin Berusaha", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (i) soalan.\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera dengan sebutan yang betul; (iv) rencana.\n3.3.2 Mengedit dan memurnikan hasil penulisan daripada aspek; (ii) tanda baca.\n5.1.4 Memahami, mengenal pasti dan menggunakan kata tugas mengikut konteks." },
-            34: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "UNIT 30", tajuk: "Bijak Berbelanja", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana dan mengembangkan idea dengan betul.\n2.1.2 Membaca dan memahami; (iv) petikan.\n3.2.4 Menulis sesuatu yang diimlakkan; (iii) ayat.\n5.2.3 Memahami, mengenal pasti dan menggunakan kata ganda." },
-            35: { tema: "ULANGKAJI", unit: "Ulangkaji", tajuk: "Ulangkaji Tema 7-8", standardKandungan: "Mengulang kaji dan menilai kefahaman murid terhadap unit-unit yang telah dipelajari.", standardPembelajaran: "Aktiviti pengukuhan dan penilaian berdasarkan kemahiran yang telah diajar." },
-            36: { tema: "PENTAKSIRAN", unit: "UASA", tajuk: "Ujian Akhir Sesi Akademik", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-            37: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-            38: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-            39: { tema: "ULANG KAJI", unit: "ULANG KAJI", tajuk: "ULANG KAJI", standardKandungan: "Ulang Kaji dan Persediaan Akhir Tahun", standardPembelajaran: "Ulang Kaji dan Persediaan Akhir Tahun" },
-            40: { tema: "PENTAKSIRAN AKHIR TAHUN", unit: "PENTAKSIRAN", tajuk: "PENTAKSIRAN", standardKandungan: "PENTAKSIRAN AKHIR TAHUN", standardPembelajaran: "PENTAKSIRAN AKHIR TAHUN" },
-            41: { tema: "PENGURUSAN AKHIR TAHUN", unit: "PENGURUSAN", tajuk: "PENGURUSAN AKHIR TAHUN", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-            42: { tema: "PENGURUSAN AKHIR TAHUN", unit: "PENGURUSAN", tajuk: "PENGURUSAN AKHIR TAHUN", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
+            2: {
+      tema: "KEKELUARGAAN",
+      unit: "TAJUK 1 - Hari Minggu Dengan Keluarga",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Mendengar, mengecam, memahami dan menyebut dengan betul dan tepat; (i) frasa (ii) ayat tunggal\n2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) perkataan (ii) ayat\n3.1.1 Menulis secara mekanis; (i) perkataan (ii) ayat\n5.1.1 Memahami, mengenal pasti dan menggunakan golongan kata mengikut konteks; (i) kata nama am"
+    },
+    3: {
+      tema: "KEKELUARGAAN",
+      unit: "TAJUK 2 - Cerita Keluarga",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Mendengar, mengecam, memahami dan menyebut dengan betul dan tepat; (i) frasa (ii) ayat tunggal\n2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (iii) perenggan (iv) petikan\n3.1.1 Menulis secara mekanis (iii) perenggan\n4.1.1 Bercerita dan menuturkan dialog yang mengandungi gaya bahasa yang indah; (i) simpulan bahasa\n5.1.1 Memahami, mengenal pasti dan menggunakan golongan kata mengikut konteks; (ii) kata nama khas (iii) kata ganti nama"
+    },
+    4: {
+      tema: "KELUARGA PENYAYANG",
+      unit: "TAJUK 3 - Keluarga Berhemah",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Mendengar, mengecam, memahami dan menyebut dengan betul dan tepat; (iii) ayat majmuk\n2.1.2 Membaca dan memahami; (i) perkataan (ii) ayat\n3.1.1 Menulis secara mekanis; (iv) petikan\n4.1.1 Bercerita dan menuturkan dialog yang mengandungi gaya bahasa yang indah; (ii) bandingan semacam\n5.1.1 Memahami, mengenal pasti dan menggunakan golongan kata mengikut konteks; (i) kata nama am (ii) kata nama khas (iii) kata ganti nama (iv) penjodoh bilangan"
+    },
+    6: {
+      tema: "PERPADUAN",
+      unit: "TAJUK 4 - Sahabat Karib",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (i) soalan\n2.1.2 Membaca dan memahami; (iii) perenggan (iv) petikan\n3.2.1 Membina dan menulis; (i) perkataan (ii) frasa\n4.1.1 Bercerita dan menuturkan dialog yang mengandungi gaya bahasa yang indah; (iii) perumpamaan\n5.1.2 Memahami, mengenal pasti dan menggunakan kata kerja mengikut konteks"
+    },
+    7: {
+      tema: "PERPADUAN",
+      unit: "TAJUK 5 - Hidup Berjiran",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (ii) suruhan\n2.2.1 Membaca, memahami dan mengenal pasti; (i) kosa kata\n3.2.1 Membina dan menulis; (iii) ayat\n4.2.1 Melafazkan dan mengenal pasti ciri-ciri pantun; (i) pembayang dan maksud\n5.1.2 Memahami, mengenal pasti dan menggunakan kata kerja pasif\n5.1.3 Memahami, mengenal pasti dan menggunakan kata adjektif sifat"
+    },
+    8: {
+      tema: "PERPADUAN",
+      unit: "TAJUK 6 - Sepakat Membawa Berkat",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iii) pesanan\n2.2.1 Membaca, memahami dan mengenal pasti; (ii) isi tersurat\n3.2.1 Membina dan menulis; (iv) perenggan\n5.1.2 Memahami, mengenal pasti dan menggunakan kata kerja aktif transitif dan kata kerja pasif\n5.1.3 Memahami, mengenal pasti dan menggunakan kata adjektif warna dan ukuran\n4.2.1 Melafazkan dengan intonasi yang betul; (i) pantun dua kerat\n5.1.1 Memahami, mengenal pasti dan menggunakan penjodoh bilangan"
+    },
+    9: {
+      tema: "PERPADUAN",
+      unit: "TAJUK 6 - Sepakat Membawa Berkat",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iii) pesanan\n2.2.1 Membaca, memahami dan mengenal pasti; (ii) isi tersurat\n3.2.1 Membina dan menulis; (iv) perenggan\n5.1.2 Memahami, mengenal pasti dan menggunakan kata kerja aktif transitif dan kata kerja pasif\n5.1.3 Memahami, mengenal pasti dan menggunakan kata adjektif warna dan ukuran\n4.2.1 Melafazkan dengan intonasi yang betul; (i) pantun dua kerat\n5.1.1 Memahami, mengenal pasti dan menggunakan penjodoh bilangan"
+    },
+    10: {
+      tema: "KEBERSIHAN DAN KESIHATAN",
+      unit: "TAJUK 7 - Kebersihan Bermula dari Rumah",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iv) permintaan\n2.2.1 Membaca, memahami dan mengenal pasti; (iii) isi tersirat\n3.2.2 Menulis jawapan pemahaman berdasarkan soalan; (i) bertumpu (ii)
+    11: {
+      tema: "KEBERSIHAN DAN KESIHATAN",
+      unit: "TAJUK 8 - Jadikan Amalan",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.3 Mendengar dan memberikan respons dengan membuat tafsiran terhadap; (i) soalan bercapah\n2.2.1 Membaca, memahami dan mengenal pasti; (iv) idea utama\n3.2.2 Menulis jawapan pemahaman berdasarkan soalan; (ii) bercapah\n4.2.1 Melafazkan dan mengenal pasti ciri-ciri pantun; (iii) format penulisan\n5.1.3 Kata adjektif waktu\n5.1.4 Kata tugas kata hubung"
+    },
+    12: {
+      tema: "KEBERSIHAN DAN KESIHATAN",
+      unit: "UNIT 9 - Aktifkan Diri",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.3 Tafsiran terhadap pesanan\n2.2.1 Idea sampingan\n3.2.3 Menyusun dan mencatat maklumat\n5.1.4 Kata tugas kata sendi nama"
+    },
+    13: {
+      tema: "KEBUDAYAAN KITA",
+      unit: "TAJUK 10 - Uniknya Budaya Kita",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.2.1 Bertutur secara bertatasusila\n2.2.1 Idea keseluruhan\n3.2.4 Menulis secara imlak\n4.2.2 Menyanyikan lagu kanak-kanak\n5.1.4 Kata tugas kata tanya"
+    },
+    16: {
+      tema: "KEBUDAYAAN KITA",
+      unit: "TAJUK 11 - Kesenian Dihargai",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.2.2 Bertutur dengan idea kritis dan kreatif\n2.3.1 Nilai daripada lagu kanak-kanak\n3.2.4 Menulis secara imlak ayat\n5.1.2 Kata kerja aktif transitif\n5.1.4 Kata tugas kata perintah"
+    },
+    18: {
+      tema: "KEBUDAYAAN KITA",
+      unit: "TAJUK 12 - Amalan Baik",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Frasa, ayat tunggal, ayat majmuk\n2.3.1 Nilai daripada cerita\n3.3.1 Penulisan naratif dan bukan naratif separa terkawal\n5.1.4 Kata tugas kata perintah dan kata seru"
+    },
+    20: {
+      tema: "NEGARAKU TERCINTA",
+      unit: "UNIT 13 - Budaya Kita",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Respons terhadap soalan\n2.3.1 Nilai daripada pantun\n3.3.1 Penulisan naratif separa terkawal\n5.2.1 Kata dasar"
+    },
+    21: {
+      tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN",
+      unit: "TAJUK 14 - Hidup Berbakti",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Respons terhadap soalan dan suruhan\n2.3.1 Nilai daripada petikan\n3.3.2 Edit ejaan\n4.2.2 Lagu rakyat\n5.2.1 Kata tunggal"
+    },
+    23: {
+      tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN",
+      unit: "TAJUK 15 - Oh, Malaysiaku!",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Respons terhadap pesanan\n2.3.2 Persembahan lagu kanak-kanak\n3.3.2 Edit tanda baca\n4.2.3 Deklamasi sajak bentuk bebas dan rangkap\n5.2.1 Kata dasar, tunggal, berimbuhan awalan dan akhiran"
+    },
+    24: {
+      tema: "ALAM SEKITAR DAN TEKNOLOGI HIJAU",
+      unit: "TAJUK 16 - Alamku Sayang",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.3 Menghasilkan bahan sastera secara kreatif\n5.2 Memahami dan menggunakan pembentukan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Respons terhadap permintaan\n2.3.2 Persembahan cerita\n3.3.2 Edit penggunaan kata\n4.3.1 Mencipta pantun empat kerat\n5.2.2 Kata majmuk"
+    },
+    26: {
+      tema: "ALAM SEKITAR DAN TEKNOLOGI HIJAU",
+      unit: "TAJUK 17 - Kebersihan Alam Tanggungjawab Bersama",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.3 Menghasilkan bahan sastera secara kreatif\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.1.3 Tafsiran terhadap soalan bercapah\n2.3.2 Persembahan pantun\n3.2.1 Menulis perenggan\n4.3.1 Mencipta sajak\n5.3.1 Ayat pola dan ayat penyata"
+    },
+    30: {
+      tema: "PERTANIAN DAN PENTERNAKAN",
+      unit: "TAJUK 19 - Hargailah Pokok",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.3 Menghasilkan bahan sastera secara kreatif\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.2.1 Bertutur untuk menjelaskan sesuatu perkara secara bertatasusila mengikut konteks\n2.2.1 Mengenal pasti kosa kata\n3.2.3 Mencatat maklumat yang bermakna\n4.3.2 Mempersembahkan cerita haiwan\n5.3.1 Menggunakan ayat perintah"
+    31: {
+      tema: "PERTANIAN DAN PENTERNAKAN",
+      unit: "TAJUK 26 - Tani Moden",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.1.2 Respons terhadap maklumat dan arahan\n2.1.2 Membaca dan memahami ayat majmuk dalam perenggan\n3.2.2 Menulis ayat tunggal dan ayat majmuk\n5.3.1 Ayat seru"
+    },
+    32: {
+      tema: "PERTANIAN DAN PENTERNAKAN",
+      unit: "TAJUK 27 - Penternakan",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.2 Membaca, memahami dan menaakul bahan grafik\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana dan mengembangkan idea\n2.2.1 Menaakul bahan grafik\n3.3.1 Penulisan perkataan, frasa dan ayat tunggal\n5.3.1 Ayat perintah"
+    },
+    33: {
+      tema: "PELANCONGAN",
+      unit: "TAJUK 28 - Tempat Menarik",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.1.1 Frasa dan ayat tunggal\n2.1.1 Membaca dengan intonasi yang sesuai\n3.1.1 Menulis perkataan, frasa dan ayat\n5.3.2 Ayat tunggal dan ayat majmuk"
+    },
+    34: {
+      tema: "PELANCONGAN",
+      unit: "TAJUK 29 - Keunikan Budaya",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.1.2 Respons terhadap maklumat dan arahan\n2.1.2 Membaca dan memahami ayat majmuk dalam perenggan\n3.2.1 Menulis perkataan, frasa dan ayat tunggal\n5.3.1 Ayat penyata"
+    },
+    35: {
+      tema: "PELANCONGAN",
+      unit: "TAJUK 30 - Jejak Warisan",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi bahan sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.2.2 Bertutur dengan idea kritis dan kreatif\n2.3.1 Nilai daripada cerita\n3.3.1 Penulisan perkataan, frasa dan ayat tunggal\n5.3.1 Ayat tanya"
+    },
+    36: {
+      tema: "SUKAN DAN REKREASI",
+      unit: "TAJUK 31 - Sukan",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.1.1 Frasa dan ayat tunggal\n2.1.1 Membaca dengan intonasi yang sesuai\n3.1.1 Menulis perkataan, frasa dan ayat\n5.3.1 Ayat seru" },
         },
         BUKU_TEKS_DATA: {
             1: { mukaSurat: "Jilid 1: 1-7 (Unit 1)<br>- Mendengar dan menyebut ayat majmuk (m/s 2)<br>- Membaca perkataan dan ayat (m/s 3)<br>- Menulis secara mekanis (m/s 4)<br>- Tatabahasa: Kata Nama Am (m/s 5)<br>- Menyanyikan lagu 'Tolong-menolong' (m/s 6)<br>- Aktiviti Pemulihan & Pengayaan (m/s 7)" },
@@ -128,48 +234,606 @@ const SEMUA_DATA = {
     // Data untuk Tahun 3 (Dikemaskini)
     3: {
         RPT_DATA: {
-            1: { tema: "MINGGU ORIENTASI", unit: "Aktiviti Suai Kenal", tajuk: "Fokus Disiplin dan Rutin Kelas", standardKandungan: "Aktiviti Pengurusan Kelas dan Orientasi Mata Pelajaran.", standardPembelajaran: "Aktiviti Suai Kenal dan Penerangan Peraturan Sekolah/Kelas." },
-			2: { tema: "KEKELUARGAAN", unit: "Unit 1", tajuk: "Keluarga Cergas", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan Memahami\n3.1 Asas menulis\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, memahami, dan menyebut; (i) ayat tunggal\n2.1.1 Membaca dengan sebutan yang betul; (i) ayat tunggal dan ayat majmuk\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai; (i) huruf\n4.1.1 Bercerita dengan gaya bahasa yang indah; (i) simpulan Bahasa\n5.1.1 Memahami dan menggunakan golongan kata nama; (i) kata nama am, (ii) kata nama khas" },
-			3: { tema: "KEKELUARGAAN", unit: "Unit 2", tajuk: "Kejayaan Keluarga", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan Memahami\n3.2 Menulis perkataan, frasa, dan ayat\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons; (i) soalan\n2.1.2 Membaca dan memahami maklumat daripada pelbagai bahan bacaan\n3.2.1 Membina dan menulis; (i) perkataan, (ii) frasa, (iii) ayat\n4.1.1 Bercerita dengan gaya bahasa yang indah; (ii) bandingan semacam\n5.1.1 Memahami dan menggunakan golongan kata nama; (iii) kata ganti nama diri" },
-			4: { tema: "KEBERSIHAN DAN KESIHATAN", unit: "Unit 3", tajuk: "Pentingnya Kebersihan dan Kesihatan", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.1.3 Mendengar, mentafsir, dan memberikan respons; (i) bunyi\n2.2.1 Membaca dan memahami maklumat yang tersurat dan tersirat\n3.2.2 Menghasilkan jawapan pemahaman secara kritis dan kreatif\n4.2.1 Melafazkan dan menyanyikan lagu\n5.1.2 Memahami dan menggunakan kata kerja" },
-			5: { tema: "KEBERSIHAN DAN KESIHATAN", unit: "Unit 4", tajuk: "Kita Cergas", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk menjelaskan sesuatu perkara\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (i) cerita\n3.2.3 Menganalisis dan mencatat maklumat\n4.2.2 Mengujarkan dialog\n5.1.3 Memahami dan menggunakan kata adjektif" },
-			6: { tema: "KEBERSIHAN DAN KESIHATAN", unit: "Unit 4", tajuk: "Kita Cergas", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk menjelaskan sesuatu perkara\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (i) cerita\n3.2.3 Menganalisis dan mencatat maklumat\n4.2.2 Mengujarkan dialog\n5.1.3 Memahami dan menggunakan kata adjektif" },
-			7: { tema: "KESELAMATAN", unit: "Unit 5", tajuk: "Waspada Amalan Kita", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat\n2.3.2 Membaca dan mempersembahkan karya sastera; (i) cerita\n3.2.4 Menulis ayat dalam perenggan yang diimlakkan\n4.3.1 Mencipta dan mempersembahkan; (i) pantun\n5.1.4 Memahami dan menggunakan kata tugas; (i) kata hubung" },
-			8: { tema: "KESELAMATAN", unit: "Unit 6", tajuk: "Fikirkah Sebelum Klik", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan Memahami\n3.3 Menghasilkan penulisan\n4.3 Menghasilkan bahan sastera\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.2.3 Bersoal jawab untuk mendapatkan maklumat\n2.1.1 Membaca dengan sebutan yang betul; (iii) perenggan\n3.3.1 Menghasilkan penulisan secara kohesi dan koheren; (i) cerita\n4.3.2 Mempersembahkan cerita\n5.2.1 Memahami dan menggunakan kata berimbuhan; (i) awalan" },
-			9: { tema: "PERPADUAN", unit: "Unit 7", tajuk: "Toleransi Kukuhkan Perpaduan", standardKandungan: "1.3 Bercerita, dan menceritakan semula\n2.1 Asas membaca dan Memahami\n3.3 Menghasilkan penulisan\n4.3 Menghasilkan bahan sastera\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul\n2.1.2 Membaca dan memahami maklumat daripada pelbagai bahan\n3.3.2 Mengedit dan memurnikan hasil penulisan; (i) ejaan\n4.3.3 Mempersembahkan sajak\n5.2.1 Memahami dan menggunakan kata berimbuhan; (ii) akhiran" },
-			10: { tema: "PERPADUAN", unit: "Unit 8", tajuk: "Hormati Kepelbagaian", standardKandungan: "1.3 Bercerita, dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu perkara yang dibaca\n2.2.1 Membaca dan memahami maklumat yang tersurat dan tersirat\n3.3.2 Mengedit dan memurnikan hasil penulisan; (ii) tanda baca\n5.2.2 Memahami dan menggunakan kata majmuk" },
-			11: { tema: "PERPADUAN", unit: "Unit 8", tajuk: "Hormati Kepelbagaian", standardKandungan: "1.3 Bercerita, dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu perkara yang dibaca\n2.2.1 Membaca dan memahami maklumat yang tersurat dan tersirat\n3.3.2 Mengedit dan memurnikan hasil penulisan; (ii) tanda baca\n5.2.2 Memahami dan menggunakan kata majmuk" },
-			12: { tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA", unit: "Unit 9", tajuk: "Indahnya Budaya Kita", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.1 Asas menulis\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, memahami, dan menyebut; (ii) ayat majmuk\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (ii) pantun\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai; (ii) perenggan\n5.2.3 Memahami dan menggunakan kata ganda" },
-			13: { tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA", unit: "Unit 10", tajuk: "Kenali Kesenian Kita", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons; (iii) pesanan\n2.3.2 Membaca dan mempersembahkan karya sastera; (ii) syair\n3.2.1 Membina dan menulis; (i) perkataan, (ii) frasa, (iii) ayat\n5.3.1 Memahami dan membina ayat; (i) ayat penyata" },
-			14: { tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN", unit: "Unit 11", tajuk: "Kenali Malaysia", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan Memahami\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.1 Bertutur untuk menjelaskan sesuatu perkara\n2.1.1 Membaca dengan sebutan yang betul; (iv) petikan\n3.2.2 Menghasilkan jawapan pemahaman secara kritis dan kreatif\n5.3.1 Memahami dan membina ayat; (ii) ayat tanya dengan kata tanya" },
-			15: { tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN", unit: "Unit 12", tajuk: "Demi Negara", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat\n2.2.1 Membaca dan memahami maklumat yang tersurat dan tersirat\n3.2.3 Menganalisis dan mencatat maklumat\n5.3.1 Memahami dan membina ayat; (iii) ayat seru" },
-			16: { tema: "SAINS, TEKNOLOGI DAN INOVASI", unit: "Unit 13", tajuk: "Hebatnya Sains", standardKandungan: "1.3 Bercerita, dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (iii) sajak\n3.2.4 Menulis ayat dalam perenggan yang diimlakkan\n5.3.1 Memahami dan membina ayat; (iv) ayat perintah" },
-			17: { tema: "SAINS, TEKNOLOGI DAN INOVASI", unit: "Unit 14", tajuk: "Teknologi dan Kita", standardKandungan: "1.3 Bercerita, dan menceritakan semula\n2.1 Asas membaca dan Memahami\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu perkara yang dibaca\n2.1.2 Membaca dan memahami maklumat daripada pelbagai bahan\n3.3.1 Menghasilkan penulisan secara kohesi dan koheren; (ii) respons\n5.3.2 Memahami dan menggunakan ayat; (i) ayat tunggal" },
-			18: { tema: "KELASTARIAN ALAM", unit: "Unit 15", tajuk: "Sayangi Alam", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.1.3 Mendengar, mentafsir, dan memberikan respons; (ii) arahan\n2.2.1 Membaca dan memahami maklumat yang tersurat dan tersirat\n3.3.2 Mengedit dan memurnikan hasil penulisan; (iii) struktur ayat\n5.3.2 Memahami dan menggunakan ayat; (ii) ayat majmuk" },
-			19: { tema: "KELASTARIAN ALAM", unit: "Unit 16", tajuk: "Pelihara dan Pulihara", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.1 Asas menulis\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.2.3 Bersoal jawab untuk mendapatkan maklumat\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (iv) pantun\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai; (ii) perenggan\n5.1.1 Memahami dan menggunakan golongan kata nama" },
-			20: { tema: "KELASTARIAN ALAM", unit: "Unit 16", tajuk: "Pelihara dan Pulihara", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.1 Asas menulis\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.2.3 Bersoal jawab untuk mendapatkan maklumat\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (iv) pantun\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai; (ii) perenggan\n5.1.1 Memahami dan menggunakan golongan kata nama" },
-			21: { tema: "PERTANIAN DAN PENTERNAKAN", unit: "Unit 17", tajuk: "Dunia Pertanian", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, memahami, dan menyebut; (i) ayat tunggal\n2.3.2 Membaca dan mempersembahkan karya sastera; (iii) sajak\n3.2.1 Membina dan menulis; (i) perkataan, (ii) frasa, (iii) ayat\n5.1.2 Memahami dan menggunakan kata kerja" },
-			22: { tema: "PERTANIAN DAN PENTERNAKAN", unit: "Unit 18", tajuk: "Haiwan Peliharaan", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan Memahami\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons; (i) soalan\n2.1.1 Membaca dengan sebutan yang betul; (iv) petikan\n3.2.2 Menghasilkan jawapan pemahaman secara kritis dan kreatif\n5.1.3 Memahami dan menggunakan kata adjektif" },
-			23: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "Unit 19", tajuk: "Peniaga Cilik", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.1 Memahami fungsi dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk menjelaskan sesuatu perkara\n2.2.1 Membaca dan memahami maklumat yang tersurat dan tersirat\n3.3.1 Menghasilkan penulisan secara kohesi dan koheren; (i) cerita\n5.1.4 Memahami dan menggunakan kata tugas" },
-			24: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "Unit 20", tajuk: "Amalan Bijak", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (i) cerita\n3.3.2 Mengedit dan memurnikan hasil penulisan; (i) ejaan\n4.1.1 Bercerita dengan gaya bahasa yang indah; (i) peribahasa" },
-			25: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "Unit 21", tajuk: "Melabur untuk Masa Depan", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan Memahami\n3.1 Asas menulis\n4.2 Menghayati keindahan dan kesantunan bahasa", standardPembelajaran: "1.2.3 Bersoal jawab untuk mendapatkan maklumat\n2.1.2 Membaca dan memahami maklumat daripada pelbagai bahan\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai; (i) huruf\n4.2.1 Melafazkan dan menyanyikan lagu" },
-			26: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "Unit 22", tajuk: "Urus Niaga", standardKandungan: "1.3 Bercerita, dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul\n2.2.1 Membaca dan memahami maklumat yang tersurat dan tersirat\n3.2.1 Membina dan menulis; (i) perkataan, (ii) frasa, (iii) ayat\n4.2.2 Mengujarkan dialog" },
-			27: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "Unit 23", tajuk: "Usahawan Berjaya", standardKandungan: "1.3 Bercerita, dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu perkara yang dibaca\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (ii) pantun\n3.2.2 Menghasilkan jawapan pemahaman secara kritis dan kreatif\n4.3.1 Mencipta dan mempersembahkan; (i) pantun" },
-			28: { tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN", unit: "Unit 24", tajuk: "Bijak Mengurus Kewangan", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.3 Bersoal jawab untuk mendapatkan maklumat\n2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks; (iv) pantun\n3.3.2 Mengedit dan memurnikan hasil penulisan; (iii) struktur ayat\n5.3.1 Memahami dan membina ayat; (iii) ayat tanya dengan kata tanya, (iv) ayat tanya tanpa kata tanya" },
-			29: { tema: "ULANG KAJI", unit: "Ulang Kaji", tajuk: "Ulang Kaji", standardKandungan: "Mengulang kaji semua topik yang telah dipelajari.", standardPembelajaran: "Aktiviti pengukuhan dan pemulihan berdasarkan keperluan murid." },
-			30: { tema: "PENTAKSIRAN", unit: "Pentaksiran Akhir Sesi Akademik", tajuk: "Pentaksiran Akhir Sesi Akademik", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-			31: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			32: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			33: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			34: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			35: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			36: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			37: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			38: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			39: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			40: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			41: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			42: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
+            1: {
+      tema: "MINGGU ORIENTASI",
+      unit: "Aktiviti Suai Kenal",
+      tajuk: "Fokus Disiplin dan Rutin Kelas",
+      standardKandungan: "Aktiviti Pengurusan Kelas dan Orientasi Mata Pelajaran.",
+      standardPembelajaran: "Aktiviti Suai Kenal dan Penerangan Peraturan Sekolah/Kelas."
+    },
+
+    // MINGGU 2
+    2: {
+      tema: "KEKELUARGAAN",
+      unit: "UNIT 1",
+      tajuk: "Keluarga Cergas",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.1 Asas menulis\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.1 Mendengar, mengecam sebutan, memahami, dan menyebut dengan betul dan tepat; (i) ayat tunggal\n" +
+        "2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) ayat tunggal dan ayat majmuk\n" +
+        "3.1.1 Menulis secara mekanis menggunakan tulisan berangkai dalam bentuk; (i) huruf\n" +
+        "4.1.1 Bercerita dengan menggunakan gaya bahasa yang indah dan santun; (i) simpulan Bahasa\n" +
+        "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks; (i) kata nama am (ii) kata nama khas"
+    },
+
+    // MINGGU 3
+    3: {
+      tema: "KEKELUARGAAN",
+      unit: "UNIT 2",
+      tajuk: "Kejayaan keluarga",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.1 Asas menulis\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.1 Mendengar, mengecam sebutan, memahami, dan menyebut dengan betul dan tepat; (ii) ayat majmuk\n" +
+        "2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (ii) perenggan\n" +
+        "3.2.1 Membina dan menulis; (i) Ayat\n" +
+        "4.1.1 Bercerita dengan menggunakan gaya bahasa yang indah dan santun; (i) simpulan Bahasa\n" +
+        "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks; (iii) kata ganti nama (iv) Penjodoh bilangan"
+    },
+
+    // MINGGU 4
+    4: {
+      tema: "KELUARGA PENYAYANG",
+      unit: "UNIT 3",
+      tajuk: "Kenangan manis",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.1 Asas menulis\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.1 Mendengar, mengecam sebutan, memahami, dan menyebut dengan betul dan tepat; (i) ayat tunggal (ii) ayat majmuk\n" +
+        "2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (iii) petikan\n" +
+        "3.2.1 Membina dan menulis; (ii) Perenggan\n" +
+        "5.1.2 Memahami dan menggunakan kata kerja mengikut konteks; (i) Kata kerja aktif transitif dan tak transitif (ii) Kata kerja pasif"
+    },
+
+    // MINGGU 5-6
+    5: {
+      tema: "KESIHATAN DAN KEBERSIHAN",
+      unit: "UNIT 4",
+      tajuk: "Saya sihat dan bertenaga",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.1 Asas menulis\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (i) suruhan dan permintaan, dan (ii) silaan dan larangan\n" +
+        "2.1.2 Membaca dengan sebutan yang betul, intonasi yang sesuai, dan memahami; (i) pelbagai jenis ayat, (ii) perenggan (iii) petikan\n" +
+        "3.2.1 Membina dan menulis; (i) ayat\n" +
+        "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (i) jarak (ii) perasaan"
+    },
+
+    // MINGGU 6 (sama dengan minggu 5)
+    6: {
+      tema: "KESIHATAN DAN KEBERSIHAN",
+      unit: "UNIT 4",
+      tajuk: "Saya sihat dan bertenaga",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.1 Asas menulis\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (i) suruhan dan permintaan, dan (ii) silaan dan larangan\n" +
+        "2.1.2 Membaca dengan sebutan yang betul, intonasi yang sesuai, dan memahami; (i) pelbagai jenis ayat, (ii) perenggan (iii) petikan\n" +
+        "3.2.1 Membina dan menulis; (i) ayat\n" +
+        "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (i) jarak (ii) perasaan"
+    },
+
+    // MINGGU 7
+    7: {
+      tema: "KESIHATAN DAN KEBERSIHAN",
+      unit: "UNIT 5",
+      tajuk: "Kebersihan tanggungjawab bersama",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.2 Asas menulis\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (ii) silaan dan larangan\n" +
+        "2.1.2 Membaca dengan sebutan yang betul, intonasi yang sesuai, dan memahami; (i) pelbagai jenis ayat, (ii) perenggan\n" +
+        "3.2.1 Membina dan menulis; (ii) perenggan\n" +
+        "4.1.1 Bercerita dengan menggunakan gaya bahasa yang indah dan santun; (ii) bandingan semacam\n" +
+        "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (iii) pancaindera"
+    },
+
+    // MINGGU 8
+    8: {
+      tema: "KESIHATAN DAN KEBERSIHAN",
+      unit: "UNIT 6",
+      tajuk: "Minda positif badan aktif",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap; (i) soalan bertumpu\n" +
+        "2.1.2 Membaca dengan sebutan yang betul, intonasi yang sesuai, dan memahami; (iii) petikan\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan; (i) bertumpu\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (ii) kata sendi nama (iii) kata arah"
+    },
+
+    // MINGGU 9
+    9: {
+      tema: "KESIHATAN DAN KEBERSIHAN",
+      unit: "UNIT 6",
+      tajuk: "Minda positif badan aktif",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap; (i) soalan bertumpu\n" +
+        "2.1.2 Membaca dengan sebutan yang betul, intonasi yang sesuai, dan memahami; (iii) petikan\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan; (i) bertumpu\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (ii) kata sendi nama (iii) kata arah"
+    },
+
+    // MINGGU 10-11
+    10: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 7",
+      tajuk: "Keselamatan di Rumah",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap; (i) soalan bertumpu, dan (ii) soalan bercapah\n" +
+        "2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) ayat tunggal dan ayat majmuk, (ii) perenggan, dan (iii) petikan\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan; (i) bertumpu, dan (ii) bercapah\n" +
+        "4.1.1 Bercerita dengan menggunakan gaya bahasa yang indah dan santun; (i) simpulan bahasa, (ii) bandingan semacam, dan (iii) perumpamaan\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung, (ii) kata sendi nama, (iii) kata arah, (iv) kata tanya, (v) kata perintah, (vi) kata seru, (vii) kata pemeri, (viii) kata penguat, (ix) kata nafi, (x) kata bantu, dan (xi) kata bilangan"
+    },
+
+    // MINGGU 11 (sama dengan minggu 10)
+    11: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 7",
+      tajuk: "Keselamatan di Rumah",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap; (i) soalan bertumpu, dan (ii) soalan bercapah\n" +
+        "2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) ayat tunggal dan ayat majmuk, (ii) perenggan, dan (iii) petikan\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan; (i) bertumpu, dan (ii) bercapah\n" +
+        "4.1.1 Bercerita dengan menggunakan gaya bahasa yang indah dan santun; (i) simpulan bahasa, (ii) bandingan semacam, dan (iii) perumpamaan\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung, (ii) kata sendi nama, (iii) kata arah, (iv) kata tanya, (v) kata perintah, (vi) kata seru, (vii) kata pemeri, (viii) kata penguat, (ix) kata nafi, (x) kata bantu, dan (xi) kata bilangan"
+    },
+
+    // MINGGU 12-13
+    12: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 7",
+      tajuk: "Keselamatan di Rumah",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap; (i) soalan bertumpu, dan (ii) soalan bercapah\n" +
+        "2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) ayat tunggal dan ayat majmuk, (ii) perenggan, dan (iii) petikan\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan; (i) bertumpu, dan (ii) bercapah\n" +
+        "4.1.1 Bercerita dengan menggunakan gaya bahasa yang indah dan santun; (i) simpulan bahasa, (ii) bandingan semacam, dan (iii) perumpamaan\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung, (ii) kata sendi nama, (iii) kata arah, (iv) kata tanya, (v) kata perintah, (vi) kata seru, (vii) kata pemeri, (viii) kata penguat, (ix) kata nafi, (x) kata bantu, dan (xi) kata bilangan"
+    },
+
+    // MINGGU 13 (sama dengan minggu 12)
+    13: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 7",
+      tajuk: "Keselamatan di Rumah",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap; (i) soalan bertumpu, dan (ii) soalan bercapah\n" +
+        "2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) ayat tunggal dan ayat majmuk, (ii) perenggan, dan (iii) petikan\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan; (i) bertumpu, dan (ii) bercapah\n" +
+        "4.1.1 Bercerita dengan menggunakan gaya bahasa yang indah dan santun; (i) simpulan bahasa, (ii) bandingan semacam, dan (iii) perumpamaan\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung, (ii) kata sendi nama, (iii) kata arah, (iv) kata tanya, (v) kata perintah, (vi) kata seru, (vii) kata pemeri, (viii) kata penguat, (ix) kata nafi, (x) kata bantu, dan (xi) kata bilangan"
+    },
+
+    // MINGGU 14-15
+    14: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 8",
+      tajuk: "Rekreasi selamat",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk menjelaskan dan menilai sesuatu perkara secara bertatasusila mengikut konteks\n" +
+        "2.2.1 Membaca, memahami dan mengecam; (i) maksud kosa kata, (ii) idea utama dan idea sampingan, dan (iii) idea keseluruhan\n" +
+        "3.2.3 Membanding bezakan dan mencatat maklumat tentang sesuatu perkara\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung, (ii) kata sendi nama, (iii) kata arah, (iv) kata tanya, (v) kata perintah, (vi) kata seru, (vii) kata pemeri, (viii) kata penguat, (ix) kata nafi, (x) kata bantu, dan (xi) kata bilangan"
+    },
+
+    // MINGGU 15 (sama dengan minggu 14)
+    15: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 8",
+      tajuk: "Rekreasi selamat",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk menjelaskan dan menilai sesuatu perkara secara bertatasusila mengikut konteks\n" +
+        "2.2.1 Membaca, memahami dan mengecam; (i) maksud kosa kata, (ii) idea utama dan idea sampingan, dan (iii) idea keseluruhan\n" +
+        "3.2.3 Membanding bezakan dan mencatat maklumat tentang sesuatu perkara\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung, (ii) kata sendi nama, (iii) kata arah, (iv) kata tanya, (v) kata perintah, (vi) kata seru, (vii) kata pemeri, (viii) kata penguat, (ix) kata nafi, (x) kata bantu, dan (xi) kata bilangan"
+    },
+
+    // MINGGU 16-17
+    16: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 9",
+      tajuk: "Alatan keselamatan",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.2 Menjelaskan dan membanding beza maklumat tersurat dengan menggunakan idea yang kritis dan kreatif\n" +
+        "2.2.1 Membaca, memahami dan mengecam; (i) maksud kosa kata, (ii) idea utama dan idea sampingan, dan (iii) idea keseluruhan\n" +
+        "3.2.4 Menulis sesuatu yang diimlakkan; (i) ayat\n" +
+        "4.2.1 Melafazkan pantun yang mengandungi bahasa yang indah dan menjelaskan maksud\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung (ii) kata sendi nama (iii) kata arah (iv) kata tanya (v) kata perintah (vi) kata seru (vii) kata pemeri (viii) kata penguat (ix) kata nafi (x) kata bantu (xi) kata bilangan"
+    },
+
+    // MINGGU 17 (sama dengan minggu 16)
+    17: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 9",
+      tajuk: "Alatan keselamatan",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.2 Menjelaskan dan membanding beza maklumat tersurat dengan menggunakan idea yang kritis dan kreatif\n" +
+        "2.2.1 Membaca, memahami dan mengecam; (i) maksud kosa kata, (ii) idea utama dan idea sampingan, dan (iii) idea keseluruhan\n" +
+        "3.2.4 Menulis sesuatu yang diimlakkan; (i) ayat\n" +
+        "4.2.1 Melafazkan pantun yang mengandungi bahasa yang indah dan menjelaskan maksud\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung (ii) kata sendi nama (iii) kata arah (iv) kata tanya (v) kata perintah (vi) kata seru (vii) kata pemeri (viii) kata penguat (ix) kata nafi (x) kata bantu (xi) kata bilangan"
+    },
+
+    // MINGGU 18
+    18: {
+      tema: "PERPADUAN",
+      unit: "UNIT 10",
+      tajuk: "Toleransi Kukuhkan Perpaduan",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk mendapatkan dan menyampaikan maklumat\n" +
+        "2.3.1 Membaca, mengenal pasti, dan menerangkan kandungan teks daripada bahan bukan satera dan bahan sastera; (i) label\n" +
+        "3.3.1 Menghasilkan kerangka dan penulisan karangan naratif dan bukan naratif secara; (i) berpandu\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (iv) kata tanya (x) kata bantu (xi) kata bilangan"
+    },
+
+    // MINGGU 19
+    19: {
+      tema: "PERPADUAN",
+      unit: "UNIT 11",
+      tajuk: "Hormat-menghormati Budaya Kita",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.2 Memahami dan menggunakan pembentukan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (i) suruhan dan permintaan\n" +
+        "2.3.1 Membaca, mengenal pasti, dan menerangkan kandungan teks daripada bahan bukan satera dan bahan sastera; (ii) manual\n" +
+        "3.3.1 Menghasilkan kerangka dan penulisan karangan naratif dan bukan naratif secara; (ii) separa berpandu\n" +
+        "4.2.2 Menyanyikan lagu mengikut irama lagu kanak-kanak dan lagu rakyat serta menjelaskan maksud bahasa yang indah dalam lirik lagu\n" +
+        "5.2.1 Memahami dan menggunakan kata mengikut konteks; (ii) kata berimbuhan awalan"
+    },
+
+    // MINGGU 20
+    20: {
+      tema: "PERPADUAN",
+      unit: "UNIT 12",
+      tajuk: "Kerjasama Asas Kesejahteraan",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.3 Membaca dan menapresiasi karya sastera dan bukan sastera\n" +
+        "3.1 Asas menulis\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.2 Memahami dan menggunakan pembentukan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami, dan memberikan respons terhadap; (ii) silaan dan larangan\n" +
+        "2.3.1 Membaca, mengenal pasti, dan menerangkan kandungan teks daripada bahan bukan sastera dan bahan sastera; (iii) cerita\n" +
+        "3.1.1 Menulis secara mekanis menggunakan tulisan berangkai dalam bentuk; (ii) perkataan\n" +
+        "3.3.1 Menghasilkan kerangka dan penulisan karangan naratif dan bukan naratif secara; (i) berpandu\n" +
+        "5.2.1 Memahami dan menggunakan kata mengikut konteks; (iii) kata berimbuhan akhiran\n" +
+        "5.2.2 Memahami dan menggunakan kata majmuk mengikut konteks"
+    },
+
+    // MINGGU 21
+    21: {
+      tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA",
+      unit: "UNIT 13",
+      tajuk: "Kekalkan Warisan Kita",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.1 Asas menulis\n" +
+        "5.2 Memahami dan menggunakan pembentukan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, memahami, mentafsir, dan memberikan respons terhadap; i) Soalan bertumpu\n" +
+        "2.3.1 Membaca, mengenal pasti, dan menerangkan kandungan teks daripada bahan bukan sastera dan sastera\n" +
+        "3.1.1 Menulis secara mekanis menggunakan tulisan berangkai dalam bentuk; iii) frasa\n" +
+        "5.2.3 Memahami dan menggunakan kata majmuk mengikut konteks; i) kata ganda penuh"
+    },
+
+    // MINGGU 22
+    22: {
+      tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA",
+      unit: "UNIT 14",
+      tajuk: "Kenali Kesenian Kita",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.2 Memahami dan menggunakan pembentukan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap : (ii) soalan bercapah\n" +
+        "2.3.2 Membaca dan mempersembahkan karya bukan sastera dan karya sastera dengan sebutan yang betul dan intonasi yang sesuai : (i) label\n" +
+        "3.3.2 Mengedit dan memurnikan hasil penulisan dari aspek : (i) ejaan, tanda baca, dan penggunaan imbuhan, (ii) penggunaan kata\n" +
+        "4.2.3 Melagukan syair dan mendeklamasikan sajak serta memahami maksud : (i) syair\n" +
+        "5.2.3 Memahami dan menggunakan kata ganda mengikut konteks: (ii) kata ganda separa (iii) kata ganda berentak"
+    },
+
+    // MINGGU 23
+    23: {
+      tema: "KEBUDAYAAN , KESENIAN DAN ESTETIKA",
+      unit: "UNIT 15",
+      tajuk: "Indahnya Seni dan Budaya Kita",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk menjelaskan dan menilai sesuatu perkara secara bertatasusila mengikut konteks\n" +
+        "2.3.2 Membaca, memahami, dan mempersembahkan karya bukan dan karya sastera dengan sebutan yang betul dan intonasi yang sesuai; (ii) manual\n" +
+        "3.3.1 Menghasilkan kerangka dan penulisan karangan naratif dan bukan naratif secara; (ii) berpandu\n" +
+        "3.3.2 Mengedit dan memurnikan hasil penulisan dari aspek; (ii) penggunaan kata\n" +
+        "5.3.1 Memahami dan membina ayat mengikut konteks; (i) ayat seruan (ii) ayat perintah (iii) ayat tanya dengan kata tanya"
+    },
+
+    // MINGGU 24
+    24: {
+      tema: "KELESTARIAN ALAM",
+      unit: "UNIT 16",
+      tajuk: "Pengurusan sisa pepejal",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.2.2 Menjelaskan dan membanding beza maklumat tersurat dengan menggunakan idea yang kritis dan kreatif\n" +
+        "2.3.2 Membaca dan mempersembahkan karya bukan sastera dan karya sastera dengan sebutan yang betul dan intonasi yang sesuai; (iii) cerita\n" +
+        "3.3.2 Mengedit dan memurnikan hasil penulisan dari aspek; (iii) struktur ayat\n" +
+        "4.2.3 Melagukan syair dan mendeklamasikan sajak serta memahami maksud; (ii) sajak\n" +
+        "5.3.1 Memahami dan membina ayat mengikut konteks; (iv) ayat tanya tanpa kata tanya"
+    },
+
+    // MINGGU 25
+    25: {
+      tema: "KELESTARIAN ALAM",
+      unit: "UNIT 17",
+      tajuk: "SUMBANGAN KITA",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk mendapatkan dan menyampaikan maklumat\n" +
+        "2.3.2 Membaca dan mempersembahkan karya bukan sastera dan karya sastera dengan sebutan yang betul dan intonasi yang sesuai; (iv) pantun\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan; (i) bertumpu\n" +
+        "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks; (iii) kata ganti nama\n" +
+        "5.3.2 Memahami dan menggunakan ayat mengikut konteks; (i) ayat tunggal (ii) ayat majmuk"
+    },
+
+    // MINGGU 26-27 (dari data txt)
+    26: {
+      tema: "KELESTARIAN ALAM",
+      unit: "UNIT 18",
+      tajuk: "TAHUKAH KAMU",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap:(i) suruhan dan permintaan\n" +
+        "1.2.3 Bersoal jawab untuk mendapatkan dan menyampaikan maklumat\n" +
+        "2.2.1 Membaca, memahami dan mengecam : (i) maksud kosa kata\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan : (ii) bercapah\n" +
+        "3.3.2 Mengedit dan memurnikan hasil penulisan dari aspek : (i) ejaan, tanda baca dan penggunaan imbuhan, (ii) penggunaan kata, dan (iii) struktur ayat\n" +
+        "4.3.1 Mencipta bahan sastera secara berpandu dan mempersembahkan secara kreatif : (i) pantun empat kerat\n" +
+        "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks (iv) penjodoh bilangan\n" +
+        "5.1.2 Memahami dan menggunakan kata kerja mengikut konteks : (i) kata kerja aktif transitif dan tak transitif (ii) kata kerja pasif"
+    },
+
+    // MINGGU 27 (sama dengan minggu 26)
+    27: {
+      tema: "KELESTARIAN ALAM",
+      unit: "UNIT 18",
+      tajuk: "TAHUKAH KAMU",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap:(i) suruhan dan permintaan\n" +
+        "1.2.3 Bersoal jawab untuk mendapatkan dan menyampaikan maklumat\n" +
+        "2.2.1 Membaca, memahami dan mengecam : (i) maksud kosa kata\n" +
+        "3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan : (ii) bercapah\n" +
+        "3.3.2 Mengedit dan memurnikan hasil penulisan dari aspek : (i) ejaan, tanda baca dan penggunaan imbuhan, (ii) penggunaan kata, dan (iii) struktur ayat\n" +
+        "4.3.1 Mencipta bahan sastera secara berpandu dan mempersembahkan secara kreatif : (i) pantun empat kerat\n" +
+        "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks (iv) penjodoh bilangan\n" +
+        "5.1.2 Memahami dan menggunakan kata kerja mengikut konteks : (i) kata kerja aktif transitif dan tak transitif (ii) kata kerja pasif"
+    },
+
+    // MINGGU 28
+    28: {
+      tema: "LINDUNGI ALAM",
+      unit: "UNIT 19",
+      tajuk: "Sayangi Alam",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap: (i) suruhan dan permintaan, dan (ii) silaan dan larangan\n" +
+        "2.2.1 Membaca, memahami dan mengecam: (i) maksud kosa kata, (ii) idea utama dan idea sampingan, dan (iii) idea keseluruhan\n" +
+        "3.2.3 Membanding bezakan dan mencatat maklumat tentang sesuatu perkara\n" +
+        "4.3.1 Mencipta bahan sastera secara berpandu dan mempersembahkan secara kreatif: (i) pantun empat kerat, dan (ii) sajak\n" +
+        "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks: (i) jarak, (ii) perasaan, (iii) pancaindera"
+    },
+
+    // MINGGU 29
+    29: {
+      tema: "LINDUNGI ALAM",
+      unit: "UNIT 20",
+      tajuk: "Flora dan Fauna",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap: (i) soalan bertumpu, dan (ii) soalan bercapah\n" +
+        "2.2.1 Membaca, memahami dan mengecam: (i) maksud kosa kata, (ii) idea utama dan idea sampingan, dan (iii) idea keseluruhan\n" +
+        "3.2.4 Menulis sesuatu yang diimlakkan: (i) ayat\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks: (i) kata hubung, (ii) kata sendi nama, (iii) kata arah, (iv) kata tanya, (v) kata perintah, (vi) kata seru, (vii) kata pemeri, (viii) kata penguat, (ix) kata nafi, (x) kata bantu, dan (xi) kata bilangan"
+    },
+
+    // MINGGU 30
+    30: {
+      tema: "LINDUNGI ALAM",
+      unit: "UNIT 21",
+      tajuk: "Bersihkan Alam",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.3 Seni Bahasa\n" +
+        "5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap: (i) soalan bertumpu, dan (ii) soalan bercapah\n" +
+        "2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks daripada bahan bukan sastera dan bahan sastera: (i) label, (ii) manual, (iii) cerita, dan (iv) pantun\n" +
+        "3.3.1 Menghasilkan kerangka dan penulisan karangan naratif dan bukan naratif secara: (i) berpandu, dan (ii) separa berpandu\n" +
+        "4.3.2 Mengubah suai cerita yang mempunyai unsur pengajaran secara berpandu dan mempersembahkan cerita secara kreatif\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks: (i) kata hubung, (ii) kata sendi nama, (iii) kata arah, (iv) kata tanya, (v) kata perintah, (vi) kata seru, (vii) kata pemeri, (viii) kata penguat, (ix) kata nafi, (x) kata bantu, dan (xi) kata bilangan"
+    },
+
+    // MINGGU 31
+    31: {
+      tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN",
+      unit: "UNIT 22",
+      tajuk: "BIJAK EKONOMI",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.2 Tatabahasa",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk menjelaskan dan menilai sesuatu perkara secara bertatasusila mengikut konteks\n" +
+        "2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks daripada bahan bukan sastera dan bahan sastera: (ii) manual\n" +
+        "3.3.1 Menghasilkan kerangka dan penulisan karangan naratif dan bukan naratif secara: (ii) separa berpandu\n" +
+        "5.2.1 Memahami dan menggunakan kata mengikut konteks: (i) kata dasar (ii) kata berimbuhan awalan (iii) kata berimbuhan akhiran\n" +
+        "5.2.2 Memahami dan menggunakan kata majmuk mengikut konteks"
+    },
+
+    // MINGGU 32
+    32: {
+      tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN",
+      unit: "UNIT 23",
+      tajuk: "BUDAYA USAHAWAN",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.2 Tatabahasa",
+      standardPembelajaran:
+        "1.2.2 Menjelaskan dan membanding beza maklumat tersurat dengan menggunakan idea yang kritis dan kreatif\n" +
+        "2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks daripada bahan bukan sastera dan bahan sastera: (iii) cerita\n" +
+        "3.3.1 Menghasilkan kerangka dan penulisan karangan naratif dan bukan naratif secara: (iii) tidak berpandu\n" +
+        "5.2.3 Memahami dan menggunakan kata ganda mengikut konteks: (i) kata ganda penuh (ii) kata ganda separa (iii) kata ganda berentak"
+    },
+
+    // MINGGU 33
+    33: {
+      tema: "EKONOMI, KEUSAHAWANAN DAN KEWANGAN",
+      unit: "UNIT 24",
+      tajuk: "BIJAK MENGURUS KEWANGAN",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk mendapatkan dan menyampaikan maklumat\n" +
+        "2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks daripada bahan bukan sastera dan bahan sastera; (iv) pantun\n" +
+        "3.3.2 Mengedit dan memurnikan hasil penulisan dari aspek; (iii) struktur ayat\n" +
+        "5.3.1 Memahami dan membina ayat mengikut konteks; (iii) ayat tanya dengan kata tanya, dan (iv) ayat tanya tanpa kata tanya\n" +
+        "5.3.2 Memahami dan menggunakan ayat mengikut konteks; (i) ayat tunggal, dan (ii) ayat majmuk" },
         },
         BUKU_TEKS_DATA: {
             1: { mukaSurat: "Jilid 1: 1-7 (Unit 1)<br>- Mendengar, mengecam dan menyebut ayat (m/s 2)<br>- Membaca teks dengan sebutan betul (m/s 3)<br>- Menulis perkataan dan frasa (m/s 4)<br>- Tatabahasa: Kata Nama Am & Khas (m/s 5)<br>- Menyanyikan lagu 'Riangnya Keluargaku' (m/s 6)<br>- Aktiviti Pemulihan & Pengayaan (m/s 7)" },
@@ -202,47 +866,197 @@ const SEMUA_DATA = {
     4: {
         RPT_DATA: {
             1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." },
-			2: { tema: "KEMASYARAKATAN", unit: "UNIT 1", tajuk: "Jiran Tetangga", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut sesuatu yang diujarkan semula dalam situasi tidak formal.\n2.1.1 Membaca dan memahami petikan dengan sebutan yang betul dan intonasi yang sesuai.\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai dalam bentuk ayat.\n5.1.1(i) Memahami dan menggunakan kata nama am." },
-			3: { tema: "KEMASYARAKATAN", unit: "UNIT 2", tajuk: "Prihatinnya Kita", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap ayat tanya.\n2.2.1 Membaca dan memahami maklumat daripada pelbagai bahan.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n5.1.1(ii) Memahami dan menggunakan kata nama khas." },
-			4: { tema: "KEMASYARAKATAN", unit: "UNIT 3", tajuk: "Masyarakat Berilmu", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan secara kritis.\n2.3.1 Membaca dan menganalisis kandungan teks karya sastera.\n3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan bertumpu dan bercapah.\n5.1.1(iii) Memahami dan menggunakan kata ganti nama." },
-			5: { tema: "KESIHATAN DAN KEBERSIHAN", unit: "UNIT 4", tajuk: "Kesihatan Harus Dijaga", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk mendapatkan maklumat dengan bertanya secara bertatasusila.\n2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera.\n3.2.3 Mencatat maklumat daripada pelbagai sumber.\n5.1.2(i) Memahami dan menggunakan kata kerja aktif transitif." },
-			6: { tema: "KESIHATAN DAN KEBERSIHAN", unit: "UNIT 4", tajuk: "Kesihatan Harus Dijaga", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk mendapatkan maklumat dengan bertanya secara bertatasusila.\n2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera.\n3.2.3 Mencatat maklumat daripada pelbagai sumber.\n5.1.2(i) Memahami dan menggunakan kata kerja aktif transitif." },
-			7: { tema: "KESIHATAN DAN KEBERSIHAN", unit: "UNIT 5", tajuk: "Kebersihan Lambang Keperibadian", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.2 Bertutur dan menghuraikan maklumat tersurat dan tersirat.\n2.1.1 Membaca dan memahami petikan dengan sebutan yang betul dan intonasi yang sesuai.\n3.3.1 Menulis draf dan menghasilkan penulisan berformat.\n5.1.2(ii) Memahami dan menggunakan kata kerja pasif." },
-			8: { tema: "KESELAMATAN", unit: "UNIT 6", tajuk: "Waspada Pasti Selamat", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul.\n2.2.1 Membaca dan memahami maklumat daripada pelbagai bahan.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n5.1.3(i) Memahami dan menggunakan kata adjektif sifatan/keadaan." },
-			9: { tema: "KESELAMATAN", unit: "UNIT 7", tajuk: "Keselamatan di Mana-mana", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera\n3.1 Asas menulis\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca dengan sebutan yang betul.\n2.3.1 Membaca dan menganalisis kandungan teks karya sastera.\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai.\n5.1.3(ii) Memahami dan menggunakan kata adjektif warna." },
-			10: { tema: "KESELAMATAN", unit: "UNIT 7", tajuk: "Keselamatan di Mana-mana", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera\n3.1 Asas menulis\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca dengan sebutan yang betul.\n2.3.1 Membaca dan menganalisis kandungan teks karya sastera.\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai.\n5.1.3(ii) Memahami dan menggunakan kata adjektif warna." },
-			11: { tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA", unit: "UNIT 8", tajuk: "Budaya Kita", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut sesuatu yang diujarkan semula.\n2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n5.1.3(iii) Memahami dan menggunakan kata adjektif bentuk." },
-			12: { tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA", unit: "UNIT 9", tajuk: "Kesenian Dihargai", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap ayat tanya.\n2.1.1 Membaca dan memahami petikan dengan sebutan yang betul.\n3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan.\n5.1.3(iv) Memahami dan menggunakan kata adjektif waktu." },
-			13: { tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN", unit: "UNIT 10", tajuk: "Semangat Patriotik", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan secara kritis.\n2.2.1 Membaca dan memahami maklumat daripada pelbagai bahan.\n3.2.3 Mencatat maklumat daripada pelbagai sumber.\n5.1.4(i) Memahami dan menggunakan kata hubung." },
-			14: { tema: "JATI DIRI, PATRIOTISME DAN KEWARGANEGARAAN", unit: "UNIT 11", tajuk: "Taat Setia", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk mendapatkan maklumat dengan bertanya secara bertatasusila.\n2.3.1 Membaca dan menganalisis kandungan teks karya sastera.\n3.3.1 Menulis draf dan menghasilkan penulisan berformat.\n5.1.4(ii) Memahami dan menggunakan kata sendi nama." },
-			15: { tema: "PERTANIAN DAN PENTERNAKAN", unit: "UNIT 12", tajuk: "Hasil Bumi", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.2 Bertutur dan menghuraikan maklumat tersurat dan tersirat.\n2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n5.1.4(iii) Memahami dan menggunakan kata nafi." },
-			16: { tema: "PERTANIAN DAN PENTERNAKAN", unit: "UNIT 13", tajuk: "Ternakan Jana Pendapatan", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul.\n2.1.1 Membaca dan memahami petikan dengan sebutan yang betul.\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai.\n5.2.1(i) Memahami dan menggunakan imbuhan awalan." },
-			17: { tema: "EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN", unit: "UNIT 14", tajuk: "Menjanakan Ekonomi", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca dengan sebutan yang betul.\n2.2.1 Membaca dan memahami maklumat daripada pelbagai bahan.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n5.2.1(ii) Memahami dan menggunakan imbuhan akhiran." },
-			18: { tema: "EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN", unit: "UNIT 15", tajuk: "Bijak Berbelanja", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut sesuatu yang diujarkan semula.\n2.3.1 Membaca dan menganalisis kandungan teks karya sastera.\n3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan.\n5.2.2 Memahami dan menggunakan kata majmuk." },
-			19: { tema: "INTEGRITI", unit: "UNIT 16", tajuk: "Tanggungjawab Digalas", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap ayat tanya.\n2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera.\n3.2.3 Mencatat maklumat daripada pelbagai sumber.\n5.2.3 Memahami dan menggunakan kata ganda." },
-			20: { tema: "INTEGRITI", unit: "UNIT 17", tajuk: "Ibarat Pedang", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.1 Bertutur untuk mendapatkan maklumat dengan bertanya secara bertatasusila.\n2.1.1 Membaca dan memahami petikan dengan sebutan yang betul.\n3.3.1 Menulis draf dan menghasilkan penulisan berformat.\n5.3.1 Memahami dan membina ayat tunggal dan ayat majmuk susunan biasa." },
-			21: { tema: "INTEGRITI", unit: "UNIT 18", tajuk: "Cariku Terang", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.2 Bertutur dan menghuraikan maklumat tersurat dan tersirat.\n2.2.1 Membaca dan memahami maklumat daripada pelbagai bahan.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n5.3.2 Memahami dan membina ayat tunggal dan ayat majmuk susunan songsang." },
-			22: { tema: "PENTAKSIRAN", unit: "Pentaksiran Pertengahan Tahun", tajuk: "Ujian", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-			23: { tema: "PENGURUSAN", unit: "Pengurusan Selepas Pentaksiran", tajuk: "Perbincangan Kertas", standardKandungan: "Membincangkan jawapan dan prestasi murid.", standardPembelajaran: "Guru dan murid berbincang mengenai kertas pentaksiran." },
-			24: { tema: "PENGURUSAN", unit: "Pengurusan Selepas Pentaksiran", tajuk: "Perbincangan Kertas", standardKandungan: "Membincangkan jawapan dan prestasi murid.", standardPembelajaran: "Guru dan murid berbincang mengenai kertas pentaksiran." },
-			25: { tema: "SAINS, TEKNOLOGI DAN INOVASI", unit: "UNIT 19", tajuk: "Celik Sains, Cipta Inovasi", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul.\n2.3.1 Membaca dan menganalisis kandungan teks karya sastera.\n4.1.1 Bercerita dan mengujarkan dialog yang mengandungi peribahasa.\n5.1.1 Memahami dan menggunakan kata nama." },
-			26: { tema: "SAINS, TEKNOLOGI DAN INOVASI", unit: "UNIT 20", tajuk: "Mesra Teknologi", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n4.2 Menghayati keindahan dan kesantunan bahasa\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca.\n2.3.2 Membaca dan mempersembahkan karya sastera.\n4.2.1 Melafazkan dan menjelaskan maksud sajak.\n5.1.2 Memahami dan menggunakan kata kerja." },
-			27: { tema: "SAINS, TEKNOLOGI DAN INOVASI", unit: "UNIT 21", tajuk: "Inovasi Kreatif", standardKandungan: "1.1 Mendengar dan memberikan respons\n3.1 Asas menulis\n4.3 Menghasilkan bahan sastera\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut sesuatu yang diujarkan semula.\n3.1.1 Menulis secara mekanis menggunakan tulisan berangkai.\n4.3.1 Mengubah suai puisi dan mempersembahkannya.\n5.1.3 Memahami dan menggunakan kata adjektif." },
-			28: { tema: "ALAM SEKITAR DAN TEKNOLOGI HIJAU", unit: "UNIT 22", tajuk: "Hargai Alam", standardKandungan: "1.1 Mendengar dan memberikan respons\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons.\n3.2.1 Membina dan menulis ayat dan perenggan.\n4.3.2 Mengubah suai cerita dan mempersembahkannya.\n5.1.4 Memahami dan menggunakan kata tugas." },
-			29: { tema: "ALAM SEKITAR DAN TEKNOLOGI HIJAU", unit: "UNIT 23", tajuk: "Mesra Alam", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n3.2 Menulis perkataan, frasa, dan ayat\n4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.2.1 Bertutur untuk mendapatkan maklumat.\n3.2.2 Menghasilkan jawapan pemahaman.\n4.4.1 Mengenal, mengecam dan menyebut huruf tunggal.\n5.2.1 Memahami dan menggunakan kata berimbuhan." },
-			30: { tema: "ALAM SEKITAR DAN TEKNOLOGI HIJAU", unit: "UNIT 24", tajuk: "Teknologi Hijau", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n3.2 Menulis perkataan, frasa, dan ayat\n4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.2.2 Bertutur dan menghuraikan maklumat.\n3.2.3 Mencatat maklumat daripada pelbagai sumber.\n4.4.2 Mempersembahkan tulisan jawi.\n5.2.2 Memahami dan menggunakan kata majmuk." },
-			31: { tema: "EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN", unit: "UNIT 15", tajuk: "Bijak Berbelanja", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut sesuatu yang diujarkan semula.\n2.3.1 Membaca dan menganalisis kandungan teks karya sastera.\n3.2.2 Menghasilkan jawapan pemahaman berdasarkan soalan.\n5.2.2 Memahami dan menggunakan kata majmuk." },
-			32: { tema: "INTEGRITI", unit: "UNIT 16", tajuk: "Tanggungjawab Digalas", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap ayat tanya.\n2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera.\n3.2.3 Mencatat maklumat daripada pelbagai sumber.\n5.2.3 Memahami dan menggunakan kata ganda." },
-			33: { tema: "INTEGRITI", unit: "UNIT 17", tajuk: "Ibarat Pedang", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.1 Bertutur untuk mendapatkan maklumat dengan bertanya secara bertatasusila.\n2.1.1 Membaca dan memahami petikan dengan sebutan yang betul.\n3.3.1 Menulis draf dan menghasilkan penulisan berformat.\n5.3.1 Memahami dan membina ayat tunggal dan ayat majmuk susunan biasa." },
-			34: { tema: "INTEGRITI", unit: "UNIT 18", tajuk: "Cariku Terang", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.2 Bertutur dan menghuraikan maklumat tersurat dan tersirat.\n2.2.1 Membaca dan memahami maklumat daripada pelbagai bahan.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n5.3.2 Memahami dan membina ayat tunggal dan ayat majmuk susunan songsang." },
-			35: { tema: "ULANG KAJI", unit: "Ulang Kaji", tajuk: "Ulang Kaji", standardKandungan: "Mengulang kaji semua topik yang telah dipelajari.", standardPembelajaran: "Aktiviti pengukuhan dan pemulihan berdasarkan keperluan murid." },
-			36: { tema: "PENTAKSIRAN", unit: "Pentaksiran Akhir Sesi Akademik", tajuk: "Pentaksiran Akhir Sesi Akademik", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-			37: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			38: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			39: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			40: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			41: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			42: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
+			 2: {
+      tema: "KEMASYARAKATAN",
+      unit: "UNIT 1 - Jiran Tetangga",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.1.1 Membaca petikan dengan sebutan dan intonasi betul\n3.1.1 Menulis ayat menggunakan tulisan berangkai\n4.1.1 Bercerita dan mengujarkan dialog dengan peribahasa\n5.1.1 Kata nama am"
+    },
+    3: {
+      tema: "KEMASYARAKATAN",
+      unit: "UNIT 2 - Prihatinnya Kita",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Memberi respons terhadap ujaran dalam situasi tidak formal\n2.2.1 Membuat gambaran daripada bahan grafik multimedia\n3.2.1 Menulis ayat daripada bahan multimedia\n4.2.1 Melafazkan dan menjelaskan maksud sajak\n5.1.1 Kata nama khas"
+    },
+    4: {
+      tema: "KEMASYARAKATAN",
+      unit: "UNIT 3 - Masyarakat Berilmu",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.3 Mentafsir dan memberi respons terhadap soalan secara kritis\n2.3.1 Menganalisis kandungan teks karya sastera\n3.2.1 Menulis ayat dan perenggan daripada bahan multimedia\n4.2.2 Menyanyi lagu rakyat dan menjelaskan maksud lirik\n5.1.1 Kata ganti nama"
+    },
+    5: {
+      tema: "KESIHATAN DAN KEBERSIHAN",
+      unit: "UNIT 4 - Saya Sihat",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera secara kreatif\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.2.1 Bertutur untuk menilai dan memberi alasan secara bertatasusila\n2.3.1 Menganalisis kandungan teks bukan sastera\n3.2.2 Menulis jawapan bertumpu secara kritis dan kreatif\n4.3.1 Mengubah suai puisi secara berpandu\n5.1.1 Penjodoh bilangan\n5.1.2 Kata kerja aktif transitif"
+    },
+    6: {
+      tema: "KESIHATAN DAN KEBERSIHAN",
+      unit: "UNIT 5 - Persekitaran Bersih Hidup Ceria",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera secara kreatif\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.2.2 Menjelaskan dan membanding beza maklumat tersurat secara kritis dan kreatif\n2.3.2 Membaca karya sastera dengan gaya penyampaian sesuai\n3.2.2 Menulis jawapan bercapah secara kritis dan kreatif\n4.3.2 Mengubah suai cerita secara berpandu\n5.1.2 Kata kerja aktif tak transitif"
+    }
+    7: {
+      tema: "KESIHATAN DAN KEBERSIHAN",
+      unit: "UNIT 6 - Pilih Gaya Hidup Sihat",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera secara kreatif\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.2.2 Menjelaskan dan membanding beza maklumat tersirat secara kritis dan kreatif\n2.3.2 Membaca karya bukan sastera dengan gaya penyampaian sesuai\n3.2.3 Menganalisis dan mencatat maklumat tentang sesuatu perkara\n4.3.3 Mengubah suai seni kata lagu dan mempersembahkannya secara kreatif\n5.1.2 Kata kerja pasif"
+    },
+    8: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 7 - Waspada Selalu",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat\n4.4 Mengaplikasikan keindahan dalam seni tulisan jawi\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.2.3 Bersoal jawab untuk mendapatkan penjelasan\n2.1.1 Membaca petikan dengan sebutan dan intonasi betul\n3.2.4 Menulis ayat dalam perenggan yang diimlakkan\n4.4.1 Mengenal dan menyebut huruf jawi dalam simpulan bahasa\n5.1.3 Kata adjektif cara dan perasaan"
+    },
+    9: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 8 - Hargai Diri",
+      standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.3 Menghasilkan penulisan\n4.4 Mengaplikasikan keindahan dalam seni tulisan jawi\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi sesuai\n2.2.1 Membuat gambaran daripada bahan grafik multimedia\n3.3.1 Menulis penulisan imaginatif\n4.4.2 Mempersembahkan seni tulisan jawi melalui simpulan bahasa\n5.1.3 Kata adjektif pancaindera dan cara"
+    },
+    10: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 9 - Patuh dan Selamat",
+      standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.3.2 Menceritakan bahan yang ditonton dengan sebutan dan intonasi sesuai\n2.3.1 Menganalisis kandungan teks karya sastera\n3.3.1 Menulis penulisan deskriptif\n5.1.4 Kata hubung dan kata sendi nama"
+    }
+    11: {
+      tema: "KESELAMATAN",
+      unit: "UNIT 9 - Patuh dan Selamat",
+      standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.3.2 Menceritakan bahan yang ditonton dengan sebutan dan intonasi sesuai\n2.3.1 Menganalisis kandungan teks karya sastera\n3.3.1 Menulis penulisan deskriptif\n5.1.4 Kata hubung dan kata sendi nama"
+    },
+    12: {
+      tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA",
+      unit: "UNIT 10 - Semarakkan Budaya Kita",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.3.1 Menganalisis kandungan teks bukan sastera\n3.3.2 Edit dan memurnikan ayat dari aspek ejaan, tanda baca dan imbuhan\n4.1.1 Bercerita dan mengujarkan dialog dengan peribahasa\n5.1.4 Kata nafi"
+    },
+    13: {
+      tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA",
+      unit: "UNIT 11 - Indah Seni Sepanjang Zaman",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Memberi respons terhadap ujaran dalam situasi tidak formal\n2.3.2 Membaca karya sastera dengan gaya penyampaian sesuai\n3.3.2 Edit dan memurnikan ayat dari aspek imbuhan\n5.2.1 Kata berimbuhan awalan dan akhiran"
+    },
+    14: {
+      tema: "KEBUDAYAAN, KESENIAN DAN ESTETIKA",
+      unit: "UNIT 12 - Adat Dijunjung Budaya Disanjung",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran: "1.1.3 Mentafsir dan memberi respons terhadap soalan secara kritis\n2.3.2 Membaca karya bukan sastera dengan gaya penyampaian sesuai\n3.3.2 Edit dan memurnikan ayat dari aspek ejaan, tanda baca dan imbuhan\n4.2.1 Melafazkan dan menjelaskan maksud sajak\n5.2.1 Kata berimbuhan apitan"
+    },
+    15: {
+      tema: "JATI DIRI, PATRIOTISME & KEWARGANEGARAAN",
+      unit: "UNIT 13 - Jadikan Inspirasi",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran: "1.2.1 Bertutur untuk menilai dan memberi alasan secara bertatasusila\n2.1.1 Membaca petikan dengan sebutan dan intonasi betul\n3.1.1 Menulis ayat menggunakan tulisan berangkai\n4.2.2 Menyanyi lagu rakyat dan menjelaskan maksud lirik\n5.2.2 Kata majmuk bebas dan mantap"
+    }
+    16: {
+      tema: "JATI DIRI, PATRIOTISME & KEWARGANEGARAAN",
+      unit: "UNIT 14 - Demi Tanah Airku",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran: "1.2.2 Banding beza maklumat tersurat dan tersirat secara kritis dan kreatif\n2.2.1 Membuat gambaran daripada bahan grafik multimedia\n3.2.2 Menulis jawapan bertumpu dan bercapah\n5.2.3 Kata ganda penuh dan separa"
+    },
+    17: {
+      tema: "JATI DIRI, PATRIOTISME & KEWARGANEGARAAN",
+      unit: "UNIT 15 - Aku Anak Watan",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera secara kreatif\n5.2 Memahami dan menggunakan bentuk kata\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.2.3 Bersoal jawab untuk mendapatkan penjelasan\n2.3.1 Menganalisis kandungan teks karya sastera\n3.2.4 Menulis perenggan secara imlak\n4.3.1 Mengubah suai puisi secara berpandu\n5.2.2 Kata majmuk bebas dan mantap\n5.3.1 Ayat tunggal"
+    },
+    18: {
+      tema: "SAINS, TEKNOLOGI DAN INOVASI",
+      unit: "UNIT 16 - Kehebatan Sains",
+      standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi sesuai\n2.3.1 Menganalisis kandungan teks bukan sastera\n3.3.1 Menulis penulisan imaginatif\n5.3.1 Ayat majmuk\n5.3.2 Ayat penyata"
+    },
+    19: {
+      tema: "SAINS, TEKNOLOGI DAN INOVASI",
+      unit: "UNIT 17 - Teknologi dalam Kehidupan",
+      standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.3 Menghasilkan bahan sastera secara kreatif\n5.3 Memahami dan membina ayat mengikut konteks\n6.1 Tingkah laku penumpang",
+      standardPembelajaran: "1.3.2 Menceritakan bahan yang ditonton dengan sebutan dan intonasi sesuai\n2.3.2 Membaca karya sastera dengan gaya penyampaian sesuai\n3.3.2 Edit dan memurnikan ayat dari aspek ejaan, tanda baca dan imbuhan\n4.3.2 Mengubah suai cerita secara berpandu\n5.3.2 Ayat tanya\n5.3.3 Membina ayat"
+    },
+    20: {
+      tema: "SAINS, TEKNOLOGI DAN INOVASI",
+      unit: "UNIT 18 - Inovasi Untuk Kita",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat mengikut konteks\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.3.2 Membaca karya bukan sastera dengan gaya penyampaian sesuai\n3.2.1 Menulis ayat dan perenggan daripada bahan multimedia\n5.3.4 Ayat susunan biasa dan songsang\n5.1.1 Kata nama am, khas, ganti nama, penjodoh bilangan"
+    }
+    21: {
+      tema: "PERTANIAN DAN PENTERNAKAN",
+      unit: "UNIT 19 - Kreatifnya Petani Kita",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.4 Mengaplikasikan keindahan dalam seni tulisan jawi\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.2 Respons terhadap ujaran dalam situasi tidak formal\n2.3.2 Membaca karya sastera dan bukan sastera dengan gaya penyampaian sesuai\n3.2.2 Menulis jawapan bertumpu dan bercapah secara kritis dan kreatif\n4.4.1 Mengenal dan menyebut huruf jawi dalam simpulan bahasa\n4.4.2 Mempersembahkan seni tulisan jawi\n5.1.2 Kata kerja aktif transitif dan tak transitif"
+    },
+    22: {
+      tema: "PERTANIAN DAN PENTERNAKAN",
+      unit: "UNIT 20 - Mari Bertani",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.3 Mentafsir dan memberi respons terhadap soalan secara kritis\n2.1.1 Membaca petikan dengan sebutan dan intonasi betul\n3.2.3 Menganalisis dan mencatat maklumat tentang sesuatu perkara\n5.1.3 Kata adjektif: cara, perasaan, waktu, pancaindera"
+    }
+    23: {
+      tema: "PERTANIAN DAN PENTERNAKAN",
+      unit: "UNIT 21 - Ternakan Jana Pendapatan",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.4 Mengaplikasikan keindahan dalam seni tulisan jawi\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.2.1 Bertutur secara bertatasusila untuk menilai dan memberi alasan\n2.3.1 Menganalisis teks karya sastera dan bukan sastera\n3.2.4 Menulis perenggan secara imlak\n4.4.1 Mengenal dan menyebut huruf jawi dalam simpulan bahasa\n5.1.4 Kata hubung dan kata sendi nama"
+    },
+    24: {
+      tema: "EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN",
+      unit: "UNIT 22 - Menjanakan Ekonomi",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.4 Mengaplikasikan keindahan dalam seni khat\n5.1 Memahami dan menggunakan golongan kata\n5.2 Memahami dan menggunakan bentuk kata",
+      standardPembelajaran: "1.2.2 Banding beza maklumat tersurat secara kritis dan kreatif\n2.3.1 Menganalisis teks karya sastera dan bukan sastera\n3.3.1 Menulis penulisan imaginatif\n4.4.2 Mempersembahkan seni tulisan jawi\n5.1.4 Kata nafi dan kata bilangan tugas\n5.2.1 Kata berimbuhan awalan, akhiran dan apitan"
+    },
+    25: {
+      tema: "EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN",
+      unit: "UNIT 23 - Usahawan Kita",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan bentuk kata",
+      standardPembelajaran: "1.2.2 Banding beza maklumat tersirat secara kritis dan kreatif\n2.3.2 Membaca karya sastera dan bukan sastera dengan gaya sesuai\n3.3.1 Menulis penulisan deskriptif\n5.2.2 Kata majmuk bebas dan kata majmuk mantap"
+    },
+    26: {
+      tema: "EKONOMI, KEUSAHAWANAN DAN PENGURUSAN KEWANGAN",
+      unit: "UNIT 24 - Pengurusan Perbelanjaan",
+      standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan bentuk kata\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.2.3 Bersoal jawab untuk mendapatkan penjelasan\n2.3.2 Membaca karya sastera dan bukan sastera dengan gaya sesuai\n3.3.2 Edit dan memurnikan ayat dari aspek ejaan, tanda baca dan imbuhan\n5.2.3 Kata ganda separa\n5.3.1 Ayat tunggal dan ayat majmuk"
+    },
+    27: {
+      tema: "INTEGRITI",
+      unit: "UNIT 25 - Tanggungjawab Digalas",
+      standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi sesuai\n2.1.1 Membaca petikan dengan sebutan dan intonasi betul\n3.1.1 Menulis ayat menggunakan tulisan berangkai\n4.1.1 Bercerita dan mengujarkan dialog dengan peribahasa\n5.3.2 Ayat penyata dan ayat tanya\n5.3.3 Membina ayat"
+    }
+    28: {
+      tema: "INTEGRITI",
+      unit: "UNIT 26 - Ibarat Pedang",
+      standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat mengikut konteks\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.3.2 Menceritakan bahan yang ditonton dengan sebutan dan intonasi sesuai\n2.2.1 Membuat gambaran daripada bahan grafik multimedia\n3.2.1 Menulis ayat dan perenggan daripada bahan multimedia\n5.3.4 Ayat susunan biasa dan songsang\n5.1.2 Kata kerja aktif dan pasif"
+    },
+    29: {
+      tema: "INTEGRITI",
+      unit: "UNIT 27 - Seribu Impian",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.3.1 Menganalisis kandungan teks karya sastera dan bukan sastera\n3.2.2 Menulis jawapan bertumpu dan bercapah secara kritis dan kreatif\n4.2.1 Melafazkan dan menjelaskan maksud sajak\n5.1.4 Kata nafi"
+    },
+    30: {
+      tema: "INTEGRITI",
+      unit: "UNIT 27 - Seribu Impian",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.3.1 Menganalisis kandungan teks karya sastera dan bukan sastera\n3.2.2 Menulis jawapan bertumpu dan bercapah secara kritis dan kreatif\n4.2.1 Melafazkan dan menjelaskan maksud sajak\n5.1.4 Kata nafi"
+    },
+    31: {
+      tema: "INTEGRITI",
+      unit: "UNIT 27 - Seribu Impian",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.3.1 Menganalisis kandungan teks karya sastera dan bukan sastera\n3.2.2 Menulis jawapan bertumpu dan bercapah secara kritis dan kreatif\n4.2.1 Melafazkan dan menjelaskan maksud sajak\n5.1.4 Kata nafi"
+    },
+    32: {
+      tema: "INTEGRITI",
+      unit: "UNIT 27 - Seribu Impian (Ulangkaji)",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.3.1 Menganalisis kandungan teks karya sastera dan bukan sastera\n3.2.2 Menulis jawapan bertumpu dan bercapah secara kritis dan kreatif\n4.2.1 Melafazkan dan menjelaskan maksud sajak\n5.1.4 Kata nafi"
+    },
+    33: {
+      tema: "INTEGRITI",
+      unit: "UNIT 27 - Seribu Impian",
+      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.3.1 Menganalisis kandungan teks karya sastera dan bukan sastera\n3.2.2 Menulis jawapan bertumpu dan bercapah secara kritis dan kreatif\n4.2.1 Melafazkan dan menjelaskan maksud sajak\n5.1.4 Kata nafi" },
         },
         BUKU_TEKS_DATA: {
             1: { mukaSurat: "1-7 (Unit 1)<br>- Mendengar dan memberikan respons 'Beramah Mesra' (m/s 2)<br>- Membaca dan memahami petikan 'Murid Baharu' (m/s 3)<br>- Membina dan menulis perenggan 'Jiran Saya' (m/s 4)<br>- Tatabahasa: Mengenal Kata Nama Am (m/s 5)<br>- Menyanyikan lagu 'Oh, Jiran!' (m/s 6)<br>- Aktiviti Pemulihan & Pengayaan (m/s 7)" },
@@ -266,47 +1080,554 @@ const SEMUA_DATA = {
     5: {
         RPT_DATA: {
             1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." },
-			2: { tema: "Keluarga Berwawasan", unit: "Unit 1: Masyarakat Penyayang", tajuk: "Masyarakat Penyayang", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut semula ujaran\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.1.1 Menulis ayat dalam perenggan secara mekanis\n4.1.1 Bercerita dan mengujarkan dialog\n5.1.1(i) Memahami dan menggunakan kata nama am" },
-			3: { tema: "Keluarga Berwawasan", unit: "Unit 2: Permuafakatan Membawa Berkat", tajuk: "Permuafakatan Membawa Berkat", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons terhadap maklumat\n2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia\n3.2.1 Membina dan menulis ayat dan perenggan\n5.1.1(ii) Memahami dan menggunakan kata nama khas" },
-			4: { tema: "Keluarga Berwawasan", unit: "Unit 3: Sepakat Menjamin Keselamatan", tajuk: "Sepakat Menjamin Keselamatan", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan\n2.3.1 Membaca dan meneliti kandungan teks\n3.2.2 Menghasilkan jawapan dengan memberikan alasan\n5.1.1(iii) Memahami dan menggunakan kata ganti nama" },
-			5: { tema: "Kesihatan Mental dan Emosi", unit: "Unit 4: Minda, Oh, Minda!", tajuk: "Minda, Oh, Minda!", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk menyatakan pertimbangan\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera\n3.2.3 Mencatat maklumat dan membina draf penulisan\n5.1.2(i) Memahami dan menggunakan kata kerja aktif transitif dan tak transitif" },
-			6: { tema: "Kesihatan Mental dan Emosi", unit: "Unit 5: Kebersihan Diri dan Persekitaran", tajuk: "Kebersihan Diri dan Persekitaran", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.3.1 Menulis draf dan menghasilkan penulisan berformat\n5.1.2(ii) Memahami dan menggunakan kata kerja pasif" },
-			7: { tema: "Kebersihan dan Kesihatan", unit: "Unit 6: Hargailah Kesihatan", tajuk: "Hargailah Kesihatan", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul\n2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia\n3.3.2 Mengedit dan memurnikan hasil penulisan\n5.1.3(i) Memahami dan menggunakan kata adjektif sifatan" },
-			8: { tema: "Kebersihan dan Kesihatan", unit: "Unit 7: Makanan Seimbang", tajuk: "Makanan Seimbang", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.1 Asas menulis\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca\n2.3.1 Membaca dan meneliti kandungan teks\n3.1.1 Menulis ayat dalam perenggan secara mekanis\n5.1.3(ii) Memahami dan menggunakan kata adjektif warna" },
-			9: { tema: "Kebersihan dan Kesihatan", unit: "Unit 7: Makanan Seimbang", tajuk: "Makanan Seimbang", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.1 Asas menulis\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca\n2.3.1 Membaca dan meneliti kandungan teks\n3.1.1 Menulis ayat dalam perenggan secara mekanis\n5.1.3(ii) Memahami dan menggunakan kata adjektif warna" },
-			10: { tema: "Selamat Datang ke Malaysia", unit: "Unit 8: Uniknya Malaysiaku", tajuk: "Uniknya Malaysiaku", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut semula ujaran\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera\n3.2.1 Membina dan menulis ayat dan perenggan\n5.1.3(iii) Memahami dan menggunakan kata adjektif bentuk" },
-			11: { tema: "Selamat Datang ke Malaysia", unit: "Unit 9: Warisan Berharga", tajuk: "Warisan Berharga", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons terhadap maklumat\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.2.2 Menghasilkan jawapan dengan memberikan alasan\n5.1.3(iv) Memahami dan menggunakan kata adjektif waktu" },
-			12: { tema: "Selamat Datang ke Malaysia", unit: "Unit 9: Warisan Berharga", tajuk: "Warisan Berharga", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons terhadap maklumat\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.2.2 Menghasilkan jawapan dengan memberikan alasan\n5.1.3(iv) Memahami dan menggunakan kata adjektif waktu" },
-			13: { tema: "Perpaduan", unit: "Unit 10: Semarak Perpaduan", tajuk: "Semarak Perpaduan", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk menyatakan pertimbangan\n2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia\n3.2.3 Mencatat maklumat dan membina draf penulisan\n5.1.4(i) Memahami dan menggunakan kata hubung" },
-			14: { tema: "Perpaduan", unit: "Unit 11: Hayati Rukun Negara", tajuk: "Hayati Rukun Negara", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat\n2.3.1 Membaca dan meneliti kandungan teks\n3.3.1 Menulis draf dan menghasilkan penulisan berformat\n5.1.4(ii) Memahami dan menggunakan kata sendi nama" },
-			15: { tema: "Perpaduan", unit: "Unit 12: Tokoh Kebanggaan", tajuk: "Tokoh Kebanggaan", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana idea\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera\n3.3.2 Mengedit dan memurnikan hasil penulisan\n5.1.4(iii) Memahami dan menggunakan kata nafi" },
-			16: { tema: "Sains, Teknologi dan Inovasi", unit: "Unit 13: Sains dan Kehidupan", tajuk: "Sains dan Kehidupan", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.1.1 Menulis ayat dalam perenggan secara mekanis\n5.2.1(i) Memahami dan menggunakan imbuhan awalan" },
-			17: { tema: "Sains, Teknologi dan Inovasi", unit: "Unit 13: Sains dan Kehidupan", tajuk: "Sains dan Kehidupan", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi yang betul\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.1.1 Menulis ayat dalam perenggan secara mekanis\n5.2.1(i) Memahami dan menggunakan imbuhan awalan" },
-			18: { tema: "Sains, Teknologi dan Inovasi", unit: "Unit 14: Inovasi Teknologi", tajuk: "Inovasi Teknologi", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca\n2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia\n3.2.1 Membina dan menulis ayat dan perenggan\n5.2.1(ii) Memahami dan menggunakan imbuhan akhiran" },
-			19: { tema: "Sains, Teknologi dan Inovasi", unit: "Unit 15: Internet dalam Kehidupan", tajuk: "Internet dalam Kehidupan", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut semula ujaran\n2.3.1 Membaca dan meneliti kandungan teks\n3.2.2 Menghasilkan jawapan dengan memberikan alasan\n5.2.2 Memahami dan menggunakan kata majmuk" },
-			20: { tema: "Pertanian dan Penternakan", unit: "Unit 16: Pertanian Sumber Rezeki", tajuk: "Pertanian Sumber Rezeki", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons terhadap maklumat\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera\n3.2.3 Mencatat maklumat dan membina draf penulisan\n5.2.3 Memahami dan menggunakan kata ganda" },
-			21: { tema: "Pertanian dan Penternakan", unit: "Unit 17: Penternakan Moden", tajuk: "Penternakan Moden", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.1 Bertutur untuk menyatakan pertimbangan\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.3.1 Menulis draf dan menghasilkan penulisan berformat\n5.3.1 Memahami dan membina ayat tunggal dan ayat majmuk" },
-			22: { tema: "Ekonomi dan Kewangan", unit: "Unit 18: Jana Pendapatan", tajuk: "Jana Pendapatan", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat\n2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia\n3.3.2 Mengedit dan memurnikan hasil penulisan\n5.3.2 Memahami dan membina ayat aktif dan ayat pasif" },
-			23: { tema: "Ekonomi dan Kewangan", unit: "Unit 19: Amalan Berjimat", tajuk: "Amalan Berjimat", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana idea\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera\n3.2.4 Menulis teks prosa yang diimlakkan\n5.3.3 Memahami dan membina ayat cakap ajuk dan cakap pindah" },
-			24: { tema: "ULANG KAJI", unit: "Ulang Kaji", tajuk: "Ulang Kaji", standardKandungan: "Mengulang kaji semua topik yang telah dipelajari.", standardPembelajaran: "Aktiviti pengukuhan dan pemulihan berdasarkan keperluan murid." },
-			25: { tema: "PENTAKSIRAN", unit: "Pentaksiran Pertengahan Sesi Akademik", tajuk: "Pentaksiran Pertengahan Sesi Akademik", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-			26: { tema: "PENGURUSAN", unit: "Pengurusan Selepas Pentaksiran", tajuk: "Perbincangan Kertas", standardKandungan: "Membincangkan jawapan dan prestasi murid.", standardPembelajaran: "Guru dan murid berbincang mengenai kertas pentaksiran." },
-			27: { tema: "PENGURUSAN", unit: "Pengurusan Selepas Pentaksiran", tajuk: "Perbincangan Kertas", standardKandungan: "Membincangkan jawapan dan prestasi murid.", standardPembelajaran: "Guru dan murid berbincang mengenai kertas pentaksiran." },
-			28: { tema: "Integriti", unit: "Unit 22: Jadilah yang Terbaik", tajuk: "Jadilah yang Terbaik", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan, dan menyebut semula ujaran\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.1.1 Menulis ayat dalam perenggan secara mekanis\n5.1.1(i) Memahami dan menggunakan kata nama am" },
-			29: { tema: "Integriti", unit: "Unit 23: Jujur dan Amanah", tajuk: "Jujur dan Amanah", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami, dan memberikan respons terhadap maklumat\n2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia\n3.2.1 Membina dan menulis ayat dan perenggan\n5.1.1(ii) Memahami dan menggunakan kata nama khas" },
-			30: { tema: "Integriti", unit: "Unit 24: Berbudi Bahasa", tajuk: "Berbudi Bahasa", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan\n2.3.1 Membaca dan meneliti kandungan teks\n3.2.2 Menghasilkan jawapan dengan memberikan alasan\n5.1.1(iii) Memahami dan menggunakan kata ganti nama" },
-			31: { tema: "Patriotisme", unit: "Unit 25: Negaraku Tercinta", tajuk: "Negaraku Tercinta", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk menyatakan pertimbangan\n2.3.2 Membaca dan mempersembahkan karya sastera dan bukan sastera\n3.2.3 Mencatat maklumat dan membina draf penulisan\n5.1.2 Memahami dan menggunakan kata kerja" },
-			32: { tema: "Patriotisme", unit: "Unit 26: Sejarah Negara", tajuk: "Sejarah Negara", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat\n2.1.1 Membaca dan memahami maklumat tersurat dan tersirat\n3.3.1 Menulis draf dan menghasilkan penulisan berformat\n5.1.3 Memahami dan menggunakan kata adjektif" },
-			33: { tema: "Patriotisme", unit: "Unit 27: Permainan di Malaysia", tajuk: "Permainan di Malaysia", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul bahan multimedia\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana idea\n2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia\n3.3.2 Mengedit dan memurnikan hasil penulisan\n5.1.4 Memahami dan menggunakan kata tugas" },
-			34: { tema: "ULANG KAJI", unit: "Ulang Kaji", tajuk: "Ulang Kaji", standardKandungan: "Mengulang kaji semua topik yang telah dipelajari.", standardPembelajaran: "Aktiviti pengukuhan dan pemulihan berdasarkan keperluan murid." },
-			35: { tema: "PENTAKSIRAN", unit: "Pentaksiran Akhir Sesi Akademik", tajuk: "Pentaksiran Akhir Sesi Akademik", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-			36: { tema: "PENGURUSAN", unit: "Pengurusan Selepas Pentaksiran", tajuk: "Perbincangan Kertas", standardKandungan: "Membincangkan jawapan dan prestasi murid.", standardPembelajaran: "Guru dan murid berbincang mengenai kertas pentaksiran." },
-			37: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			38: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			39: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			40: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			41: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			42: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
+			"2": {
+      tema: "Tema 1: Keluarga Berwawasan",
+      unit: "Unit 1: Masyarakat Penyayang",
+      tajuk: "Masyarakat Penyayang",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.1 Asas menulis.\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.1 Mendengar, mengecam sebutan, dan menyebut semula ujaran yang terdapat dalam situasi formal\n" +
+        "2.1.1 Membaca dan memahami maklumat tersurat dan tersirat untuk memberikan respons\n" +
+        "3.1.1 Menulis ayat dalam perenggan secara mekanis dalam bentuk tulisan berangkai\n" +
+        "4.1.1 Bercerita dan mengujarkan dialog yang mengandungi peribahasa dan bahasa yang santun.\n" +
+        "5.1.1(i) Memahami dan menggunakan kata nama am mengikut konteks"
+    },
+    "3": {
+      tema: "Tema 1: Keluarga Berwawasan",
+      unit: "Unit 2: Kerjasama Eratkan Hubungan",
+      tajuk: "Kerjasama Eratkan Hubungan",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap maklumat yang diujarkan dalam situasi formal\n" +
+        "2.1.1 Membaca dan memahami maklumat tersurat dan tersirat untuk memberikan respons\n" +
+        "3.2.1 Membina dan menulis ayat untuk menyatakan pendapat daripada sesuatu bahan multimedia.\n" +
+        "4.2.1 Melafazkan dan melagukan syair dengan irama yang sesuai serta menyatakan idea keseluruhan syair\n" +
+        "5.1.1(ii) Memahami dan menggunakan kata nama khas mengikut konteks"
+    },
+    "4": {
+      tema: "Tema 1: Keluarga Berwawasan",
+      unit: "Unit 3: Masyarakat Celik Ilmu",
+      tajuk: "Masyarakat Celik Ilmu",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan secara kritis dan kreatif.\n" +
+        "2.1.1 Membaca dan memahami maklumat tersurat dan tersirat untuk memberikan respons\n" +
+        "3.2.1 Membina dan menulis ayat untuk menyatakan pendapat daripada sesuatu bahan multimedia.\n" +
+        "3.2.2 Menghasilkan jawapan dengan memberikan alasan secara kritis dan kreatif\n" +
+        "4.2.2 Mendeklamasikan sajak dengan nada yang sesuai dan menyatakan maksud sajak.\n" +
+        "5.1.1(i-iv) Memahami dan menggunakan kata nama am, kata nama khas, kata ganti nama dan penjodoh bilangan mengikut konteks"
+    },
+    "5": {
+      tema: "Tema 1: Keluarga Berwawasan",
+      unit: "Unit 3: Masyarakat Celik Ilmu",
+      tajuk: "Masyarakat Celik Ilmu",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan secara kritis dan kreatif.\n" +
+        "2.1.1 Membaca dan memahami maklumat tersurat dan tersirat untuk memberikan respons\n" +
+        "3.2.1 Membina dan menulis ayat untuk menyatakan pendapat daripada sesuatu bahan multimedia.\n" +
+        "3.2.2 Menghasilkan jawapan dengan memberikan alasan secara kritis dan kreatif\n" +
+        "4.2.2 Mendeklamasikan sajak dengan nada yang sesuai dan menyatakan maksud sajak.\n" +
+        "5.1.1(i-iv) Memahami dan menggunakan kata nama am, kata nama khas, kata ganti nama dan penjodoh bilangan mengikut konteks"
+    },
+    "6": {
+      tema: "Tema 2: Kesihatan dan Kebersihan",
+      unit: "Unit 4: Bahaya dalam Senyap",
+      tajuk: "Bahaya dalam Senyap",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk menyatakan pertimbangan dan keputusan tentang bahan multimedia secara bertatasusila mengikut konteks\n" +
+        "2.1.2 Membaca dan merujuk kamus serta media elektronik untuk mencari makna perkataan dan meneliti ejaan yang tepat mengikut susunan perkataan\n" +
+        "3.2.3 Mencatat maklumat berdasarkan bahan yang dibaca, dilihat, dan didengar\n" +
+        "4.3.1 Mengubah suai puisi dengan bahasa yang indah dan santun secara separa berpandu dan mempersembahkannya secara kreatif\n" +
+        "5.1.2 Memahami dan menggunakan kata kerja transitif dan kata kerja tak transitif mengikut konteks."
+    },
+    "7": {
+      tema: "Tema 2: Kesihatan dan Kebersihan",
+      unit: "Unit 5: Kebersihan Diri dan Persekitaran",
+      tajuk: "Kebersihan Diri dan Persekitaran",
+      standardKandungan:
+        "1.4 Bertutur, berbual dan menyatakan permintaan tentang sesuatu perkara daripada pelbagai sumber dalam situasi formal dan tidak formal secara bertatasusila.\n" +
+        "2.4 Membaca dan memahami maklumat yang tersurat dan tersirat daripada pelbagai bahan untuk memberi respons dengan betul.\n" +
+        "3.4 Menulis imlak dengan tepat.\n" +
+        "4.2 Mengujarkan bahasa yang indah dan menggunakan bahasa badan secara kreatif semasa bercerita secara didik hibur.\n" +
+        "5.1 Memahami dan menggunakan golongan kata dengan betul mengikut konteks.",
+      standardPembelajaran:
+        "1.4.2 Berbual tentang sesuatu perkara daripada pelbagai sumber menggunakan kata gelaran yang sesuai dalam situasi formal secara bertatasusila.\n" +
+        "2.4.3 Membaca dan memahami maklumat yang tersurat dan tersirat dengan tepat daripada pelbagai bahan untuk membuat ulasan yang betul.\n" +
+        "3.4.1 Menulis pelbagai jenis kata ganda dengan ejaan yang tepat secara imlak.\n" +
+        "4.2.1 Mengujarkan ayat dengan sebutan yang jelas dan intonasi yang betul serta menggunakan laras bahasa yang sesuai semasa bercerita.\n" +
+        "5.1.5 Memahami dan menggunakan kata adjektif dan kata bantu mengikut konteks dengan betul."
+    },
+    "8": {
+      tema: "Tema 2: Kesihatan dan Kebersihan",
+      unit: "Unit 5: Kebersihan Diri dan Persekitaran",
+      tajuk: "Kebersihan Diri dan Persekitaran",
+      standardKandungan:
+        "1.4 Bertutur, berbual dan menyatakan permintaan tentang sesuatu perkara daripada pelbagai sumber dalam situasi formal dan tidak formal secara bertatasusila.\n" +
+        "2.4 Membaca dan memahami maklumat yang tersurat dan tersirat daripada pelbagai bahan untuk memberi respons dengan betul.\n" +
+        "3.4 Menulis imlak dengan tepat.\n" +
+        "4.2 Mengujarkan bahasa yang indah dan menggunakan bahasa badan secara kreatif semasa bercerita secara didik hibur.\n" +
+        "5.1 Memahami dan menggunakan golongan kata dengan betul mengikut konteks.",
+      standardPembelajaran:
+        "1.4.2 Berbual tentang sesuatu perkara daripada pelbagai sumber menggunakan kata gelaran yang sesuai dalam situasi formal secara bertatasusila.\n" +
+        "2.4.3 Membaca dan memahami maklumat yang tersurat dan tersirat dengan tepat daripada pelbagai bahan untuk membuat ulasan yang betul.\n" +
+        "3.4.1 Menulis pelbagai jenis kata ganda dengan ejaan yang tepat secara imlak.\n" +
+        "4.2.1 Mengujarkan ayat dengan sebutan yang jelas dan intonasi yang betul serta menggunakan laras bahasa yang sesuai semasa bercerita.\n" +
+        "5.1.5 Memahami dan menggunakan kata adjektif dan kata bantu mengikut konteks dengan betul."
+    },   
+    "9": {
+      tema: "Tema 2: Kesihatan dan Kebersihan",
+      unit: "Unit 6: Minda Sihat",
+      tajuk: "Minda Sihat",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.2 Membaca, memahami, dan menaakul bahan multimedia.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk menyatakan pertimbangan dan keputusan tentang bahan multimedia secara bertatasusila mengikut konteks\n" +
+        "1.2.2 Bertutur dan menghuraikan maklumat tersurat dan tersirat yang dikenal pasti dengan menggunakan idea yang kritis dan kreatif\n" +
+        "2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia untuk membuat pertimbangan dan keputusan\n" +
+        "3.2.4 Menulis teks prosa yang diimlakkan\n" +
+        "4.3.2 Mengubah suai cerita dengan bahasa yang indah dan santun secara separa berpandu dan mempersembahkannya secara kreatif\n" +
+        "5.1.2 Memahami dan menggunakan kata kerja transitif dan kata kerja tak transitif mengikut konteks.\n" +
+        "5.1.3 Memahami dan menggunakan pelbagai kata adjektif mengikut konteks"
+    },
+    "10": {
+      tema: "Tema 3: Keselamatan",
+      unit: "Unit 7: Bijak Bertindak",
+      tajuk: "Bijak Bertindak",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan dalam seni tulisan jawi.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.2 Bertutur dan menghuraikan maklumat tersurat dan tersirat yang dikenal pasti dengan menggunakan idea yang kritis dan kreatif\n" +
+        "2.3.1 Membaca dan meneliti kandungan teks karya sastera dan karya bukan sastera untuk membuat rumusan.\n" +
+        "3.3.1 Mendraf dan menghasilkan penulisan berformat, dan tidak berformat\n" +
+        "4.4.1 Mengenal, mengecam dan menyebut huruf tunggal yang ditulis mengikut tulisan Jawi dalam perumpamaan dan mempersembahkannya\n" +
+        "5.1.3 Memahami dan menggunakan pelbagai kata adjektif mengikut konteks"
+    },
+    "11": {
+      tema: "Tema 3: Keselamatan",
+      unit: "Unit 8: Awasi Langkahmu",
+      tajuk: "Awasi Langkahmu",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan dalam seni tulisan jawi.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk menjana idea tentang sesuatu perkara\n" +
+        "2.3.1 Membaca dan meneliti kandungan teks karya sastera dan karya bukan sastera untuk membuat rumusan.\n" +
+        "3.3.1 Mendraf dan menghasilkan penulisan berformat, dan tidak berformat\n" +
+        "4.4.2 Mempersembahkan keindahan seni tulisan jawi melalui perumpamaan\n" +
+        "5.1.4(ii) Memahami dan menggunakan kata penguat mengikut konteks\n" +
+        "5.1.4(iii) Memahami dan menggunakan kata bantu mengikut konteks"
+    },
+    "12": {
+      tema: "Tema 3: Keselamatan",
+      unit: "Unit 8: Awasi Langkahmu",
+      tajuk: "Awasi Langkahmu",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan dalam seni tulisan jawi.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk menjana idea tentang sesuatu perkara\n" +
+        "2.3.1 Membaca dan meneliti kandungan teks karya sastera dan karya bukan sastera untuk membuat rumusan.\n" +
+        "3.3.1 Mendraf dan menghasilkan penulisan berformat, dan tidak berformat\n" +
+        "4.4.2 Mempersembahkan keindahan seni tulisan jawi melalui perumpamaan\n" +
+        "5.1.4(ii) Memahami dan menggunakan kata penguat mengikut konteks\n" +
+        "5.1.4(iii) Memahami dan menggunakan kata bantu mengikut konteks"
+    },    
+    "13": {
+      tema: "Tema 3: Keselamatan",
+      unit: "Unit 9: Beringat Sebelum Terkena",
+      tajuk: "Beringat Sebelum Terkena",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "1.3 Bercerita, dan menceritakan perkara yang didengar, ditonton dan dibaca dengan sebutan dan intonasi yang betul.\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk menjana idea tentang sesuatu perkara\n" +
+        "1.3.1 Bercerita dengan sebutan yang betul, intonasi dan gaya yang sesuai\n" +
+        "2.3.1 Membaca dan meneliti kandungan teks karya sastera dan karya bukan sastera untuk membuat rumusan.\n" +
+        "3.3.1 Mendraf dan menghasilkan penulisan berformat, dan tidak berformat\n" +
+        "3.3.2 Mengedit dan memurnikan perenggan dari aspek ejaan, tanda baca, penggunaan imbuhan, penggunaan kata, dan struktur ayat\n" +
+        "5.1.4(i-iii) Memahami dan menggunakan kata pemeri, kata penguat dan kata bantu mengikut konteks\n" +
+        "5.2.2(i-ii) Memahami dan menggunakan kata majmuk bebas, kata majmuk mantap dan kata majmuk kiasan mengikut konteks"
+    },
+    "14": {
+      tema: "Tema 4: Perpaduan",
+      unit: "Unit 10: Memupuk Perpaduan",
+      tajuk: "Memupuk Perpaduan",
+      standardKandungan:
+        "1.6 Berbicara untuk menyampaikan maklumat tentang sesuatu perkara daripada pelbagai sumber dengan tepat secara bertatasusila.\n" +
+        "2.6 Membaca pelbagai bahan sastera dan bukan sastera yang sesuai bagi memupuk minat membaca.\n" +
+        "3.6 Menulis untuk menyampaikan maklumat tentang sesuatu perkara dengan menggunakan bahasa yang santun.\n" +
+        "4.3 Mengujarkan bahasa yang indah dan menggunakan bahasa badan dengan kreatif melalui lakonan secara didik hibur.\n" +
+        "5.2 Memahami dan menggunakan pembentukan kata yang sesuai dalam pelbagai situasi dengan betul.",
+      standardPembelajaran:
+        "1.6.1 Berbicara untuk mendapatkan maklumat yang tersurat dan tersirat dengan tepat tentang sesuatu perkara secara bertatasusila.\n" +
+        "2.6.2 Membaca dan memahami pelbagai bahan bukan sastera untuk memperkaya laras bahasa.\n" +
+        "3.6.2 Menulis untuk menyampaikan maklumat yang betul berbentuk syarahan, ucapan dan pidato dengan betul serta menggunakan bahasa yang santun.\n" +
+        "4.3.1 Mengujarkan dialog dengan sebutan yang jelas dan intonasi yang betul serta menggunakan bahasa badan yang kreatif melalui lakonan.\n" +
+        "5.2.3 Memahami dan menggunakan kata majmuk istilah khusus dalam bidang ilmiah dan kata majmuk yang mendukung maksud kiasan dengan betul dalam pelbagai situasi."
+    },
+    "15": {
+      tema: "Tema 4: Perpaduan",
+      unit: "Unit 11: Meraikan Penyatuan",
+      tajuk: "Meraikan Penyatuan",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.1 Asas menulis.\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks situasi.",
+      standardPembelajaran:
+        "1.1.1 Mendengar, mengecam sebutan, dan menyebut semula ujaran yang terdapat dalam situasi formal\n" +
+        "2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera dengan pelbagai bentuk penyampaian\n" +
+        "3.1.1 Menulis ayat dalam perenggan secara mekanis dalam bentuk tulisan berangkai\n" +
+        "4.2.1 Melafazkan dan melagukan syair dengan irama yang sesuai serta menyatakan idea keseluruhan syair\n" +
+        "5.2.1(iv) Memahami dan menggunakan kata berimbuhan sisipan mengikut konteks"
+    },
+    "16": {
+      tema: "Tema 4: Perpaduan",
+      unit: "Unit 12: Jalinan Perpaduan",
+      tajuk: "Jalinan Perpaduan",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap maklumat yang diujarkan dalam situasi formal\n" +
+        "2.1.1 Membaca dan memahami maklumat tersurat dan tersirat untuk memberikan respons\n" +
+        "3.2.1 Membina dan menulis ayat untuk menyatakan pendapat daripada sesuatu bahan multimedia.\n" +
+        "3.3.2 Mengedit dan memurnikan perenggan dari aspek ejaan, tanda baca, penggunaan imbuhan, penggunaan kata, dan struktur ayat\n" +
+        "4.2.2 Mendeklamasikan sajak dengan nada yang sesuai dan menyatakan maksud sajak.\n" +
+        "5.2.2(i) Memahami dan menggunakan kata majmuk bebas dan kata majmuk mantap mengikut konteks\n" +
+        "5.2.1(iii) Memahami dan menggunakan kata berimbuhan apitan mengikut konteks"
+    },
+    "17": {
+      tema: "Tema 5: Jati Diri, Patriotisme dan Kewarganegaraan",
+      unit: "Unit 13: Sikap Bertanggungjawab",
+      tajuk: "Sikap Bertanggungjawab",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan secara kritis dan kreatif.\n" +
+        "2.1.2 Membaca dan merujuk kamus serta media elektronik untuk mencari makna perkataan dan meneliti ejaan yang tepat mengikut susunan perkataan\n" +
+        "3.2.2 Menghasilkan jawapan dengan memberikan alasan secara kritis dan kreatif\n" +
+        "4.3.1 Mengubah suai puisi dengan bahasa yang indah dan santun secara separa berpandu dan mempersembahkannya secara kreatif\n" +
+        "5.2.2(ii) Memahami dan menggunakan kata majmuk kiasan mengikut konteks"
+    },
+    "18": {
+      tema: "Tema 5: Jati Diri, Patriotisme dan Kewarganegaraan",
+      unit: "Unit 14: Sayangi Malaysia",
+      tajuk: "Sayangi Malaysia",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.2 Membaca, memahami, dan menaakul bahan multimedia.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk menyatakan pertimbangan dan keputusan tentang bahan multimedia secara bertatasusila mengikut konteks\n" +
+        "2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia untuk membuat pertimbangan dan keputusan\n" +
+        "3.2.3 Mencatat maklumat berdasarkan bahan yang dibaca, dilihat, dan didengar\n" +
+        "4.3.2 Mengubah suai cerita dengan bahasa yang indah dan santun secara separa berpandu dan mempersembahkannya secara kreatif\n" +
+        "5.2.3(i) Memahami dan menggunakan kata ganda penuh mengikut konteks\n" +
+        "5.2.3(ii) Memahami dan menggunakan kata ganda separa mengikut konteks"
+    },
+    "19": {
+      tema: "Tema 5: Jati Diri, Patriotisme dan Kewarganegaraan",
+      unit: "Unit 15: Keranamu Malaysia",
+      tajuk: "Keranamu Malaysia",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.2 Bertutur dan menghuraikan maklumat tersurat dan tersirat yang dikenal pasti dengan menggunakan idea yang kritis dan kreatif\n" +
+        "2.3.1 Membaca dan meneliti kandungan teks karya sastera dan karya bukan sastera untuk membuat rumusan.\n" +
+        "3.2.4 Menulis teks prosa yang diimlakkan\n" +
+        "4.3.3 Mengubah suai seni kata lagu dengan menggunakan diksi yang sesuai dan mempersembahkannya dengan gaya yang kreatif\n" +
+        "5.2.2(ii) Memahami dan menggunakan kata majmuk kiasan mengikut konteks\n" +
+        "5.2.3(iii) Memahami dan menggunakan kata ganda berentak mengikut konteks"
+    },
+    "20": {
+      tema: "Tema 6: Sains, Teknologi dan Inovasi",
+      unit: "Unit 16: Sains dan Kehidupan",
+      tajuk: "Sains dan Kehidupan",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan dalam seni tulisan jawi.\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk menjana idea tentang sesuatu perkara\n" +
+        "2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera dengan pelbagai bentuk penyampaian\n" +
+        "3.3.1 Mendraf dan menghasilkan penulisan berformat, dan tidak berformat\n" +
+        "4.4.1 Mengenal, mengecam dan menyebut huruf tunggal yang ditulis mengikut tulisan Jawi dalam perumpamaan dan mempersembahkannya\n" +
+        "5.3.1 Memahami dan membina ayat tunggal dan ayat majmuk dengan peluasan subjek dan predikat mengikut konteks"
+    },
+    "21": {
+      tema: "Tema 6: Sains, Teknologi dan Inovasi",
+      unit: "Unit 17: Mesra Teknologi",
+      tajuk: "Mesra Teknologi",
+      standardKandungan:
+        "1.3 Bercerita, dan menceritakan perkara yang didengar, ditonton dan dibaca dengan sebutan dan intonasi yang betul.\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan dalam seni tulisan jawi.\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.3.1 Bercerita dengan sebutan yang betul, intonasi dan gaya yang sesuai\n" +
+        "2.1.1 Membaca dan memahami maklumat tersurat dan tersirat untuk memberikan respons\n" +
+        "3.3.2 Mengedit dan memurnikan perenggan dari aspek ejaan, tanda baca, penggunaan imbuhan, penggunaan kata, dan struktur ayat\n" +
+        "4.4.2 Mempersembahkan keindahan seni tulisan jawi melalui perumpamaan\n" +
+        "5.3.1 Memahami dan membina ayat tunggal dan ayat majmuk dengan peluasan subjek dan predikat mengikut konteks"
+    },
+    "22": {
+      tema: "Tema 6: Sains, Teknologi dan Inovasi",
+      unit: "Unit 18: Inovasi Bertambah Mutu",
+      tajuk: "Inovasi Bertambah Mutu",
+      standardKandungan:
+        "1.3 Bercerita, dan menceritakan perkara yang didengar, ditonton dan dibaca dengan sebutan dan intonasi yang betul.\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.3.2 Menceritakan sesuatu perkara yang didengar, ditonton dan dibaca dengan sebutan yang betul dan intonasi serta gaya yang sesuai\n" +
+        "2.1.1 Membaca dan memahami maklumat tersurat dan tersirat untuk memberikan respons\n" +
+        "2.1.2 Membaca dan merujuk kamus serta media elektronik untuk mencari makna perkataan dan meneliti ejaan yang tepat mengikut susunan perkataan\n" +
+        "3.3.2 Mengedit dan memurnikan perenggan dari aspek ejaan, tanda baca, penggunaan imbuhan, penggunaan kata, dan struktur ayat\n" +
+        "5.3.1 Memahami dan membina ayat tunggal dan ayat majmuk dengan peluasan subjek dan predikat mengikut konteks\n" +
+        "5.3.2(i-ii) Memahami dan membina pelbagai jenis ayat seruan dan ayat perintah mengikut konteks"
+    },
+    "23": {
+      tema: "Tema 7: Kelestarian Alam",
+      unit: "Unit 19: Ceriakan Buana Kita",
+      tajuk: "Ceriakan Buana Kita",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.2 Membaca, memahami, dan menaakul bahan multimedia.\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks dengan betul",
+      standardPembelajaran:
+        "1.1.1 Mendengar, mengecam sebutan, dan menyebut semula ujaran yang terdapat dalam situasi formal\n" +
+        "2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia untuk membuat pertimbangan dan keputusan\n" +
+        "3.3.2 Mengedit dan memurnikan perenggan dari aspek ejaan, tanda baca, penggunaan imbuhan, penggunaan kata, dan struktur ayat\n" +
+        "4.1.1 Bercerita dan mengujarkan dialog yang mengandungi peribahasa dan bahasa yang santun.\n" +
+        "5.3.3 Memahami dan membina ayat aktif, dan ayat pasif mengikut konteks"
+    },
+    "24": {
+      tema: "Tema 7: Kelestarian Alam",
+      unit: "Unit 20: Selamatkan Alam Kita",
+      tajuk: "Selamatkan Alam Kita",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.1 Asas menulis.\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera. situasi.\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.1.2 Mendengar, memahami dan memberikan respons terhadap maklumat yang diujarkan dalam situasi formal\n" +
+        "2.3.1 Membaca dan meneliti kandungan teks karya sastera dan karya bukan sastera untuk membuat rumusan.\n" +
+        "3.1.1 Menulis ayat dalam perenggan secara mekanis dalam bentuk tulisan berangkai\n" +
+        "4.2.1 Melafazkan dan melagukan syair dengan irama yang sesuai serta menyatakan idea keseluruhan syair\n" +
+        "5.3.3 Memahami dan membina ayat aktif, dan ayat pasif mengikut konteks"
+    },
+    "25": {
+      tema: "Tema 7: Kelestarian Alam",
+      unit: "Unit 21: Teknologi Hijau",
+      tajuk: "Teknologi Hijau",
+      standardKandungan:
+        "1.1 Mendengar dan memberikan respons semasa berkomunikasi dalam situasi formal dan tidak formal\n" +
+        "2.2 Membaca, memahami, dan menaakul bahan multimedia.\n" +
+        "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.3 Memahami dan membina ayat mengikut konteks",
+      standardPembelajaran:
+        "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan secara kritis dan kreatif.\n" +
+        "2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia untuk membuat pertimbangan dan keputusan\n" +
+        "2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera dengan pelbagai bentuk penyampaian\n" +
+        "3.2.1 Membina dan menulis ayat untuk menyatakan pendapat daripada sesuatu bahan multimedia.\n" +
+        "4.2.2 Mendeklamasikan sajak dengan nada yang sesuai dan menyatakan maksud sajak.\n" +
+        "5.3.3 Memahami dan membina ayat aktif, dan ayat pasif mengikut konteks\n" +
+        "5.3.4 Memahami dan membina ayat susunan biasa dan susunan songsang mengikut konteks"
+    },
+    "26": {
+      tema: "Tema 8: Ekonomi, Keusahawanan dan Pengurusan Kewangan",
+      unit: "Unit 22: Ekonomi Dinamik",
+      tajuk: "Ekonomi Dinamik",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk menyatakan pertimbangan dan keputusan tentang bahan multimedia secara bertatasusila mengikut konteks\n" +
+        "2.1.1 Membaca dan memahami maklumat tersurat dan tersirat untuk memberikan respons\n" +
+        "3.2.2 Menghasilkan jawapan dengan memberikan alasan secara kritis dan kreatif\n" +
+        "4.3.1 Mengubah suai puisi dengan bahasa yang indah dan santun secara separa berpandu dan mempersembahkannya secara kreatif\n" +
+        "5.1.4(i-iii) Memahami dan menggunakan kata pemeri, kata penguat dan kata bantu mengikut konteks"
+    },
+    "27": {
+      tema: "Tema 8: Ekonomi, Keusahawanan dan Pengurusan Kewangan",
+      unit: "Unit 23: Usahawan Berwawasan",
+      tajuk: "Usahawan Berwawasan",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.2 Bertutur dan menghuraikan maklumat tersurat dan tersirat yang dikenal pasti dengan menggunakan idea yang kritis dan kreatif\n" +
+        "2.1.2 Membaca dan merujuk kamus serta media elektronik untuk mencari makna perkataan dan meneliti ejaan yang tepat mengikut susunan perkataan\n" +
+        "3.2.3 Mencatat maklumat berdasarkan bahan yang dibaca, dilihat, dan didengar\n" +
+        "4.3.2 Mengubah suai cerita dengan bahasa yang indah dan santun secara separa berpandu dan mempersembahkannya secara kreatif\n" +
+        "5.2.1(i-iv) Memahami dan menggunakan kata berimbuhan awalan, akhiran, apitan dan sisipan mengikut konteks"
+    },
+    "28": {
+      tema: "Tema 8: Ekonomi, Keusahawanan dan Pengurusan Kewangan",
+      unit: "Unit 24: Pintar Kewangan",
+      tajuk: "Pintar Kewangan",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.2 Membaca, memahami, dan menaakul bahan multimedia.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk menjana idea tentang sesuatu perkara\n" +
+        "2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia untuk membuat pertimbangan dan keputusan\n" +
+        "3.2.4 Menulis teks prosa yang diimlakkan\n" +
+        "4.3.3 Mengubah suai seni kata lagu dengan menggunakan diksi yang sesuai dan mempersembahkannya dengan gaya yang kreatif\n" +
+        "5.2.2(i-ii) Memahami dan menggunakan kata majmuk bebas, kata majmuk mantap dan kata majmuk kiasan mengikut konteks\n" +
+        "5.2.3(i-iii) Memahami dan menggunakan kata ganda penuh, kata ganda separa dan kata ganda berentak mengikut konteks"
+    }
+    "29": {
+      tema: "Tema 8: Ekonomi, Keusahawanan dan Pengurusan Kewangan",
+      unit: "Unit 24: Pintar Kewangan",
+      tajuk: "Pintar Kewangan",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.2 Membaca, memahami, dan menaakul bahan multimedia.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk menjana idea tentang sesuatu perkara\n" +
+        "2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia untuk membuat pertimbangan dan keputusan\n" +
+        "3.2.4 Menulis teks prosa yang diimlakkan\n" +
+        "4.3.3 Mengubah suai seni kata lagu dengan menggunakan diksi yang sesuai dan mempersembahkannya dengan gaya yang kreatif\n" +
+        "5.2.2(i-ii) Memahami dan menggunakan kata majmuk bebas, kata majmuk mantap dan kata majmuk kiasan mengikut konteks\n" +
+        "5.2.3(i-iii) Memahami dan menggunakan kata ganda penuh, kata ganda separa dan kata ganda berentak mengikut konteks"
+     }  
+    "30": {
+    tema: "Tema 9: Integriti",
+    unit: "Unit 25: Insan Berketerampilan",
+    tajuk: "Insan Berketerampilan",
+    standardKandungan:
+      "1.3 Bercerita, dan menceritakan perkara yang didengar, ditonton dan dibaca dengan sebutan dan intonasi yang betul.\n" +
+      "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+      "3.3 Menghasilkan penulisan\n" +
+      "4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan dalam seni tulisan jawi.\n" +
+      "5.3 Memahami dan membina ayat mengikut konteks",
+    standardPembelajaran:
+      "1.3.1 Bercerita dengan sebutan yang betul, intonasi dan gaya yang sesuai\n" +
+      "2.3.1 Membaca dan meneliti kandungan teks karya sastera dan karya bukan sastera untuk membuat rumusan.\n" +
+      "3.3.1 Mendraf dan menghasilkan penulisan berformat, dan tidak berformat\n" +
+      "4.4.1 Mengenal, mengecam dan menyebut huruf tunggal yang ditulis mengikut tulisan Jawi dalam perumpamaan dan mempersembahkannya\n" +
+      "5.3.1 Memahami dan membina ayat tunggal dan ayat majmuk dengan peluasan subjek dan predikat mengikut konteks\n" +
+      "5.3.2(i-ii) Memahami dan membina pelbagai jenis ayat seruan dan ayat perintah mengikut konteks"
+  },
+  "31": {
+    tema: "Tema 9: Integriti",
+    unit: "Unit 26: Dahulukan yang Utama",
+    tajuk: "Dahulukan yang Utama",
+    standardKandungan:
+      "1.3 Bercerita, dan menceritakan perkara yang didengar, ditonton dan dibaca dengan sebutan dan intonasi yang betul.\n" +
+      "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+      "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+      "4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan dalam seni tulisan jawi.\n" +
+      "5.3 Memahami dan membina ayat mengikut konteks",
+    standardPembelajaran:
+      "1.3.2 Menceritakan sesuatu perkara yang didengar, ditonton dan dibaca dengan sebutan yang betul dan intonasi serta gaya yang sesuai\n" +
+      "2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera dengan pelbagai bentuk penyampaian\n" +
+      "3.2.2 Menghasilkan jawapan dengan memberikan alasan secara kritis dan kreatif\n" +
+      "4.4.2 Mempersembahkan keindahan seni tulisan jawi melalui perumpamaan\n" +
+      "5.3.3 Memahami dan membina ayat aktif, dan ayat pasif mengikut konteks"
+  },
+  "32": {
+    tema: "Tema 9: Integriti",
+    unit: "Unit 27: Hormati Hak Sesama Kita",
+    tajuk: "Hormati Hak Sesama Kita",
+    standardKandungan:
+      "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+      "2.2 Membaca, memahami, dan menaakul bahan multimedia.\n" +
+      "2.3 Membaca dan mengapresiasi pelbagai bahan sastera dan bahan bukan sastera.\n" +
+      "3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n" +
+      "5.3 Memahami dan membina ayat mengikut konteks",
+    standardPembelajaran:
+      "1.2.3 Bersoal jawab untuk menjana idea tentang sesuatu perkara\n" +
+      "2.2.1 Membaca dan memahami maklumat berdasarkan bahan multimedia untuk membuat pertimbangan dan keputusan\n" +
+      "2.3.2 Membaca dan mempersembahkan karya sastera dan karya bukan sastera dengan pelbagai bentuk penyampaian\n" +
+      "3.2.2 Menghasilkan jawapan dengan memberikan alasan secara kritis dan kreatif\n" +
+      "3.2.4 Menulis teks prosa yang diimlakkan\n" +
+      "5.3.3 Memahami dan membina ayat aktif, dan ayat pasif mengikut konteks\n" +
+      "5.3.4 Memahami dan membina ayat susunan biasa dan susunan songsang mengikut konteks" },
         },
         BUKU_TEKS_DATA: {
             1: { mukaSurat: "1-7 (Unit 1)<br>- Memberi respons terhadap suruhan & permintaan (m/s 2)<br>- Membaca & memahami maklumat tersurat (m/s 3)<br>- Membina dan menulis ayat (m/s 4)<br>- Tatabahasa: Kata Nama Am & Penjodoh Bilangan (m/s 5)<br>- Melafazkan dan menjelaskan sajak (m/s 6)<br>- Aktiviti Pemulihan & Pengayaan (m/s 7)" },
@@ -339,47 +1660,152 @@ const SEMUA_DATA = {
     6: {
         RPT_DATA: {
             1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." },
-			2: { tema: "Kekeluargaan", unit: "Unit 1", tajuk: "Saling Menyayangi", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan dan menyebut semula ujaran.\n2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bukan sastera.\n3.1.1 Menulis puisi secara mekanis dalam bentuk tulisan berangkai.\n5.1.1 Memahami dan menggunakan kata nama mengikut konteks." },
-			3: { tema: "Kekeluargaan", unit: "Unit 2", tajuk: "Ke Sana Ke Mari", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons untuk menjana idea.\n2.2.1 Membaca, memahami dan menaakul maklumat yang tersurat dan tersirat.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n5.1.2 Memahami dan menggunakan kata adjektif." },
-			4: { tema: "Kekeluargaan", unit: "Unit 3", tajuk: "Pentingnya Kerjasama", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan.\n2.3.1 Membaca dan mengulas maklumat daripada pelbagai teks.\n3.2.2 Menghasilkan jawapan dengan memberikan cadangan.\n5.1.3 Memahami dan menggunakan kata kerja." },
-			5: { tema: "Kebersihan dan Kesihatan", unit: "Unit 4", tajuk: "Amalan Pemakanan Sihat", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk membuat rumusan dan ramalan.\n2.3.2 Membaca dan mempersembahkan karya sastera dalam pelbagai bentuk.\n3.2.3 Mencatat maklumat dan menjana idea berdasarkan bahan.\n5.1.4 Memahami dan menggunakan kata tugas." },
-			6: { tema: "Kebersihan dan Kesihatan", unit: "Unit 4", tajuk: "Amalan Pemakanan Sihat", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.1 Bertutur untuk membuat rumusan dan ramalan.\n2.3.2 Membaca dan mempersembahkan karya sastera dalam pelbagai bentuk.\n3.2.3 Mencatat maklumat dan menjana idea berdasarkan bahan.\n5.1.4 Memahami dan menggunakan kata tugas." },
-			7: { tema: "Kebersihan dan Kesihatan", unit: "Unit 5", tajuk: "Sihat dan Cergas", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat.\n2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bukan sastera.\n3.3.1 Menghasilkan penulisan berformat, dan tidak berformat.\n5.2.1 Memahami dan menggunakan kata berimbuhan." },
-			8: { tema: "Kebersihan dan Kesihatan", unit: "Unit 6", tajuk: "Remaja Berwawasan", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.1 Menceritakan sesuatu perkara dengan sebutan dan intonasi yang betul.\n2.2.1 Membaca, memahami dan menaakul maklumat yang tersurat dan tersirat.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n5.2.2 Memahami dan menggunakan kata majmuk." },
-			9: { tema: "Keselamatan", unit: "Unit 7", tajuk: "Berwaspada di Jalan Raya", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.1 Asas menulis\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca.\n2.3.1 Membaca dan mengulas maklumat daripada pelbagai teks.\n3.1.1 Menulis puisi secara mekanis dalam bentuk tulisan berangkai.\n5.2.3 Memahami dan menggunakan kata ganda." },
-			10: { tema: "Keselamatan", unit: "Unit 8", tajuk: "Sentiasa Berhati-hati", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan dan menyebut semula ujaran.\n2.3.2 Membaca dan mempersembahkan karya sastera dalam pelbagai bentuk.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n5.3.1 Memahami dan membina pelbagai ayat tunggal." },
-			11: { tema: "Keselamatan", unit: "Unit 8", tajuk: "Sentiasa Berhati-hati", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan dan menyebut semula ujaran.\n2.3.2 Membaca dan mempersembahkan karya sastera dalam pelbagai bentuk.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n5.3.1 Memahami dan membina pelbagai ayat tunggal." },
-			12: { tema: "Keselamatan", unit: "Unit 9", tajuk: "Panduan Keselamatan", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons untuk menjana idea.\n2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bukan sastera.\n3.2.2 Menghasilkan jawapan dengan memberikan cadangan.\n5.3.2 Memahami dan membina pelbagai jenis ayat." },
-			13: { tema: "Perpaduan", unit: "Unit 10", tajuk: "Masyarakat Muhibah", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.1 Bertutur untuk membuat rumusan dan ramalan.\n2.2.1 Membaca, memahami dan menaakul maklumat yang tersurat dan tersirat.\n3.2.3 Mencatat maklumat dan menjana idea berdasarkan bahan.\n5.3.3 Memahami dan membina ayat aktif, dan ayat pasif." },
-			14: { tema: "Perpaduan", unit: "Unit 11", tajuk: "Rakyat Bersatu Negara Maju", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat.\n2.3.1 Membaca dan mengulas maklumat daripada pelbagai teks.\n3.3.1 Menghasilkan penulisan berformat, dan tidak berformat.\n5.3.4 Memahami dan membina ayat susunan biasa dan susunan songsang." },
-			15: { tema: "Perpaduan", unit: "Unit 12", tajuk: "Hidup Berjiran", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana dan mengembangkan idea.\n2.3.2 Membaca dan mempersembahkan karya sastera dalam pelbagai bentuk.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n4.1.1 Bercerita dan mengujarkan dialog yang mengandungi peribahasa." },
-			16: { tema: "Kebudayaan, Kesenian dan Estetika", unit: "Unit 13", tajuk: "Endahnya Budaya", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.2 Menghayati keindahan dan kesantunan bahasa", standardPembelajaran: "1.3.1 Menceritakan sesuatu perkara dengan sebutan dan intonasi yang betul.\n2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bukan sastera.\n3.1.1 Menulis puisi secara mekanis dalam bentuk tulisan berangkai.\n4.2.1 Melafazkan dan melagukan syair." },
-			17: { tema: "Kebudayaan, Kesenian dan Estetika", unit: "Unit 14", tajuk: "Warna-warni Kesenian", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n4.2 Menghayati keindahan dan kesantunan bahasa", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca.\n2.2.1 Membaca, memahami dan menaakul maklumat yang tersurat dan tersirat.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n4.2.2 Menyanyikan lagu dan menjelaskan maksud lirik lagu." },
-			18: { tema: "Kebudayaan, Kesenian dan Estetika", unit: "Unit 15", tajuk: "Indah dan Permai", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan dan menyebut semula ujaran.\n2.3.1 Membaca dan mengulas maklumat daripada pelbagai teks.\n3.2.2 Menghasilkan jawapan dengan memberikan cadangan.\n4.3.1 Menghasilkan puisi dengan bahasa yang indah." },
-			19: { tema: "Jati Diri, Patriotisme dan Kewarganegaraan", unit: "Unit 16", tajuk: "Aku Anak Malaysia", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n4.3 Menghasilkan bahan sastera", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons untuk menjana idea.\n2.3.2 Membaca dan mempersembahkan karya sastera dalam pelbagai bentuk.\n3.2.3 Mencatat maklumat dan menjana idea berdasarkan bahan.\n4.3.2 Mengubah suai cerita dengan bahasa yang indah." },
-			20: { tema: "PENTAKSIRAN", unit: "Pentaksiran Pertengahan Tahun", tajuk: "Ujian", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-			21: { tema: "PENGURUSAN", unit: "Pengurusan Selepas Pentaksiran", tajuk: "Perbincangan Kertas", standardKandungan: "Membincangkan jawapan dan prestasi murid.", standardPembelajaran: "Guru dan murid berbincang mengenai kertas pentaksiran." },
-			22: { tema: "PENGURUSAN", unit: "Pengurusan Selepas Pentaksiran", tajuk: "Perbincangan Kertas", standardKandungan: "Membincangkan jawapan dan prestasi murid.", standardPembelajaran: "Guru dan murid berbincang mengenai kertas pentaksiran." },
-			23: { tema: "Jati Diri, Patriotisme dan Kewarganegaraan", unit: "Unit 17", tajuk: "Benderaku Berkibar", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan", standardPembelajaran: "1.1.3 Mendengar, mentafsir dan memberikan respons terhadap soalan.\n2.1.2 Membaca dan merujuk kamus serta media elektronik.\n3.3.1 Menghasilkan penulisan berformat, dan tidak berformat.\n4.4.1 Mempersembahkan pengacaraan dengan sebutan dan intonasi yang betul." },
-			24: { tema: "Jati Diri, Patriotisme dan Kewarganegaraan", unit: "Unit 18", tajuk: "Bumiku Malaysia", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan", standardPembelajaran: "1.2.1 Bertutur untuk membuat rumusan dan ramalan.\n2.2.1 Membaca, memahami dan menaakul maklumat yang tersurat dan tersirat.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n4.4.2 Mempersembahkan sketsa." },
-			25: { tema: "Sains, Teknologi dan Inovasi", unit: "Unit 19", tajuk: "Sains dan Kehidupan", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.1 Asas menulis\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat.\n2.3.1 Membaca dan mengulas maklumat daripada pelbagai teks.\n3.1.1 Menulis puisi secara mekanis dalam bentuk tulisan berangkai.\n5.1.1 Memahami dan menggunakan kata nama." },
-			26: { tema: "Sains, Teknologi dan Inovasi", unit: "Unit 20", tajuk: "Hebatnya Teknologi", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.2.3 Bersoal jawab untuk menjana dan mengembangkan idea.\n2.3.2 Membaca dan mempersembahkan karya sastera dalam pelbagai bentuk.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n5.1.2 Memahami dan menggunakan kata adjektif." },
-			27: { tema: "Sains, Teknologi dan Inovasi", unit: "Unit 21", tajuk: "Kreatif dan Inovasi", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.1 Menceritakan sesuatu perkara dengan sebutan dan intonasi yang betul.\n2.1.2 Membaca dan merujuk kamus serta media elektronik.\n3.2.2 Menghasilkan jawapan dengan memberikan cadangan.\n5.1.3 Memahami dan menggunakan kata kerja." },
-			28: { tema: "Kelestarian Alam", unit: "Unit 22", tajuk: "Lestarikan Alam", standardKandungan: "1.3 Bercerita dan menceritakan semula\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n5.1 Memahami dan menggunakan golongan kata", standardPembelajaran: "1.3.2 Menceritakan semula sesuatu bahan yang dibaca.\n2.2.1 Membaca, memahami dan menaakul maklumat yang tersurat dan tersirat.\n3.2.3 Mencatat maklumat dan menjana idea berdasarkan bahan.\n5.1.4 Memahami dan menggunakan kata tugas." },
-			29: { tema: "Kelestarian Alam", unit: "Unit 23", tajuk: "Selamatkan Bumi", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.1 Mendengar, mengecam sebutan dan menyebut semula ujaran.\n2.3.1 Membaca dan mengulas maklumat daripada pelbagai teks.\n3.3.1 Menghasilkan penulisan berformat, dan tidak berformat.\n5.2.1 Memahami dan menggunakan kata berimbuhan." },
-			30: { tema: "Ekonomi, Keusahawanan dan Pengurusan Kewangan", unit: "Unit 24", tajuk: "Bijak Wang", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons untuk menjana idea.\n2.3.2 Membaca dan mempersembahkan karya sastera dalam pelbagai bentuk.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n5.2.2 Memahami dan menggunakan kata majmuk." },
-			31: { tema: "Ekonomi, Keusahawanan dan Pengurusan Kewangan", unit: "Unit 25", tajuk: "Sumber Ekonomi", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.2 Memahami dan menggunakan pembentukan kata", standardPembelajaran: "1.2.1 Bertutur untuk membuat rumusan dan ramalan.\n2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bukan sastera.\n3.1.1 Menulis puisi secara mekanis dalam bentuk tulisan berangkai.\n5.2.3 Memahami dan menggunakan kata ganda." },
-			32: { tema: "Ekonomi, Keusahawanan dan Pengurusan Kewangan", unit: "Unit 26", tajuk: "Usahawan Muda", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat.\n2.2.1 Membaca, memahami dan menaakul maklumat yang tersurat dan tersirat.\n3.2.1 Membina dan menulis ayat untuk menghasilkan perenggan.\n5.3.1 Memahami dan membina pelbagai ayat tunggal." },
-			33: { tema: "Integriti", unit: "Unit 27", tajuk: "Kejujuran Asas Jati Diri", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.1 Asas membaca dan memahami\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.1 Bertutur untuk membuat rumusan dan ramalan.\n2.1.2 Membaca dan merujuk kamus serta media elektronik.\n3.3.1 Menghasilkan penulisan berformat, dan tidak berformat.\n5.3.2 Memahami dan membina pelbagai jenis ayat." },
-			34: { tema: "Integriti", unit: "Unit 28", tajuk: "Amanah dan Tanggungjawab", standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat\n2.2 Membaca, memahami, dan menaakul\n3.3 Menghasilkan penulisan\n5.3 Memahami dan membina ayat", standardPembelajaran: "1.2.2 Bertutur untuk menghuraikan maklumat.\n2.2.1 Membaca, memahami dan menaakul maklumat yang tersurat dan tersirat.\n3.3.2 Mengedit dan memurnikan hasil penulisan.\n5.3.3 Memahami dan membina ayat aktif, dan ayat pasif." },
-			35: { tema: "ULANG KAJI", unit: "Ulang Kaji", tajuk: "Ulang Kaji", standardKandungan: "Mengulang kaji semua topik yang telah dipelajari.", standardPembelajaran: "Aktiviti pengukuhan dan pemulihan berdasarkan keperluan murid." },
-			36: { tema: "PENTAKSIRAN", unit: "Pentaksiran Akhir Sesi Akademik", tajuk: "Pentaksiran Akhir Sesi Akademik", standardKandungan: "Mentaksir tahap penguasaan murid.", standardPembelajaran: "Murid menjawab soalan pentaksiran." },
-			37: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			38: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			39: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			40: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			41: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
-			42: { tema: "PENGURUSAN AKHIR TAHUN", unit: "Pengurusan Kelas", tajuk: "Aktiviti Pasca Pentaksiran", standardKandungan: "Aktiviti ringan dan pengurusan bilik darjah.", standardPembelajaran: "Menjalankan aktiviti seperti permainan bahasa, kuiz, dan mengemas kelas." },
+			 "2": {
+      tema: "Tema 1: Kekeluargaan",
+      unit: "Unit 1",
+      tajuk: "Saling Menyayangi",
+      standardKandungan:
+        "1.1 Mendengar, dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.1 Asas menulis.\n" +
+        "4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks",
+      standardPembelajaran:
+        "1.1.1 Mendengar, mengecam sebutan dan menyebut semula ujaran yang terdapat dalam pelbagai situasi.\n" +
+        "2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bahan bukan sastera.\n" +
+        "3.1.1 Menulis puisi secara mekanis dalam bentuk tulisan berangkai.\n" +
+        "4.1.1 Bercerita dan mengujarkan dialog yang mengandungi peribahasa dan bahasa yang santun dalam bentuk persembahan\n" +
+        "5.1.1 Memahami dan menggunakan kata nama mengikut konteks; (i) kata nama am (ii) kata nama khas (iii) kata ganti nama"
+    },
+    "3": {
+      tema: "Tema 1: Kekeluargaan",
+      unit: "Unit 2",
+      tajuk: "Prihatinnya Kita",
+      standardKandungan:
+        "1.1 Mendengar, dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna.\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks.",
+      standardPembelajaran:
+        "1.1.2 Mendengar dan memberikan respons dengan membuat tafsiran terhadap soalan bercapah.\n" +
+        "2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bahan bukan sastera.\n" +
+        "3.2.1 Membina dan menulis ayat untuk menghasilkan penulisan berformat.\n" +
+        "4.2.1 Melafazkan dan melagukan syair serta mendeklamasikan sajak dengan nada dan intonasi yang sesuai dengan menggunakan bahasa yang indah secara kreatif.\n" +
+        "5.1.2 Memahami dan menggunakan kata kerja mengikut konteks; (i) kata kerja aktif transitif dan tak transitif (ii) kata kerja pasif"
+    },
+    "4": {
+      tema: "Tema 1: Kekeluargaan",
+      unit: "Unit 3",
+      tajuk: "Semangat Kejiranan",
+      standardKandungan:
+        "1.1 Mendengar, dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna.\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks.",
+      standardPembelajaran:
+        "1.1.3 Mendengar dan memberikan respons untuk membuat keputusan dan menyelesaikan masalah secara rasional.\n" +
+        "2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bahan bukan sastera.\n" +
+        "3.2.2 Menghasilkan jawapan dengan memberikan cadangan secara kritis dan kreatif.\n" +
+        "4.2.2 Menggunakan simile dan peribahasa dalam komunikasi dan penulisan dengan betul mengikut konteks.\n" +
+        "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (i) sifatan atau keadaan (ii) warna (iii) ukuran (iv) bentuk (v) waktu (vi) jarak (vii) cara (viii) perasaan (ix) pancaindera"
+    },
+    "5": {
+      tema: "Tema 1: Kekeluargaan",
+      unit: "Unit 3",
+      tajuk: "Semangat Kejiranan",
+      standardKandungan:
+        "1.1 Mendengar, dan memberikan respons\n" +
+        "2.1 Asas membaca dan memahami.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna.\n" +
+        "4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks.",
+      standardPembelajaran:
+        "1.1.3 Mendengar dan memberikan respons untuk membuat keputusan dan menyelesaikan masalah secara rasional.\n" +
+        "2.1.1 Membaca, memahami, dan mentafsir bahan sastera dan bahan bukan sastera.\n" +
+        "3.2.2 Menghasilkan jawapan dengan memberikan cadangan secara kritis dan kreatif.\n" +
+        "4.2.2 Menggunakan simile dan peribahasa dalam komunikasi dan penulisan dengan betul mengikut konteks.\n" +
+        "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (i) sifatan atau keadaan (ii) warna (iii) ukuran (iv) bentuk (v) waktu (vi) jarak (vii) cara (viii) perasaan (ix) pancaindera"
+    },
+    "6": {
+      tema: "Tema 2: Kesihatan Mental dan Emosi",
+      unit: "Unit 4",
+      tajuk: "Kesihatan Tanggungjawab Kita",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.2 Membaca, memahami, dan menaakul bahan untuk mendapatkan dan memindahkan maklumat.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna.\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.1 Memahami dan menggunakan golongan kata mengikut konteks.",
+      standardPembelajaran:
+        "1.2.1 Bertutur untuk membuat rumusan dan ramalan secara kritis menggunakan ayat yang gramatis.\n" +
+        "2.2.1 Membaca, memahami, dan menaakul maklumat yang tersurat dan tersirat untuk memindahkan maklumat dalam bentuk grafik.\n" +
+        "3.2.3 Menyunting dan memurnikan hasil penulisan daripada aspek; (i) ejaan dan tanda baca.\n" +
+        "4.3.1 Menghasilkan puisi dengan bahasa yang indah dan santun berdasarkan bahan rangsangan dan mempersembahkannya secara kreatif.\n" +
+        "5.1.4 Memahami dan menggunakan kata tugas mengikut konteks; (i) kata hubung (ii) kata sendi nama (iii) kata nafi (iv) kata bilangan"
+    },
+    "7": {
+      tema: "Tema 2: Kesihatan Mental dan Emosi",
+      unit: "Unit 5",
+      tajuk: "Pintar Emosi",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna.\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.2 Memahami dan menggunakan bentuk kata mengikut konteks.",
+      standardPembelajaran:
+        "1.2.2 Menjelaskan dan membanding beza maklumat tersurat dan tersirat dengan menggunakan idea yang kritis dan kreatif.\n" +
+        "2.3.1 Membaca dan mengenal pasti kandungan teks karya sastera dan karya bukan sastera; (i) idea utama dan idea sampingan (ii) menentusahkan maklumat.\n" +
+        "3.2.4 Menulis teks berbentuk naratif, deskriptif dan informatif secara terancang.\n" +
+        "4.3.2 Menghasilkan karya fiksyen dan puisi dengan menggunakan bahasa yang indah dan santun secara separa terkawal dan mempersembahkannya secara kreatif.\n" +
+        "5.2.1 Memahami dan menggunakan bentuk kata mengikut konteks; (i) kata tunggal (ii) kata terbitan (iii) kata majmuk (iv) kata ganda"
+    },
+    "8": {
+      tema: "Tema 2: Kesihatan Mental dan Emosi",
+      unit: "Unit 6",
+      tajuk: "Teguh Hadapi Cabaran",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera.\n" +
+        "3.3 Menghasilkan penulisan.\n" +
+        "4.4 Mengaplikasikan, menghayati dan menghasilkan unsur keindahan dalam seni tulisan jawi.\n" +
+        "5.3 Memahami dan membina ayat yang betul dalam pelbagai situasi.",
+      standardPembelajaran:
+        "1.2.3 Bersoal jawab untuk menjana idea secara kritis dan bertatasusila.\n" +
+        "2.3.2 Membaca dan menghargai ilmu dan nilai daripada pelbagai bahan sastera dan bahan bukan sastera, dan dipersembahkan dalam pelbagai bentuk.\n" +
+        "3.3.1 Menghasilkan draf perenggan isi dan pendahuluan, penutup dalam penulisan kreatif dengan betul.\n" +
+        "4.4.1 Menulis, melengkapkan dan menyalin peribahasa dalam tulisan Jawi.\n" +
+        "5.3.1 Memahami dan membina ayat mengikut konteks; (i) ayat tunggal (ii) ayat majmuk"
+    },
+    "32": {
+      tema: "Tema 9: Integriti",
+      unit: "Unit 26",
+      tajuk: "Keutamaan Diri",
+      standardKandungan:
+        "1.3 Bercerita dan menceritakan sesuatu perkara semula dengan tepat menggunakan sebutan yang jelas dan intonasi yang betul.\n" +
+        "2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera.\n" +
+        "3.2 Menulis perkataan, frasa, dan ayat yang bermakna.\n" +
+        "4.3 Menghasilkan bahan sastera dengan menyerapkan keindahan dan kesantunan bahasa serta mempersembahkannya secara kreatif.\n" +
+        "5.3 Memahami dan membina ayat yang betul dalam pelbagai situasi.",
+      standardPembelajaran:
+        "1.3.2 Menceritakan sesuatu perkara dengan sebutan yang betul, intonasi, gaya dan ekspresi yang sesuai.\n" +
+        "2.3.2 Membaca dan menghargai ilmu dan nilai daripada pelbagai bahan sastera dan bahan bukan sastera, dan dipersembahkan dalam pelbagai bentuk\n" +
+        "3.2.2 Menghasilkan jawapan dengan memberikan cadangan secara kritis dan kreatif.\n" +
+        "4.3.1 Menghasilkan puisi dengan bahasa yang indah dan santun berdasarkan bahan rangsangan dan mempersembahkannya secara kreatif.\n" +
+        "5.3.4 Memahami dan membina ayat susunan biasa dan susunan songsang mengikut konteks."
+    },
+    "33": {
+      tema: "Tema 9: Integriti",
+      unit: "Unit 27",
+      tajuk: "Kejujuran Asas Jati Diri",
+      standardKandungan:
+        "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan.\n" +
+        "2.1 Asas membaca dan memahami\n" +
+        "3.3 Menghasilkan penulisan\n" +
+        "5.3 Memahami dan membina ayat yang betul dalam pelbagai situasi.",
+      standardPembelajaran: " },
         },
         BUKU_TEKS_DATA: {
             1: { mukaSurat: "1-7 (Unit 1)<br>- Mendengar dan memberikan respons (m/s 2)<br>- Membaca & menyatakan isi tersurat dan tersirat (m/s 3)<br>- Menulis maklumat tersurat dan tersirat (m/s 4)<br>- Tatabahasa: Kata Nama (m/s 5)<br>- Mendeklamasikan sajak dan menjelaskannya (m/s 6)<br>- Aktiviti Penilaian (m/s 7)" },
