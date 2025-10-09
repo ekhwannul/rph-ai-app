@@ -1832,6 +1832,7 @@ const SEMUA_DATA = {
 			22: { mukaSurat: "134-139 (Unit 23)<br>- Berbual 'Pengusaha Coklat' (m/s 134)<br>- Membaca dan membuat ulasan 'Pengusaha Kraf Tangan' (m/s 135)<br>- Menulis draf dan menghasilkan penulisan (m/s 136)<br>- Tatabahasa: Latihan Pelbagai (m/s 137)<br>- Mengenal Simpulan Bahasa (m/s 138)" },
 			23: { mukaSurat: "145-151 (Unit 25)<br>- Memberikan respons 'Anak yang Jujur' (m/s 146)<br>- Membaca dan memahami 'Pemimpin Berintegriti' (m/s 147)<br>- Menulis maklumat 'Akauntan Bertauliah' (m/s 148)<br>- Tatabahasa: Latihan Pelbagai (m/s 149)<br>- Mendeklamasikan sajak 'Amanah' (m/s 150)" },
 			24: { mukaSurat: "152-157 (Unit 26)<br>- Menjelaskan & membanding beza 'Tanggungjawab Kita' (m/s 152)<br>- Membaca dan membuat ulasan 'Ketua Kelas yang Bertanggungjawab' (m/s 153)<br>- Menulis kerangka dan karangan 'Pustakawan Sekolah' (m/s 154)<br>- Tatabahasa: Latihan Pelbagai (m/s 155)<br>- Melagukan syair 'Tanggungjawab' (m/s 156)" }
-        }
+       } // 
+		}
     }
 };
