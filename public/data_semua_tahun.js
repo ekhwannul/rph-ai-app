@@ -242,7 +242,6 @@ const SEMUA_DATA = {
       standardPembelajaran: "Aktiviti Suai Kenal dan Penerangan Peraturan Sekolah/Kelas."
     },
 
-    // MINGGU 2
     2: {
       tema: "KEKELUARGAAN",
       unit: "UNIT 1",
@@ -261,7 +260,6 @@ const SEMUA_DATA = {
         "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks; (i) kata nama am (ii) kata nama khas"
     },
 
-    // MINGGU 3
     3: {
       tema: "KEKELUARGAAN",
       unit: "UNIT 2",
@@ -280,7 +278,6 @@ const SEMUA_DATA = {
         "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks; (iii) kata ganti nama (iv) Penjodoh bilangan"
     },
 
-    // MINGGU 4
     4: {
       tema: "KELUARGA PENYAYANG",
       unit: "UNIT 3",
@@ -297,7 +294,6 @@ const SEMUA_DATA = {
         "5.1.2 Memahami dan menggunakan kata kerja mengikut konteks; (i) Kata kerja aktif transitif dan tak transitif (ii) Kata kerja pasif"
     },
 
-    // MINGGU 5-6
     5: {
       tema: "KESIHATAN DAN KEBERSIHAN",
       unit: "UNIT 4",
@@ -314,7 +310,6 @@ const SEMUA_DATA = {
         "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (i) jarak (ii) perasaan"
     },
 
-    // MINGGU 6 (sama dengan minggu 5)
     6: {
       tema: "KESIHATAN DAN KEBERSIHAN",
       unit: "UNIT 4",
@@ -331,7 +326,6 @@ const SEMUA_DATA = {
         "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (i) jarak (ii) perasaan"
     },
 
-    // MINGGU 7
     7: {
       tema: "KESIHATAN DAN KEBERSIHAN",
       unit: "UNIT 5",
@@ -350,7 +344,6 @@ const SEMUA_DATA = {
         "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (iii) pancaindera"
     },
 
-    // MINGGU 8
     8: {
       tema: "KESIHATAN DAN KEBERSIHAN",
       unit: "UNIT 6",
@@ -833,7 +826,7 @@ const SEMUA_DATA = {
         "2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks daripada bahan bukan sastera dan bahan sastera; (iv) pantun\n" +
         "3.3.2 Mengedit dan memurnikan hasil penulisan dari aspek; (iii) struktur ayat\n" +
         "5.3.1 Memahami dan membina ayat mengikut konteks; (iii) ayat tanya dengan kata tanya, dan (iv) ayat tanya tanpa kata tanya\n" +
-        "5.3.2 Memahami dan menggunakan ayat mengikut konteks; (i) ayat tunggal, dan (ii) ayat majmuk" },
+        "5.3.2 Memahami dan menggunakan ayat mengikut konteks; (i) ayat tunggal, dan (ii) ayat majmuk" }
         },
         BUKU_TEKS_DATA: {
             1: { mukaSurat: "Jilid 1: 1-7 (Unit 1)<br>- Mendengar, mengecam dan menyebut ayat (m/s 2)<br>- Membaca teks dengan sebutan betul (m/s 3)<br>- Menulis perkataan dan frasa (m/s 4)<br>- Tatabahasa: Kata Nama Am & Khas (m/s 5)<br>- Menyanyikan lagu 'Riangnya Keluargaku' (m/s 6)<br>- Aktiviti Pemulihan & Pengayaan (m/s 7)" },
