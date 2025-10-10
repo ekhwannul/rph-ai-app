@@ -1,6 +1,6 @@
 // --- LOGIK TELAH DIPERBAIKI ---
-// VERSI TERKINI: Logik kini membaca pemisah '|' dalam data RPT, 
-// menyelesaikan isu "Standard Kandungan tidak dinyatakan".
+// VERSI TERKINI: Menambah pemeriksaan untuk mengendalikan data yang tidak lengkap 
+// dan menyelesaikan ralat 'Cannot read properties of undefined'.
 
 document.addEventListener('DOMContentLoaded', function () {
     // Pastikan SEMUA_DATA wujud sebelum meneruskan
@@ -123,8 +123,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function formatTarikh(tarikhISO) { if (!tarikhISO) return 'Tarikh tidak ditetapkan'; const tarikh = new Date(tarikhISO); return tarikh.toLocaleDateString('ms-MY', { day: '2-digit', month: 'long', year: 'numeric' }); }
 function generateTiadaDataContent(minggu, tahun) { return `<div style="text-align: center; padding: 40px; background-color: #fff3cd; border-radius: 8px;"><h2 style="color: #856404;">📝 Tiada Data RPH Ditemui</h2><p>Tiada data pengajaran formal ditemui untuk <strong>Minggu ${minggu} (Tahun ${tahun})</strong>.</p><p style="margin-top: 20px; font-size: 0.9em;"><em>Sila semak semula data RPT anda atau rujuk takwim sekolah.</em></p></div>`; }
-function isSpecialWeek(rptData) { const keywords = ['pentaksiran', 'peperiksaan', 'ulangkaji', 'cuti', 'pengurusan akhir tahun', 'orientasi', 'transisi']; const theme = rptData.tema.toLowerCase(); const title = rptData.tajuk.toLowerCase(); return keywords.some(keyword => theme.includes(keyword) || title.includes(keyword)); }
-function generateSpecialWeekContent(rptData) { return `<div style="text-align: center; padding: 40px; background-color: #e2e3e5; border-radius: 8px;"><h2 style="color: #383d41;">🗓️ Makluman Minggu Khas</h2><p style="font-size: 1.2rem; margin-top: 10px;"><strong>Tema/Aktiviti:</strong> ${rptData.tema}</p><p><strong>Fokus:</strong> ${rptData.tajuk}</p><p style="margin-top: 20px; font-size: 0.9em;"><em>Tiada RPH formal dijana untuk minggu ini. Sila rujuk takwim sekolah anda untuk maklumat lanjut.</em></p></div>`; }
+
+// --- FUNGSI isSpecialWeek DIPERBAIKI DI SINI ---
+function isSpecialWeek(rptData) { 
+    const keywords = ['pentaksiran', 'peperiksaan', 'ulangkaji', 'cuti', 'pengurusan akhir tahun', 'orientasi', 'transisi']; 
+    // Tambah pemeriksaan untuk pastikan .tema dan .tajuk wujud sebelum .toLowerCase()
+    const theme = (rptData.tema && typeof rptData.tema === 'string') ? rptData.tema.toLowerCase() : ''; 
+    const title = (rptData.tajuk && typeof rptData.tajuk === 'string') ? rptData.tajuk.toLowerCase() : ''; 
+    if (!theme && !title) return false;
+    return keywords.some(keyword => theme.includes(keyword) || title.includes(keyword)); 
+}
+
+function generateSpecialWeekContent(rptData) { return `<div style="text-align: center; padding: 40px; background-color: #e2e3e5; border-radius: 8px;"><h2 style="color: #383d41;">🗓️ Makluman Minggu Khas</h2><p style="font-size: 1.2rem; margin-top: 10px;"><strong>Tema/Aktiviti:</strong> ${rptData.tema || 'Tiada Tema'}</p><p><strong>Fokus:</strong> ${rptData.tajuk || 'Tiada Tajuk'}</p><p style="margin-top: 20px; font-size: 0.9em;"><em>Tiada RPH formal dijana untuk minggu ini. Sila rujuk takwim sekolah anda untuk maklumat lanjut.</em></p></div>`; }
 
 async function getAIActivities(level, tajuk, sp, previousActivities) {
     try {
@@ -149,22 +159,15 @@ async function getAIActivities(level, tajuk, sp, previousActivities) {
 }
 
 async function generateRPHContent(formData, rptData, bukuTeksData, previousActivities) {
-    // --- FUNGSI PEMILIHAN SK/SP DIPERBAIKI DI SINI ---
     const pilihSKSPSesuaian = (skString, spString) => {
         if (!skString || !spString) return { sk: "Standard Kandungan tidak dinyatakan", sp: "Standard Pembelajaran tidak dinyatakan" };
-        
-        // Menggunakan '|' sebagai pemisah, dan '\n' sebagai sandaran
         const separator = skString.includes('|') ? '|' : '\n';
-        
         const skList = skString.split(separator).map(s => s.trim()).filter(Boolean);
         const spList = spString.split(separator).map(s => s.trim()).filter(Boolean);
-        
         if (spList.length === 0) return { sk: skList.join('<br>'), sp: "Tiada Standard Pembelajaran spesifik" };
-        
         const spTerpilih = spList[Math.floor(Math.random() * spList.length)];
         const spCodeMatch = spTerpilih.match(/^(\d+\.\d+)/);
         let skSepadan = skList.length > 0 ? skList[0] : "Standard Kandungan tidak dinyatakan";
-        
         if (spCodeMatch) {
             const spBaseCode = spCodeMatch[1];
             const foundSk = skList.find(sk => sk.trim().startsWith(spBaseCode));
