@@ -1,12 +1,11 @@
-// --- VERSI NAIK TARAF ---
-// 1. Menambah 'ingatan' untuk menyimpan aktiviti yang lepas.
-// 2. Menghantar 'ingatan' ini ke backend untuk menjana aktiviti baharu.
-
-let lastGeneratedActivities = null; // Pembolehubah untuk "ingatan" AI
+// --- LOGIK TELAH DIPERBAIKI ---
+// VERSI TERKINI: Logik kini membaca pemisah '|' dalam data RPT, 
+// menyelesaikan isu "Standard Kandungan tidak dinyatakan".
 
 document.addEventListener('DOMContentLoaded', function () {
+    // Pastikan SEMUA_DATA wujud sebelum meneruskan
     if (typeof SEMUA_DATA === 'undefined') {
-        alert("RALAT KRITIKAL: Fail data_semua_tahun.js gagal dimuatkan atau mempunyai ralat.");
+        alert("RALAT KRITIKAL: Fail data_semua_tahun.js gagal dimuatkan atau mempunyai ralat. Sila pastikan fail tersebut wujud dan tiada kesilapan sintaks.");
         return;
     }
 
@@ -20,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const errorTextSpan = document.getElementById('errorText');
 
     let currentFormData = null;
+    let lastGeneratedActivities = null;
 
     function populateMingguDropdown(selectedTahun) {
         if (!mingguSelect) return;
@@ -59,12 +59,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 kreativiti: document.getElementById('kreativiti').value
             };
             
-            // Logik untuk 'ingatan': Jika input sama, anggap sebagai 'Jana Semula'. Jika berbeza, reset 'ingatan'.
             if (JSON.stringify(currentFormData) !== JSON.stringify(formData)) {
                 lastGeneratedActivities = null;
             }
             currentFormData = formData;
-
 
             if (!formData.minggu || isNaN(formData.minggu)) {
                 showError("Sila pilih minggu yang sah.");
@@ -79,17 +77,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 if (!dataTahunIni) throw new Error(`Data untuk Tahun ${formData.tahun} tidak wujud.`);
                 
                 const rptData = dataTahunIni.RPT_DATA[formData.minggu];
-                const bukuTeksData = (dataTahunIni.BUKU_TEKS_DATA && dataTahunIni.BUKU_TEKS_DATA[formData.minggu]) 
-                                     ? dataTahunIni.BUKU_TEKS_DATA[formData.minggu] 
-                                     : { mukaSurat: "Rujuk buku teks" };
-
-                if (!rptData) {
+                
+                if (rptData && isSpecialWeek(rptData)) {
+                    rphContentDiv.innerHTML = generateSpecialWeekContent(rptData);
+                    lastGeneratedActivities = null;
+                } else if (!rptData) {
                     rphContentDiv.innerHTML = generateTiadaDataContent(formData.minggu, formData.tahun);
-                    lastGeneratedActivities = null; // Reset ingatan jika tiada data
+                    lastGeneratedActivities = null;
                 } else {
-                    // Hantar aktiviti lepas ke fungsi penjanaan
+                    const bukuTeksData = (dataTahunIni.BUKU_TEKS_DATA && dataTahunIni.BUKU_TEKS_DATA[formData.minggu]) 
+                                         ? dataTahunIni.BUKU_TEKS_DATA[formData.minggu] 
+                                         : { mukaSurat: "Rujuk buku teks" };
                     const rphData = await generateRPHContent(formData, rptData, bukuTeksData, lastGeneratedActivities);
-                    // Simpan aktiviti baharu ke dalam 'ingatan'
                     lastGeneratedActivities = rphData.rangkaAktiviti; 
                     rphContentDiv.innerHTML = renderRPH(rphData, formData);
                 }
@@ -124,13 +123,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
 function formatTarikh(tarikhISO) { if (!tarikhISO) return 'Tarikh tidak ditetapkan'; const tarikh = new Date(tarikhISO); return tarikh.toLocaleDateString('ms-MY', { day: '2-digit', month: 'long', year: 'numeric' }); }
 function generateTiadaDataContent(minggu, tahun) { return `<div style="text-align: center; padding: 40px; background-color: #fff3cd; border-radius: 8px;"><h2 style="color: #856404;">📝 Tiada Data RPH Ditemui</h2><p>Tiada data pengajaran formal ditemui untuk <strong>Minggu ${minggu} (Tahun ${tahun})</strong>.</p><p style="margin-top: 20px; font-size: 0.9em;"><em>Sila semak semula data RPT anda atau rujuk takwim sekolah.</em></p></div>`; }
+function isSpecialWeek(rptData) { const keywords = ['pentaksiran', 'peperiksaan', 'ulangkaji', 'cuti', 'pengurusan akhir tahun', 'orientasi', 'transisi']; const theme = rptData.tema.toLowerCase(); const title = rptData.tajuk.toLowerCase(); return keywords.some(keyword => theme.includes(keyword) || title.includes(keyword)); }
+function generateSpecialWeekContent(rptData) { return `<div style="text-align: center; padding: 40px; background-color: #e2e3e5; border-radius: 8px;"><h2 style="color: #383d41;">🗓️ Makluman Minggu Khas</h2><p style="font-size: 1.2rem; margin-top: 10px;"><strong>Tema/Aktiviti:</strong> ${rptData.tema}</p><p><strong>Fokus:</strong> ${rptData.tajuk}</p><p style="margin-top: 20px; font-size: 0.9em;"><em>Tiada RPH formal dijana untuk minggu ini. Sila rujuk takwim sekolah anda untuk maklumat lanjut.</em></p></div>`; }
 
-async function getAIActivities(level, tajuk, sp, previousActivities) { // Terima 'previousActivities'
+async function getAIActivities(level, tajuk, sp, previousActivities) {
     try {
         const response = await fetch('/api/generate-activities', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ level, tajuk, sp, previousActivities }) // Hantar ke backend
+            body: JSON.stringify({ level, tajuk, sp, previousActivities })
         });
         if (!response.ok) {
             const errorData = await response.json();
@@ -147,15 +148,23 @@ async function getAIActivities(level, tajuk, sp, previousActivities) { // Terima
     }
 }
 
-async function generateRPHContent(formData, rptData, bukuTeksData, previousActivities) { // Terima 'previousActivities'
+async function generateRPHContent(formData, rptData, bukuTeksData, previousActivities) {
+    // --- FUNGSI PEMILIHAN SK/SP DIPERBAIKI DI SINI ---
     const pilihSKSPSesuaian = (skString, spString) => {
         if (!skString || !spString) return { sk: "Standard Kandungan tidak dinyatakan", sp: "Standard Pembelajaran tidak dinyatakan" };
-        const skList = skString.split('\n').map(s => s.trim()).filter(Boolean);
-        const spList = spString.split('\n').map(s => s.trim()).filter(Boolean);
+        
+        // Menggunakan '|' sebagai pemisah, dan '\n' sebagai sandaran
+        const separator = skString.includes('|') ? '|' : '\n';
+        
+        const skList = skString.split(separator).map(s => s.trim()).filter(Boolean);
+        const spList = spString.split(separator).map(s => s.trim()).filter(Boolean);
+        
         if (spList.length === 0) return { sk: skList.join('<br>'), sp: "Tiada Standard Pembelajaran spesifik" };
+        
         const spTerpilih = spList[Math.floor(Math.random() * spList.length)];
         const spCodeMatch = spTerpilih.match(/^(\d+\.\d+)/);
         let skSepadan = skList.length > 0 ? skList[0] : "Standard Kandungan tidak dinyatakan";
+        
         if (spCodeMatch) {
             const spBaseCode = spCodeMatch[1];
             const foundSk = skList.find(sk => sk.trim().startsWith(spBaseCode));
@@ -264,6 +273,4 @@ function renderRPH(rphData, formData) {
         </div>
     `;
 }
-
-
 
