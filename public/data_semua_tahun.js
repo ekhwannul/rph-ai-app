@@ -56,12 +56,7 @@ const SEMUA_DATA = {
     2: {
         RPT_DATA: {
             1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." },
-            2: {
-      tema: "KEKELUARGAAN",
-      unit: "TAJUK 1 - Hari Minggu Dengan Keluarga",
-      standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
-      standardPembelajaran: "1.1.1 Mendengar, mengecam, memahami dan menyebut dengan betul dan tepat; (i) frasa (ii) ayat tunggal\n2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) perkataan (ii) ayat\n3.1.1 Menulis secara mekanis; (i) perkataan (ii) ayat\n5.1.1 Memahami, mengenal pasti dan menggunakan golongan kata mengikut konteks; (i) kata nama am"
-    },
+            2: { tema: "KEKELUARGAAN", unit: "TAJUK 1 - Hari Minggu Dengan Keluarga", standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks", standardPembelajaran: "1.1.1 Mendengar, mengecam, memahami dan menyebut dengan betul dan tepat; (i) frasa (ii) ayat tunggal\n2.1.1 Membaca dengan sebutan yang betul dan intonasi yang sesuai; (i) perkataan (ii) ayat\n3.1.1 Menulis secara mekanis; (i) perkataan (ii) ayat\n5.1.1 Memahami, mengenal pasti dan menggunakan golongan kata mengikut konteks; (i) kata nama am"},
     3: {
       tema: "KEKELUARGAAN",
       unit: "TAJUK 2 - Cerita Keluarga",
@@ -103,8 +98,8 @@ const SEMUA_DATA = {
       unit: "TAJUK 7 - Kebersihan Bermula dari Rumah",
       standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
       standardPembelajaran: "1.1.2 Mendengar, memahami dan memberikan respons terhadap; (iv) permintaan\n2.2.1 Membaca, memahami dan mengenal pasti; (iii) isi tersirat\n3.2.2 Menulis jawapan pemahaman berdasarkan soalan; (i) bertumpu (ii)
-	},  
-    11: {
+    },
+	11: {
       tema: "KEBERSIHAN DAN KESIHATAN",
       unit: "TAJUK 8 - Jadikan Amalan",
       standardKandungan: "1.1 Mendengar dan memberikan respons\n2.2 Membaca, memahami dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.1 Memahami fungsi dan menggunakan golongan kata mengikut konteks",
@@ -169,8 +164,8 @@ const SEMUA_DATA = {
       unit: "TAJUK 19 - Hargailah Pokok",
       standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea bagi pelbagai tujuan\n2.2 Membaca, memahami, dan menaakul bahan grafik dan bukan grafik\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n4.3 Menghasilkan bahan sastera secara kreatif\n5.3 Memahami dan membina ayat mengikut konteks",
       standardPembelajaran: "1.2.1 Bertutur untuk menjelaskan sesuatu perkara secara bertatasusila mengikut konteks\n2.2.1 Mengenal pasti kosa kata\n3.2.3 Mencatat maklumat yang bermakna\n4.3.2 Mempersembahkan cerita haiwan\n5.3.1 Menggunakan ayat perintah"
-	},
-    31: {
+    },
+	31: {
       tema: "PERTANIAN DAN PENTERNAKAN",
       unit: "TAJUK 26 - Tani Moden",
       standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.3 Memahami dan membina ayat mengikut konteks",
@@ -244,6 +239,7 @@ const SEMUA_DATA = {
       standardPembelajaran: "Aktiviti Suai Kenal dan Penerangan Peraturan Sekolah/Kelas."
     },
 
+    // MINGGU 2
     2: {
       tema: "KEKELUARGAAN",
       unit: "UNIT 1",
@@ -262,6 +258,7 @@ const SEMUA_DATA = {
         "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks; (i) kata nama am (ii) kata nama khas"
     },
 
+    // MINGGU 3
     3: {
       tema: "KEKELUARGAAN",
       unit: "UNIT 2",
@@ -280,6 +277,7 @@ const SEMUA_DATA = {
         "5.1.1 Memahami dan menggunakan golongan kata nama mengikut konteks; (iii) kata ganti nama (iv) Penjodoh bilangan"
     },
 
+    // MINGGU 4
     4: {
       tema: "KELUARGA PENYAYANG",
       unit: "UNIT 3",
@@ -296,6 +294,7 @@ const SEMUA_DATA = {
         "5.1.2 Memahami dan menggunakan kata kerja mengikut konteks; (i) Kata kerja aktif transitif dan tak transitif (ii) Kata kerja pasif"
     },
 
+    // MINGGU 5-6
     5: {
       tema: "KESIHATAN DAN KEBERSIHAN",
       unit: "UNIT 4",
@@ -312,6 +311,7 @@ const SEMUA_DATA = {
         "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (i) jarak (ii) perasaan"
     },
 
+    // MINGGU 6 (sama dengan minggu 5)
     6: {
       tema: "KESIHATAN DAN KEBERSIHAN",
       unit: "UNIT 4",
@@ -328,6 +328,7 @@ const SEMUA_DATA = {
         "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (i) jarak (ii) perasaan"
     },
 
+    // MINGGU 7
     7: {
       tema: "KESIHATAN DAN KEBERSIHAN",
       unit: "UNIT 5",
@@ -346,6 +347,7 @@ const SEMUA_DATA = {
         "5.1.3 Memahami dan menggunakan kata adjektif mengikut konteks; (iii) pancaindera"
     },
 
+    // MINGGU 8
     8: {
       tema: "KESIHATAN DAN KEBERSIHAN",
       unit: "UNIT 6",
@@ -828,7 +830,7 @@ const SEMUA_DATA = {
         "2.3.1 Membaca, mengenal pasti dan menerangkan kandungan teks daripada bahan bukan sastera dan bahan sastera; (iv) pantun\n" +
         "3.3.2 Mengedit dan memurnikan hasil penulisan dari aspek; (iii) struktur ayat\n" +
         "5.3.1 Memahami dan membina ayat mengikut konteks; (iii) ayat tanya dengan kata tanya, dan (iv) ayat tanya tanpa kata tanya\n" +
-        "5.3.2 Memahami dan menggunakan ayat mengikut konteks; (i) ayat tunggal, dan (ii) ayat majmuk" }
+        "5.3.2 Memahami dan menggunakan ayat mengikut konteks; (i) ayat tunggal, dan (ii) ayat majmuk" },
         },
         BUKU_TEKS_DATA: {
             1: { mukaSurat: "Jilid 1: 1-7 (Unit 1)<br>- Mendengar, mengecam dan menyebut ayat (m/s 2)<br>- Membaca teks dengan sebutan betul (m/s 3)<br>- Menulis perkataan dan frasa (m/s 4)<br>- Tatabahasa: Kata Nama Am & Khas (m/s 5)<br>- Menyanyikan lagu 'Riangnya Keluargaku' (m/s 6)<br>- Aktiviti Pemulihan & Pengayaan (m/s 7)" },
@@ -914,7 +916,7 @@ const SEMUA_DATA = {
       unit: "UNIT 9 - Patuh dan Selamat",
       standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.3 Menghasilkan penulisan\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
       standardPembelajaran: "1.3.2 Menceritakan bahan yang ditonton dengan sebutan dan intonasi sesuai\n2.3.1 Menganalisis kandungan teks karya sastera\n3.3.1 Menulis penulisan deskriptif\n5.1.4 Kata hubung dan kata sendi nama"
-    }
+    },
     11: {
       tema: "KESELAMATAN",
       unit: "UNIT 9 - Patuh dan Selamat",
@@ -944,7 +946,7 @@ const SEMUA_DATA = {
       unit: "UNIT 13 - Jadikan Inspirasi",
       standardKandungan: "1.2 Bertutur untuk menyampaikan maklumat dan idea\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.2 Menghayati keindahan dan kesantunan bahasa dalam bahan sastera\n5.2 Memahami dan menggunakan bentuk kata mengikut konteks",
       standardPembelajaran: "1.2.1 Bertutur untuk menilai dan memberi alasan secara bertatasusila\n2.1.1 Membaca petikan dengan sebutan dan intonasi betul\n3.1.1 Menulis ayat menggunakan tulisan berangkai\n4.2.2 Menyanyi lagu rakyat dan menjelaskan maksud lirik\n5.2.2 Kata majmuk bebas dan mantap"
-    }
+    },
     16: {
       tema: "JATI DIRI, PATRIOTISME & KEWARGANEGARAAN",
       unit: "UNIT 14 - Demi Tanah Airku",
@@ -974,7 +976,7 @@ const SEMUA_DATA = {
       unit: "UNIT 18 - Inovasi Untuk Kita",
       standardKandungan: "1.1 Mendengar dan memberikan respons\n2.3 Membaca dan mengapresiasi karya sastera dan bukan sastera\n3.2 Menulis perkataan, frasa, dan ayat\n5.3 Memahami dan membina ayat mengikut konteks\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
       standardPembelajaran: "1.1.1 Menyebut semula ujaran dalam situasi tidak formal\n2.3.2 Membaca karya bukan sastera dengan gaya penyampaian sesuai\n3.2.1 Menulis ayat dan perenggan daripada bahan multimedia\n5.3.4 Ayat susunan biasa dan songsang\n5.1.1 Kata nama am, khas, ganti nama, penjodoh bilangan"
-    }
+    },
     21: {
       tema: "PERTANIAN DAN PENTERNAKAN",
       unit: "UNIT 19 - Kreatifnya Petani Kita",
@@ -986,7 +988,7 @@ const SEMUA_DATA = {
       unit: "UNIT 20 - Mari Bertani",
       standardKandungan: "1.1 Mendengar dan memberikan respons\n2.1 Asas membaca dan memahami\n3.2 Menulis perkataan, frasa, dan ayat yang bermakna\n5.1 Memahami dan menggunakan golongan kata mengikut konteks",
       standardPembelajaran: "1.1.3 Mentafsir dan memberi respons terhadap soalan secara kritis\n2.1.1 Membaca petikan dengan sebutan dan intonasi betul\n3.2.3 Menganalisis dan mencatat maklumat tentang sesuatu perkara\n5.1.3 Kata adjektif: cara, perasaan, waktu, pancaindera"
-    }
+    },
     23: {
       tema: "PERTANIAN DAN PENTERNAKAN",
       unit: "UNIT 21 - Ternakan Jana Pendapatan",
@@ -1016,7 +1018,7 @@ const SEMUA_DATA = {
       unit: "UNIT 25 - Tanggungjawab Digalas",
       standardKandungan: "1.3 Bercerita dan menceritakan perkara yang didengar, ditonton dan dibaca\n2.1 Asas membaca dan memahami\n3.1 Asas menulis\n4.1 Mengaplikasikan unsur keindahan dan kesantunan bahasa dalam bahan sastera\n5.3 Memahami dan membina ayat mengikut konteks",
       standardPembelajaran: "1.3.1 Bercerita dengan sebutan dan intonasi sesuai\n2.1.1 Membaca petikan dengan sebutan dan intonasi betul\n3.1.1 Menulis ayat menggunakan tulisan berangkai\n4.1.1 Bercerita dan mengujarkan dialog dengan peribahasa\n5.3.2 Ayat penyata dan ayat tanya\n5.3.3 Membina ayat"
-    }
+    },
     28: {
       tema: "INTEGRITI",
       unit: "UNIT 26 - Ibarat Pedang",
@@ -1074,7 +1076,8 @@ const SEMUA_DATA = {
     // Data untuk Tahun 5 (Dikemaskini)
     5: {
         RPT_DATA: {
-            1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." },
+            1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." 
+			},
 			"2": {
       tema: "Tema 1: Keluarga Berwawasan",
       unit: "Unit 1: Masyarakat Penyayang",
@@ -1587,7 +1590,7 @@ const SEMUA_DATA = {
       "4.4.1 Mengenal, mengecam dan menyebut huruf tunggal yang ditulis mengikut tulisan Jawi dalam perumpamaan dan mempersembahkannya\n" +
       "5.3.1 Memahami dan membina ayat tunggal dan ayat majmuk dengan peluasan subjek dan predikat mengikut konteks\n" +
       "5.3.2(i-ii) Memahami dan membina pelbagai jenis ayat seruan dan ayat perintah mengikut konteks"
-  },
+    },
   "31": {
     tema: "Tema 9: Integriti",
     unit: "Unit 26: Dahulukan yang Utama",
@@ -1604,7 +1607,7 @@ const SEMUA_DATA = {
       "3.2.2 Menghasilkan jawapan dengan memberikan alasan secara kritis dan kreatif\n" +
       "4.4.2 Mempersembahkan keindahan seni tulisan jawi melalui perumpamaan\n" +
       "5.3.3 Memahami dan membina ayat aktif, dan ayat pasif mengikut konteks"
-  },
+   },
   "32": {
     tema: "Tema 9: Integriti",
     unit: "Unit 27: Hormati Hak Sesama Kita",
@@ -1654,7 +1657,8 @@ const SEMUA_DATA = {
     // Data untuk Tahun 6 (Dikemaskini)
     6: {
         RPT_DATA: {
-            1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." },
+            1: { tema: "AKTIVITI MINGGU PERTAMA", unit: "Orientasi", tajuk: "Suai Kenal dan Peraturan Kelas", standardKandungan: "Aktiviti pengurusan kelas dan orientasi mata pelajaran.", standardPembelajaran: "Aktiviti suai kenal dan penerangan peraturan sekolah/kelas." 
+			},
 			 "2": {
       tema: "Tema 1: Kekeluargaan",
       unit: "Unit 1",
@@ -1826,10 +1830,7 @@ const SEMUA_DATA = {
 			21: { mukaSurat: "127-133 (Unit 22)<br>- Memberikan respons 'Sumber Hutan' (m/s 128)<br>- Membaca & memahami maklumat 'Sumber Galian' (m/s 129)<br>- Menulis maklumat 'Pelancongan Kesihatan' (m/s 130)<br>- Tatabahasa: Latihan Pelbagai (m/s 131)<br>- Melafazkan pantun Sumber Ekonomi (m/s 132)" },
 			22: { mukaSurat: "134-139 (Unit 23)<br>- Berbual 'Pengusaha Coklat' (m/s 134)<br>- Membaca dan membuat ulasan 'Pengusaha Kraf Tangan' (m/s 135)<br>- Menulis draf dan menghasilkan penulisan (m/s 136)<br>- Tatabahasa: Latihan Pelbagai (m/s 137)<br>- Mengenal Simpulan Bahasa (m/s 138)" },
 			23: { mukaSurat: "145-151 (Unit 25)<br>- Memberikan respons 'Anak yang Jujur' (m/s 146)<br>- Membaca dan memahami 'Pemimpin Berintegriti' (m/s 147)<br>- Menulis maklumat 'Akauntan Bertauliah' (m/s 148)<br>- Tatabahasa: Latihan Pelbagai (m/s 149)<br>- Mendeklamasikan sajak 'Amanah' (m/s 150)" },
-			24: { mukaSurat: "152-157 (Unit 26)<br>- Menjelaskan & membanding beza 'Tanggungjawab Kita' (m/s 152)<br>- Membaca dan membuat ulasan 'Ketua Kelas yang Bertanggungjawab' (m/s 153)<br>- Menulis kerangka dan karangan 'Pustakawan Sekolah' (m/s 154)<br>- Tatabahasa: Latihan Pelbagai (m/s 155)<br>- Melagukan syair 'Tanggungjawab' (m/s 156)" },
-		}
+			24: { mukaSurat: "152-157 (Unit 26)<br>- Menjelaskan & membanding beza 'Tanggungjawab Kita' (m/s 152)<br>- Membaca dan membuat ulasan 'Ketua Kelas yang Bertanggungjawab' (m/s 153)<br>- Menulis kerangka dan karangan 'Pustakawan Sekolah' (m/s 154)<br>- Tatabahasa: Latihan Pelbagai (m/s 155)<br>- Melagukan syair 'Tanggungjawab' (m/s 156)" }
+        }
     }
 };
-if (typeof module !== 'undefined' && module.exports) {
-    module.exports = SEMUA_DATA;
-}
