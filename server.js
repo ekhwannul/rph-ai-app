@@ -119,16 +119,20 @@ async function tryOpenRouter(prompt) {
 
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Content-Type': 'application/json'
+        headers: { 
+            'Authorization': `Bearer ${apiKey}`, 
+            'Content-Type': 'application/json',
+            // Header ini disyorkan oleh OpenRouter
+            'HTTP-Referer': 'https://rph-ai-generator.onrender.com', // Gantikan dengan URL aplikasi anda
+            'X-Title': 'RPH AI Generator' // Gantikan dengan nama aplikasi anda
         },
         body: JSON.stringify({
-            model: "meta-llama/llama-3.1-8b-instruct", // Model yang sama untuk konsistensi
+            // MODEL DIUBAH: Menggunakan Llama 3.1 yang jauh lebih baik dalam Bahasa Melayu
+            model: 'meta-llama/llama-3.1-8b-instruct', 
             messages: [{ role: 'user', content: prompt }]
         })
     });
-
+    
     if (!response.ok) {
         const errorBody = await response.json();
         throw new Error(`OpenRouter API returned ${response.status}: ${JSON.stringify(errorBody)}`);
@@ -136,6 +140,11 @@ async function tryOpenRouter(prompt) {
 
     const data = await response.json();
     const content = data.choices[0]?.message?.content;
+    
+    if (!content || content.trim() === '') {
+        throw new Error("OpenRouter mengembalikan kandungan kosong.");
+    }
+    
     return processAIResponse(content);
 }
 
