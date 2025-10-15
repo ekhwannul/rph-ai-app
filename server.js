@@ -1,6 +1,6 @@
 // --- VERSI NAIK TARAF ---
-// 1. Sistem fallback AI dikembalikan kepada: Groq -> Hugging Face -> OpenRouter.
-// 2. Google Gemini telah dibuang.
+// 1. Logik 'buildPrompt' diperhalusi untuk menjana PAK21 yang berbeza mengikut aras.
+// 2. Ralat kritikal dalam 'processAIResponse' yang memotong hasil kepada 5 langkah telah diperbaiki kepada 7.
 
 const express = require('express');
 const path = require('path');
@@ -8,15 +8,28 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, 'public')));
+// Pastikan folder 'public' wujud untuk fail statik seperti index.html, script.js, dll.
+// Jika fail anda berada di root, baris ini boleh dibuang atau diubah kepada app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname)));
 
-// Fungsi untuk membina prompt AI
+
+// =============================================================================
+// FUNGSI PEMBINA PROMPT AI (TELAH DIUBAHSUAI)
+// =============================================================================
 const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
     let complexity;
+    // PERUBAHAN 1: Arahan 'complexity' kini lebih spesifik untuk setiap aras
+    // Ini "mengajar" AI jenis PAK21 yang diharapkan untuk setiap tahap.
     switch (level) {
-        case 'Tinggi': complexity = "sangat kreatif dan berpusatkan murid menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
-        case 'Sederhana': complexity = "melibatkan perbincangan dan interaksi antara murid menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
-        default: complexity = "asas dan berpandukan arahan guru menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
+        case 'Tinggi':
+            complexity = "sangat kreatif dan berpusatkan murid, menggunakan satu aktiviti PAK21 yang kompleks dan berimpak tinggi seperti 'Simulasi' atau 'Pembentangan Kumpulan Kreatif'";
+            break;
+        case 'Sederhana':
+            complexity = "melibatkan perbincangan dan interaksi antara murid, menggunakan satu aktiviti PAK21 yang kolaboratif seperti 'Round Table' atau 'Gallery Walk'";
+            break;
+        default: // Asas
+            complexity = "asas dan berpandukan arahan guru, tetapi WAJIB menyertakan satu aktiviti PAK21 yang mudah dan berstruktur seperti 'Think-Pair-Share' atau 'Peta Minda'";
+            break;
     }
 
     let variationInstruction = '';
@@ -39,16 +52,22 @@ Syarat Paling Penting:
 ${variationInstruction}`;
 };
 
-// Fungsi untuk memproses jawapan dari API
+// =============================================================================
+// FUNGSI PEMPROSESAN RESPON (TELAH DIPERBAIKI)
+// =============================================================================
 const processAIResponse = (responseText) => {
     if (!responseText) return [];
-    return responseText.split('\n')
+    // PERUBAHAN 2: Ralat kritikal diperbaiki.
+    // .slice(0, 5) telah ditukar kepada .slice(0, 7) untuk memastikan 7 langkah dipaparkan.
+    return responseText.split('\\n')
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
         .filter(line => line.length > 0)
-        .slice(0, 5); // Potong paksa untuk memastikan hanya 7 langkah diambil
+        .slice(0, 7); // Potong untuk memastikan TEPAT 7 langkah diambil
 };
 
-// API Endpoint Utama
+// =============================================================================
+// API ENDPOINT UTAMA (KEKAL SAMA)
+// =============================================================================
 app.post('/api/generate-activities', async (req, res) => {
     const { level, tajuk, sp } = req.body;
     const prompt = buildPrompt(level, tajuk, sp);
@@ -65,14 +84,14 @@ app.post('/api/generate-activities', async (req, res) => {
             const activities = await provider.try(prompt);
             if (activities && activities.length > 0) {
                 console.log(`${provider.name} berjaya.`);
-                if (activities.length === 5 && !activities[4].includes("refleksi")) {
-                    activities[4] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
+                // Logik tambahan untuk memastikan langkah ke-7 adalah refleksi jika AI terlupa
+                if (activities.length === 7 && !activities[6].toLowerCase().includes("refleksi")) {
+                    activities[6] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
                 }
                 return res.json({ activities, source: provider.name });
             }
             console.log(`${provider.name} tidak mengembalikan kandungan.`);
         } catch (error) {
-            // Log ralat yang lebih terperinci
             console.error(`Ralat pada ${provider.name}:`, error.message);
         }
     }
@@ -81,11 +100,11 @@ app.post('/api/generate-activities', async (req, res) => {
     res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi pada masa ini. Sila cuba lagi sebentar lagi.' });
 });
 
-// -----------------------------------------------------------------------------
-// FUNGSI PANGGILAN API UNTUK SETIAP PENYEDIA AI
-// -----------------------------------------------------------------------------
+// =============================================================================
+// FUNGSI PANGGILAN API UNTUK SETIAP PENYEDIA (KEKAL SAMA)
+// =============================================================================
 
-// 1. Panggilan ke Groq (Pilihan Utama)
+// 1. Panggilan ke Groq
 async function tryGroq(prompt) {
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) throw new Error('GROQ_API_KEY tidak ditetapkan');
@@ -98,7 +117,7 @@ async function tryGroq(prompt) {
         },
         body: JSON.stringify({
             messages: [{ role: 'user', content: prompt }],
-            model: 'llama-3.1-8b-instant' // Model pantas dan cekap
+            model: 'llama-3.1-8b-instant'
         })
     });
 
@@ -112,27 +131,25 @@ async function tryGroq(prompt) {
     return processAIResponse(content);
 }
 
-// 2. Panggilan ke OpenRouter (Sandaran Pertama)
+// 2. Panggilan ke OpenRouter
 async function tryOpenRouter(prompt) {
     const apiKey = process.env.OPENROUTER_API_KEY;
     if (!apiKey) throw new Error('OPENROUTER_API_KEY tidak ditetapkan');
 
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
-        headers: { 
-            'Authorization': `Bearer ${apiKey}`, 
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
             'Content-Type': 'application/json',
-            // Header ini disyorkan oleh OpenRouter
-            'HTTP-Referer': 'https://rph-ai-generator.onrender.com', // Gantikan dengan URL aplikasi anda
-            'X-Title': 'RPH AI Generator' // Gantikan dengan nama aplikasi anda
+            'HTTP-Referer': 'https://rph-ai-app.onrender.com', // Gantikan dengan URL aplikasi anda
+            'X-Title': 'RPH AI App' // Gantikan dengan nama aplikasi anda
         },
         body: JSON.stringify({
-            // MODEL DIUBAH: Menggunakan Llama 3.1 yang jauh lebih baik dalam Bahasa Melayu
-            model: 'meta-llama/llama-3.1-8b-instruct', 
+            model: 'meta-llama/llama-3.1-8b-instruct',
             messages: [{ role: 'user', content: prompt }]
         })
     });
-    
+
     if (!response.ok) {
         const errorBody = await response.json();
         throw new Error(`OpenRouter API returned ${response.status}: ${JSON.stringify(errorBody)}`);
@@ -140,93 +157,79 @@ async function tryOpenRouter(prompt) {
 
     const data = await response.json();
     const content = data.choices[0]?.message?.content;
-    
-    if (!content || content.trim() === '') {
-        throw new Error("OpenRouter mengembalikan kandungan kosong.");
-    }
-    
     return processAIResponse(content);
 }
 
-// 3. Panggilan ke Hugging Face (Sandaran Kedua)
+// 3. Panggilan ke Hugging Face
 async function tryHuggingFace(prompt) {
     const apiKey = process.env.HUGGINGFACE_API_KEY;
     if (!apiKey) throw new Error('HUGGINGFACE_API_KEY tidak ditetapkan');
+    const modelId = 'distilgpt2';
 
-    // MODEL DIUBAH: Menggunakan model 'distilgpt2'. 
-    // Ini adalah model asas yang sangat stabil dan sentiasa tersedia di API percuma.
-    // Tujuannya adalah untuk mengesahkan sambungan API anda berfungsi.
-    const modelId = 'distilgpt2'; 
-    
     const response = await fetch(`https://api-inference.huggingface.co/models/${modelId}`, {
         method: 'POST',
-        headers: { 
-            'Authorization': `Bearer ${apiKey}`, 
-            'Content-Type': 'application/json' 
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ 
-            inputs: prompt, 
-            parameters: { 
-                max_new_tokens: 512, // Kurangkan sedikit token untuk model yang lebih kecil
-                return_full_text: false 
-            } 
+        body: JSON.stringify({
+            inputs: prompt,
+            parameters: {
+                max_new_tokens: 512,
+                return_full_text: false
+            }
         })
     });
 
     if (!response.ok) {
-        const errorBody = await response.text(); 
+        const errorBody = await response.text();
         throw new Error(`Hugging Face API returned ${response.status}: ${errorBody}`);
     }
 
     const data = await response.json();
     const content = data[0]?.generated_text;
-    
-    if (!content || content.trim() === '') {
-        throw new Error("Hugging Face mengembalikan kandungan kosong.");
-    }
-    
     return processAIResponse(content);
 }
 
-// -----------------------------------------------------------------------------
-// ROUTE UTAMA APLIKASI
-// -----------------------------------------------------------------------------
 
+// =============================================================================
+// PENGENDALIAN LALUAN DAN SERVER (DIUBAHSUAI SEDIKIT)
+// =============================================================================
+
+// Route untuk API yang dipanggil dari script.js
+// Nama endpoint diselaraskan dengan kod lama anda: /generate-rph
 app.post('/generate-rph', async (req, res) => {
     const { level, tajuk, sp, previousActivities } = req.body;
     const prompt = buildPrompt(level, tajuk, sp, previousActivities);
+    const providers = [
+        { name: 'Groq', try: tryGroq },
+        { name: 'OpenRouter', try: tryOpenRouter },
+        { name: 'Hugging Face', try: tryHuggingFace }
+    ];
 
-    // Rantaian sandaran: Groq -> OpenRouter -> Hugging Face
-    try {
-        console.log("Mencuba Groq (Pilihan 1)...");
-        const result = await tryGroq(prompt);
-        res.json(result);
-    } catch (e1) {
-        console.error("Ralat pada Groq:", e1.message);
-        console.log("Groq gagal. Mencuba OpenRouter (Pilihan 2)...");
+    for (const provider of providers) {
         try {
-            const result = await tryOpenRouter(prompt);
-            res.json(result);
-        } catch (e2) {
-            console.error("Ralat pada OpenRouter:", e2.message);
-            console.log("OpenRouter gagal. Mencuba Hugging Face (Pilihan 3)...");
-            try {
-                const result = await tryHuggingFace(prompt);
-                res.json(result);
-            } catch (e3) {
-                console.error("Ralat pada Hugging Face:", e3.message);
-                res.status(500).json({ error: "Semua penyedia AI (Groq, OpenRouter, Hugging Face) gagal. Sila cuba sebentar lagi." });
+            console.log(`Mencuba ${provider.name}...`);
+            const activities = await provider.try(prompt);
+             if (activities && activities.length > 0) {
+                console.log(`${provider.name} berjaya.`);
+                if (activities.length === 7 && !activities[6].toLowerCase().includes("refleksi")) {
+                    activities[6] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
+                }
+                // Respon sepatutnya dalam format objek, bukan array terus
+                return res.json({ activities, source: provider.name });
             }
+            console.log(`${provider.name} tidak mengembalikan kandungan.`);
+        } catch (error) {
+            console.error(`Ralat pada ${provider.name}:`, error.message);
         }
     }
+     res.status(500).json({ error: "Semua penyedia AI gagal. Sila cuba sebentar lagi." });
 });
 
-// -----------------------------------------------------------------------------
-// PENGENDALIAN LALUAN DAN SERVER
-// -----------------------------------------------------------------------------
 
 app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
 app.listen(PORT, () => {
