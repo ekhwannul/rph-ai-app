@@ -45,7 +45,7 @@ const processAIResponse = (responseText) => {
     return responseText.split('\n')
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
         .filter(line => line.length > 0)
-        .slice(0, 5); // Potong paksa untuk memastikan hanya 5 langkah diambil
+        .slice(0, 5); // Potong paksa untuk memastikan hanya 7 langkah diambil
 };
 
 // API Endpoint Utama
