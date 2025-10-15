@@ -81,46 +81,6 @@ app.post('/api/generate-activities', async (req, res) => {
 });
 
 // --- Fungsi untuk setiap penyedia AI ---
-async function tryGoogleGemini(prompt) {
-    const apiKey = process.env.GEMINI_API_KEY;
-    const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID;
-
-    if (!apiKey) throw new Error('GEMINI_API_KEY tidak ditetapkan');
-    if (!projectId) throw new Error('GOOGLE_CLOUD_PROJECT_ID tidak ditetapkan');
-
-    // URL Vertex AI yang betul DENGAN API key sebagai parameter
-    const url = `https://us-central1-aiplatform.googleapis.com/v1/projects/${projectId}/locations/us-central1/publishers/google/models/gemini-pro:generateContent?key=${apiKey}`;
-
-    const response = await fetch(url, {
-        method: 'POST',
-        headers: {
-            // Kita buang 'Authorization' header
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            contents: [{
-                parts: [{
-                    text: prompt
-                }]
-            }]
-        })
-    });
-
-    if (!response.ok) {
-        const errorBody = await response.json();
-        // Beri mesej ralat yang lebih jelas
-        console.error("Ralat Terperinci dari Vertex AI:", JSON.stringify(errorBody, null, 2));
-        throw new Error(`Google Vertex AI API returned ${response.status}: ${JSON.stringify(errorBody.error.message)}`);
-    }
-
-    const data = await response.json();
-    const content = data.candidates[0]?.content?.parts[0]?.text;
-    if (!content) {
-        console.error("Respons tidak lengkap dari Vertex AI:", JSON.stringify(data, null, 2));
-        throw new Error("Gagal mengekstrak kandungan daripada respons Vertex AI.");
-    }
-    return processAIResponse(content);
-}
 
 async function tryGroq(prompt) {
     const apiKey = process.env.GROQ_API_KEY;
