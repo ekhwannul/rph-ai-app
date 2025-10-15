@@ -85,7 +85,7 @@ app.post('/api/generate-activities', async (req, res) => {
 async function tryGoogleGemini(prompt) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) throw new Error('GEMINI_API_KEY tidak ditetapkan');
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
     const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -120,4 +120,3 @@ async function tryGroq(prompt) {
 app.listen(PORT, () => {
     console.log(`Server sedang berjalan di port ${PORT}`);
 });
-
