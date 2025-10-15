@@ -1,5 +1,5 @@
 // --- LOGIK TELAH DIPERBAIKI ---
-// VERSI TERKINI: Menambah format penomboran manual (1., 2., 3.) pada senarai aktiviti yang dijana.
+// VERSI TERKINI: Menambah pengesahan untuk butang radio 'Aras Kerumitan' bagi mengelakkan ralat 'null'.
 
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof SEMUA_DATA === 'undefined') {
@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', function () {
         mingguSelect.innerHTML = ''; 
 
         if (selectedTahun && SEMUA_DATA[selectedTahun]) {
-            // Menggunakan data RPT untuk menentukan minggu yang ada
             const rptData = SEMUA_DATA[selectedTahun].RPT_DATA;
             Object.keys(rptData).forEach(mingguNum => {
                 const option = document.createElement('option');
@@ -44,7 +43,16 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const selectedTahun = document.getElementById('tahun').value;
         const selectedMinggu = document.getElementById('minggu').value;
-        const selectedLevel = document.querySelector('input[name="level"]:checked').value;
+        const selectedLevelElement = document.querySelector('input[name="level"]:checked');
+
+        // === PERUBAHAN & PEMBETULAN DI SINI ===
+        // 1. Semak jika pengguna telah memilih aras kerumitan
+        if (!selectedLevelElement) {
+            showError("Sila pilih satu Aras Kerumitan Aktiviti sebelum menjana RPH.");
+            return; // Hentikan fungsi jika tiada pilihan dibuat
+        }
+        const selectedLevel = selectedLevelElement.value;
+        // === AKHIR PERUBAHAN ===
 
         if (!SEMUA_DATA[selectedTahun] || !SEMUA_DATA[selectedTahun].RPT_DATA[selectedMinggu]) {
             showError("Data RPH tidak ditemui untuk tahun dan minggu yang dipilih.");
@@ -63,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     async function generateRPH(formData, previousActivities) {
         showLoading(true);
-        showError(false);
+        showError(false); // Sembunyikan mesej ralat lama sebelum janaan baru
         resultDiv.style.display = 'none';
 
         const { tahun, minggu, level } = formData;
@@ -88,16 +96,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const data = await response.json();
             
-            // Simpan aktiviti yang baru dijana
             if (Array.isArray(data.activities)) {
                  lastGeneratedActivities = data.activities;
             } else {
-                // Jika format tidak dijangka, elakkan ralat
                 lastGeneratedActivities = [];
                 console.error("Format 'activities' yang diterima bukan array:", data.activities);
             }
            
-
             const fullRphData = {
                 ...rptData,
                 rangkaAktiviti: lastGeneratedActivities,
@@ -116,7 +121,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function formatRPHContent(rphData) {
-        // PERUBAHAN DI SINI: Menambah nombor secara manual (index + 1)
         const aktivitiHtml = rphData.rangkaAktiviti
             .map((item, index) => `<li>${index + 1}. ${item}</li>`)
             .join('');
@@ -170,7 +174,6 @@ document.addEventListener('DOMContentLoaded', function () {
     
     window.generateAgain = async function() {
         if (currentFormData) {
-            // Hantar aktiviti lama untuk memastikan janaan baru adalah berbeza
             await generateRPH(currentFormData, lastGeneratedActivities); 
         }
     };
@@ -188,6 +191,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
-    // Panggil pada mulanya untuk mengisi dropdown minggu
     populateMingguDropdown(tahunSelect.value);
 });
+
