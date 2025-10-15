@@ -144,7 +144,8 @@ async function tryHuggingFace(prompt) {
     const apiKey = process.env.HUGGINGFACE_API_KEY;
     if (!apiKey) throw new Error('HUGGINGFACE_API_KEY tidak ditetapkan');
 
-    const modelId = 'mistralai/Mistral-7B-Instruct-v0.2';
+    // MODEL DIUBAH: Menggunakan model Gemma dari Google yang sangat stabil di API percuma
+    const modelId = 'google/gemma-7b-it'; 
     
     const response = await fetch(`https://api-inference.huggingface.co/models/${modelId}`, {
         method: 'POST',
@@ -154,12 +155,15 @@ async function tryHuggingFace(prompt) {
         },
         body: JSON.stringify({ 
             inputs: prompt, 
-            parameters: { max_new_tokens: 2048, return_full_text: false } 
+            parameters: { 
+                max_new_tokens: 2048, 
+                return_full_text: false 
+            } 
         })
     });
 
     if (!response.ok) {
-        // PERUBAHAN DI SINI: Baca ralat sebagai .text() dan bukannya .json()
+        // Membaca ralat sebagai teks untuk mengelak crash JSON
         const errorBody = await response.text(); 
         throw new Error(`Hugging Face API returned ${response.status}: ${errorBody}`);
     }
