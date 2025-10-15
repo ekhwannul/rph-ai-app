@@ -144,8 +144,10 @@ async function tryHuggingFace(prompt) {
     const apiKey = process.env.HUGGINGFACE_API_KEY;
     if (!apiKey) throw new Error('HUGGINGFACE_API_KEY tidak ditetapkan');
 
-    // MODEL DIUBAH: Menggunakan model Gemma dari Google yang sangat stabil di API percuma
-    const modelId = 'google/gemma-7b-it'; 
+    // MODEL DIUBAH: Menggunakan model 'distilgpt2'. 
+    // Ini adalah model asas yang sangat stabil dan sentiasa tersedia di API percuma.
+    // Tujuannya adalah untuk mengesahkan sambungan API anda berfungsi.
+    const modelId = 'distilgpt2'; 
     
     const response = await fetch(`https://api-inference.huggingface.co/models/${modelId}`, {
         method: 'POST',
@@ -156,14 +158,13 @@ async function tryHuggingFace(prompt) {
         body: JSON.stringify({ 
             inputs: prompt, 
             parameters: { 
-                max_new_tokens: 2048, 
+                max_new_tokens: 512, // Kurangkan sedikit token untuk model yang lebih kecil
                 return_full_text: false 
             } 
         })
     });
 
     if (!response.ok) {
-        // Membaca ralat sebagai teks untuk mengelak crash JSON
         const errorBody = await response.text(); 
         throw new Error(`Hugging Face API returned ${response.status}: ${errorBody}`);
     }
