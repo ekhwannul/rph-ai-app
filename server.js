@@ -21,19 +21,19 @@ const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
     let variationInstruction = '';
     if (previousActivities && previousActivities.length > 0) {
         const previousList = previousActivities.map(act => `- ${act}`).join('\n');
-        variationInstruction = `\nSyarat Tambahan: JANGAN ULANGI aktiviti terdahulu di bawah. Hasilkan set aktiviti yang baharu dan berbeza.\nAktiviti Terdahulu:\n${previousList}`;
+        variationInstruction = `\nSyarat Tambahan: JANGAN ULANGI aktiviti terdahulu di bawah. Hasilkan set aktiviti yang mesti mempunyai aktiviti PAK21 yang baharu dan berbeza.\nAktiviti Terdahulu:\n${previousList}`;
     }
 
-    return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia. Reka BENTUK TEPAT LIMA (5) langkah aktiviti pengajaran yang ${complexity} dan mudah difahami.
+    return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia. Reka BENTUK TEPAT TUJUH (7) langkah aktiviti pengajaran yang ${complexity} dan mudah difahami.
 
 Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
 Syarat Paling Penting:
-1. Hasilkan TEPAT 5 langkah pengajaran dalam format senarai bernombor.
+1. Hasilkan TEPAT 7 langkah pengajaran dalam format senarai bernombor.
 2. Jika menggunakan aktiviti PAK21, ringkaskan penerangannya ke dalam SATU langkah sahaja.
 3. Gunakan Bahasa Melayu standard Malaysia sepenuhnya. Elakkan istilah Indonesia.
-4. Langkah ke-5 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
+4. Langkah ke-7 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
 5. Jangan sertakan sebarang tajuk atau pengenalan. Berikan senarai aktiviti sahaja.
 ${variationInstruction}`;
 };
@@ -85,7 +85,7 @@ app.post('/api/generate-activities', async (req, res) => {
 async function tryGoogleGemini(prompt) {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) throw new Error('GEMINI_API_KEY tidak ditetapkan');
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${apiKey}`;
+    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`;
     const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
