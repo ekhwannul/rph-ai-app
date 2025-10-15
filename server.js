@@ -1,182 +1,193 @@
-// --- VERSI NAIK TARAF ---
-// Laluan (path) fail statik dan index.html telah diperbetulkan untuk sepadan dengan struktur fail anda.
+// --- LOGIK TELAH DIPERBAIKI ---
+// VERSI TERKINI: Menambah format penomboran manual (1., 2., 3.) pada senarai aktiviti yang dijana.
 
-const express = require('express');
-const path = require('path');
-const app = express();
-const PORT = process.env.PORT || 3000;
-
-app.use(express.json());
-
-// =============================================================================
-// PENGENDALIAN FAIL STATIK (TELAH DIPERBAIKI)
-// =============================================================================
-// DIUBAH SUAI: Menetapkan folder 'public' sebagai direktori untuk fail statik (script.js, style.css, dll.)
-app.use(express.static(path.join(__dirname, 'public')));
-
-
-// =============================================================================
-// FUNGSI PEMBINA PROMPT AI (KEKAL SAMA)
-// =============================================================================
-const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
-    let complexity;
-    switch (level) {
-        case 'Tinggi':
-            complexity = "sangat kreatif dan berpusatkan murid, menggunakan satu aktiviti PAK21 yang kompleks dan berimpak tinggi seperti 'Simulasi' atau 'Pembentangan Kumpulan Kreatif'";
-            break;
-        case 'Sederhana':
-            complexity = "melibatkan perbincangan dan interaksi antara murid, menggunakan satu aktiviti PAK21 yang kolaboratif seperti 'Round Table' atau 'Gallery Walk'";
-            break;
-        default: // Asas
-            complexity = "asas dan berpandukan arahan guru, tetapi WAJIB menyertakan satu aktiviti PAK21 yang mudah dan berstruktur seperti 'Think-Pair-Share' atau 'Peta Minda'";
-            break;
+document.addEventListener('DOMContentLoaded', function () {
+    if (typeof SEMUA_DATA === 'undefined') {
+        alert("RALAT KRITIKAL: Fail data_semua_tahun.js gagal dimuatkan atau mempunyai ralat.");
+        return;
     }
 
-    let variationInstruction = '';
-    if (previousActivities && previousActivities.length > 0) {
-        const previousList = previousActivities.map(act => `- ${act}`).join('\\n');
-        variationInstruction = `\\nSyarat Tambahan: JANGAN ULANGI aktiviti terdahulu di bawah. WAJIB hasilkan set aktiviti dengan aktiviti PAK21 yang baharu dan berbeza setiap kali janaan.\\nAktiviti Terdahulu:\\n${previousList}`;
+    const tahunSelect = document.getElementById('tahun');
+    const mingguSelect = document.getElementById('minggu');
+    const form = document.getElementById('rphForm');
+    const resultDiv = document.getElementById('result');
+    const rphContentDiv = document.getElementById('rphContent');
+    const loadingDiv = document.getElementById('loading');
+    const errorMessageDiv = document.getElementById('errorMessage');
+    const errorTextSpan = document.getElementById('errorText');
+
+    let currentFormData = null;
+    let lastGeneratedActivities = null;
+
+    function populateMingguDropdown(selectedTahun) {
+        if (!mingguSelect) return;
+        mingguSelect.innerHTML = ''; 
+
+        if (selectedTahun && SEMUA_DATA[selectedTahun]) {
+            // Menggunakan data RPT untuk menentukan minggu yang ada
+            const rptData = SEMUA_DATA[selectedTahun].RPT_DATA;
+            Object.keys(rptData).forEach(mingguNum => {
+                const option = document.createElement('option');
+                option.value = mingguNum;
+                option.textContent = `Minggu ${mingguNum}`;
+                mingguSelect.appendChild(option);
+            });
+        }
     }
+    
+    tahunSelect.addEventListener('change', (e) => {
+        populateMingguDropdown(e.target.value);
+    });
 
-    return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia. Reka BENTUK TEPAT TUJUH (7) langkah aktiviti pengajaran yang ${complexity} dan mudah difahami.
+    form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+        
+        const selectedTahun = document.getElementById('tahun').value;
+        const selectedMinggu = document.getElementById('minggu').value;
+        const selectedLevel = document.querySelector('input[name="level"]:checked').value;
 
-Topik Pengajaran: "${tajuk}"
-Fokus Kemahiran (Standard Pembelajaran): "${sp}"
+        if (!SEMUA_DATA[selectedTahun] || !SEMUA_DATA[selectedTahun].RPT_DATA[selectedMinggu]) {
+            showError("Data RPH tidak ditemui untuk tahun dan minggu yang dipilih.");
+            return;
+        }
 
-Syarat Paling Penting:
-1. Hasilkan TEPAT 7 langkah pengajaran dalam format senarai bernombor.
-2. WAJIB sertakan SATU aktiviti Pembelajaran Abad Ke-21 (PAK21) dan ringkaskan penerangannya dalam SATU langkah sahaja.
-3. Gunakan Bahasa Melayu standard Malaysia sepenuhnya. Elakkan istilah Indonesia.
-4. Langkah ke-7 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
-5. Jangan sertakan sebarang tajuk atau pengenalan. Berikan senarai aktiviti sahaja.
-${variationInstruction}`;
-};
+        currentFormData = {
+            tahun: selectedTahun,
+            minggu: selectedMinggu,
+            level: selectedLevel
+        };
+        
+        lastGeneratedActivities = null; // Reset aktiviti untuk janaan baru
+        await generateRPH(currentFormData, null);
+    });
 
-// =============================================================================
-// FUNGSI PEMPROSESAN RESPON (KEKAL SAMA)
-// =============================================================================
-const processAIResponse = (responseText) => {
-    if (!responseText) return [];
-    return responseText.split('\\n')
-        .map(line => line.replace(/^\d+\.\s*/, '').trim())
-        .filter(line => line.length > 0)
-        .slice(0, 7);
-};
+    async function generateRPH(formData, previousActivities) {
+        showLoading(true);
+        showError(false);
+        resultDiv.style.display = 'none';
 
-// =============================================================================
-// API ENDPOINT UTAMA (KEKAL SAMA)
-// =============================================================================
-app.post('/api/generate-activities', async (req, res) => {
-    const { level, tajuk, sp } = req.body;
-    const prompt = buildPrompt(level, tajuk, sp);
-
-    const providers = [
-        { name: 'Groq', try: tryGroq },
-        { name: 'Hugging Face', try: tryHuggingFace },
-        { name: 'OpenRouter', try: tryOpenRouter }
-    ];
-
-    for (const provider of providers) {
+        const { tahun, minggu, level } = formData;
+        const rptData = SEMUA_DATA[tahun].RPT_DATA[minggu];
+        
         try {
-            console.log(`Mencuba ${provider.name}...`);
-            const activities = await provider.try(prompt);
-            if (activities && activities.length > 0) {
-                console.log(`${provider.name} berjaya.`);
-                if (activities.length === 7 && !activities[6].toLowerCase().includes("refleksi")) {
-                    activities[6] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
-                }
-                return res.json({ activities, source: provider.name });
+            const response = await fetch('/generate-rph', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    level: level,
+                    tajuk: rptData.tajuk,
+                    sp: rptData.standardPembelajaran,
+                    previousActivities: previousActivities
+                })
+            });
+
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.error || 'Ralat tidak diketahui dari pelayan.');
             }
-            console.log(`${provider.name} tidak mengembalikan kandungan.`);
+
+            const data = await response.json();
+            
+            // Simpan aktiviti yang baru dijana
+            if (Array.isArray(data.activities)) {
+                 lastGeneratedActivities = data.activities;
+            } else {
+                // Jika format tidak dijangka, elakkan ralat
+                lastGeneratedActivities = [];
+                console.error("Format 'activities' yang diterima bukan array:", data.activities);
+            }
+           
+
+            const fullRphData = {
+                ...rptData,
+                rangkaAktiviti: lastGeneratedActivities,
+                sumberAi: data.source || 'Tidak diketahui'
+            };
+
+            const rphHtml = formatRPHContent(fullRphData);
+            rphContentDiv.innerHTML = rphHtml;
+            resultDiv.style.display = 'block';
+
         } catch (error) {
-            console.error(`Ralat pada ${provider.name}:`, error.message);
+            showError(error.message);
+        } finally {
+            showLoading(false);
         }
     }
 
-    console.log("Semua penyedia AI gagal. Menghantar mesej ralat.");
-    res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi pada masa ini. Sila cuba lagi sebentar lagi.' });
-});
+    function formatRPHContent(rphData) {
+        // PERUBAHAN DI SINI: Menambah nombor secara manual (index + 1)
+        const aktivitiHtml = rphData.rangkaAktiviti
+            .map((item, index) => `<li>${index + 1}. ${item}</li>`)
+            .join('');
 
-// =============================================================================
-// FUNGSI PANGGILAN API (KEKAL SAMA)
-// =============================================================================
+        return `
+            <div class="rph-header">
+                <h2>Rancangan Pengajaran Harian (RPH)</h2>
+                <p>Tahun ${currentFormData.tahun} | Minggu ${currentFormData.minggu}</p>
+            </div>
+            <table class="rph-table">
+                <tr><td><strong>TEMA</strong></td><td>${rphData.tema}</td></tr>
+                <tr><td><strong>UNIT</strong></td><td>${rphData.unit}</td></tr>
+                <tr><td><strong>TAJUK</strong></td><td>${rphData.tajuk}</td></tr>
+                <tr><td><strong>STANDARD KANDUNGAN</strong></td><td>${rphData.standardKandungan}</td></tr>
+                <tr><td><strong>STANDARD PEMBELAJARAN</strong></td><td>${rphData.standardPembelajaran}</td></tr>
+            </table>
+            <h3>Rangka Aktiviti Pengajaran</h3>
+            <ol class="activity-list">${aktivitiHtml}</ol>
+            <div class="ai-notes">
+                <h4>Nota Penjanaan AI</h4>
+                <p>Dijana menggunakan: <strong>${rphData.sumberAi}</strong> | Aras Kerumitan: <strong>${currentFormData.level}</strong></p>
+            </div>
+        `;
+    }
 
-async function tryGroq(prompt) {
-    const apiKey = process.env.GROQ_API_KEY;
-    if (!apiKey) throw new Error('GROQ_API_KEY tidak ditetapkan');
-    const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: [{ role: 'user', content: prompt }], model: 'llama-3.1-8b-instant' })
-    });
-    if (!response.ok) { const errorBody = await response.json(); throw new Error(`Groq API returned ${response.status}: ${JSON.stringify(errorBody)}`); }
-    const data = await response.json();
-    return processAIResponse(data.choices[0]?.message?.content);
-}
+    window.copyToClipboard = function() {
+        const content = rphContentDiv.innerText || rphContentDiv.textContent;
+        navigator.clipboard.writeText(content).then(() => {
+            alert('Teks RPH telah disalin ke papan klip!');
+        }).catch(err => {
+            console.error('Gagal menyalin teks: ', err);
+        });
+    };
+    
+    window.downloadDOCX = function() {
+        const header = "<html xmlns:o='urn:schemas-microsoft-com:office:office' "+
+            "xmlns:w='urn:schemas-microsoft-com:office:word' "+
+            "xmlns='http://www.w3.org/TR/REC-html40'>"+
+            "<head><meta charset='utf-8'><title>RPH</title></head><body>";
+        const footer = "</body></html>";
+        const sourceHTML = header + rphContentDiv.innerHTML + footer;
+        
+        const source = 'data:application/vnd.ms-word;charset=utf-8,' + encodeURIComponent(sourceHTML);
+        const fileDownload = document.createElement("a");
+        document.body.appendChild(fileDownload);
+        fileDownload.href = source;
+        fileDownload.download = `RPH_Tahun${currentFormData.tahun}_Minggu${currentFormData.minggu}.doc`;
+        fileDownload.click();
+        document.body.removeChild(fileDownload);
+    };
+    
+    window.generateAgain = async function() {
+        if (currentFormData) {
+            // Hantar aktiviti lama untuk memastikan janaan baru adalah berbeza
+            await generateRPH(currentFormData, lastGeneratedActivities); 
+        }
+    };
 
-async function tryOpenRouter(prompt) {
-    const apiKey = process.env.OPENROUTER_API_KEY;
-    if (!apiKey) throw new Error('OPENROUTER_API_KEY tidak ditetapkan');
-    const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'HTTP-Referer': 'https://rph-ai-app.onrender.com', 'X-Title': 'RPH AI App' },
-        body: JSON.stringify({ model: 'meta-llama/llama-3.1-8b-instruct', messages: [{ role: 'user', content: prompt }] })
-    });
-    if (!response.ok) { const errorBody = await response.json(); throw new Error(`OpenRouter API returned ${response.status}: ${JSON.stringify(errorBody)}`); }
-    const data = await response.json();
-    return processAIResponse(data.choices[0]?.message?.content);
-}
+    function showLoading(isLoading) {
+        loadingDiv.style.display = isLoading ? 'block' : 'none';
+    }
 
-async function tryHuggingFace(prompt) {
-    const apiKey = process.env.HUGGINGFACE_API_KEY;
-    if (!apiKey) throw new Error('HUGGINGFACE_API_KEY tidak ditetapkan');
-    const response = await fetch(`https://api-inference.huggingface.co/models/distilgpt2`, {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ inputs: prompt, parameters: { max_new_tokens: 512, return_full_text: false } })
-    });
-    if (!response.ok) { const errorBody = await response.text(); throw new Error(`Hugging Face API returned ${response.status}: ${errorBody}`); }
-    const data = await response.json();
-    return processAIResponse(data[0]?.generated_text);
-}
-
-// =============================================================================
-// PENGENDALIAN LALUAN DAN SERVER (KEKAL SAMA)
-// =============================================================================
-
-app.post('/generate-rph', async (req, res) => {
-    const { level, tajuk, sp, previousActivities } = req.body;
-    const prompt = buildPrompt(level, tajuk, sp, previousActivities);
-    const providers = [
-        { name: 'Groq', try: tryGroq },
-        { name: 'OpenRouter', try: tryOpenRouter },
-        { name: 'Hugging Face', try: tryHuggingFace }
-    ];
-    for (const provider of providers) {
-        try {
-            console.log(`Mencuba ${provider.name}...`);
-            const activities = await provider.try(prompt);
-             if (activities && activities.length > 0) {
-                console.log(`${provider.name} berjaya.`);
-                if (activities.length === 7 && !activities[6].toLowerCase().includes("refleksi")) {
-                    activities[6] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
-                }
-                return res.json({ activities, source: provider.name });
-            }
-            console.log(`${provider.name} tidak mengembalikan kandungan.`);
-        } catch (error) {
-            console.error(`Ralat pada ${provider.name}:`, error.message);
+    function showError(message) {
+        if (message) {
+            errorTextSpan.textContent = message;
+            errorMessageDiv.style.display = 'block';
+        } else {
+            errorMessageDiv.style.display = 'none';
         }
     }
-     res.status(500).json({ error: "Semua penyedia AI gagal. Sila cuba sebentar lagi." });
+    
+    // Panggil pada mulanya untuk mengisi dropdown minggu
+    populateMingguDropdown(tahunSelect.value);
 });
-
-// DIUBAH SUAI: Menghantar fail index.html dari dalam folder 'public'
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-app.listen(PORT, () => {
-    console.log(`Server sedang berjalan di http://localhost:${PORT}`);
-});
-
