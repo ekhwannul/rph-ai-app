@@ -1,5 +1,5 @@
 // --- LOGIK TELAH DIPERBAIKI ---
-// VERSI TERKINI: Menambah pengesahan untuk butang radio 'Aras Kerumitan' bagi mengelakkan ralat 'null'.
+// VERSI TERKINI: Membetulkan nama pemilih 'querySelector' daripada 'level' kepada 'aras' agar sepadan dengan HTML.
 
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof SEMUA_DATA === 'undefined') {
@@ -43,13 +43,13 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const selectedTahun = document.getElementById('tahun').value;
         const selectedMinggu = document.getElementById('minggu').value;
-        const selectedLevelElement = document.querySelector('input[name="level"]:checked');
-
         // === PERUBAHAN & PEMBETULAN DI SINI ===
-        // 1. Semak jika pengguna telah memilih aras kerumitan
+        // Nama ditukar daripada 'level' kepada 'aras' untuk sepadan dengan index.html
+        const selectedLevelElement = document.querySelector('input[name="aras"]:checked');
+
         if (!selectedLevelElement) {
             showError("Sila pilih satu Aras Kerumitan Aktiviti sebelum menjana RPH.");
-            return; // Hentikan fungsi jika tiada pilihan dibuat
+            return; 
         }
         const selectedLevel = selectedLevelElement.value;
         // === AKHIR PERUBAHAN ===
