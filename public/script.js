@@ -138,7 +138,7 @@ function generateSpecialWeekContent(rptData) { return `<div style="text-align: c
 
 async function getAIActivities(level, tajuk, sp, previousActivities) {
     try {
-        const response = await fetch('/generate-rph', {
+        const response = await fetch('/api/generate-activities', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ level, tajuk, sp, previousActivities })
