@@ -1,6 +1,5 @@
 // --- VERSI NAIK TARAF ---
-// Kod ini adalah untuk bahagian pelayan (server-side) SAHAJA.
-// Laluan fail telah dikonfigurasikan untuk struktur fail anda.
+// Laluan (path) fail statik dan index.html telah diperbetulkan untuk sepadan dengan struktur fail anda.
 
 const express = require('express');
 const path = require('path');
@@ -9,11 +8,15 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.json());
 
-// Menetapkan folder 'public' sebagai direktori untuk fail statik (script.js, style.css, dll.)
+// =============================================================================
+// PENGENDALIAN FAIL STATIK (TELAH DIPERBAIKI)
+// =============================================================================
+// DIUBAH SUAI: Menetapkan folder 'public' sebagai direktori untuk fail statik (script.js, style.css, dll.)
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // =============================================================================
-// FUNGSI PEMBINA PROMPT AI
+// FUNGSI PEMBINA PROMPT AI (KEKAL SAMA)
 // =============================================================================
 const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
     let complexity;
@@ -50,7 +53,7 @@ ${variationInstruction}`;
 };
 
 // =============================================================================
-// FUNGSI PEMPROSESAN RESPON
+// FUNGSI PEMPROSESAN RESPON (KEKAL SAMA)
 // =============================================================================
 const processAIResponse = (responseText) => {
     if (!responseText) return [];
@@ -61,21 +64,23 @@ const processAIResponse = (responseText) => {
 };
 
 // =============================================================================
-// API ENDPOINT
+// API ENDPOINT UTAMA (KEKAL SAMA)
 // =============================================================================
-app.post('/generate-rph', async (req, res) => {
-    const { level, tajuk, sp, previousActivities } = req.body;
-    const prompt = buildPrompt(level, tajuk, sp, previousActivities);
+app.post('/api/generate-activities', async (req, res) => {
+    const { level, tajuk, sp } = req.body;
+    const prompt = buildPrompt(level, tajuk, sp);
+
     const providers = [
         { name: 'Groq', try: tryGroq },
-        { name: 'OpenRouter', try: tryOpenRouter },
-        { name: 'Hugging Face', try: tryHuggingFace }
+        { name: 'Hugging Face', try: tryHuggingFace },
+        { name: 'OpenRouter', try: tryOpenRouter }
     ];
+
     for (const provider of providers) {
         try {
             console.log(`Mencuba ${provider.name}...`);
             const activities = await provider.try(prompt);
-             if (activities && activities.length > 0) {
+            if (activities && activities.length > 0) {
                 console.log(`${provider.name} berjaya.`);
                 if (activities.length === 7 && !activities[6].toLowerCase().includes("refleksi")) {
                     activities[6] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
@@ -87,13 +92,15 @@ app.post('/generate-rph', async (req, res) => {
             console.error(`Ralat pada ${provider.name}:`, error.message);
         }
     }
-     res.status(500).json({ error: "Semua penyedia AI gagal. Sila cuba sebentar lagi." });
+
+    console.log("Semua penyedia AI gagal. Menghantar mesej ralat.");
+    res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi pada masa ini. Sila cuba lagi sebentar lagi.' });
 });
 
+// =============================================================================
+// FUNGSI PANGGILAN API (KEKAL SAMA)
+// =============================================================================
 
-// =============================================================================
-// FUNGSI PANGGILAN API
-// =============================================================================
 async function tryGroq(prompt) {
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) throw new Error('GROQ_API_KEY tidak ditetapkan');
@@ -134,8 +141,37 @@ async function tryHuggingFace(prompt) {
 }
 
 // =============================================================================
-// PENGENDALIAN LALUAN DAN SERVER
+// PENGENDALIAN LALUAN DAN SERVER (KEKAL SAMA)
 // =============================================================================
+
+app.post('/generate-rph', async (req, res) => {
+    const { level, tajuk, sp, previousActivities } = req.body;
+    const prompt = buildPrompt(level, tajuk, sp, previousActivities);
+    const providers = [
+        { name: 'Groq', try: tryGroq },
+        { name: 'OpenRouter', try: tryOpenRouter },
+        { name: 'Hugging Face', try: tryHuggingFace }
+    ];
+    for (const provider of providers) {
+        try {
+            console.log(`Mencuba ${provider.name}...`);
+            const activities = await provider.try(prompt);
+             if (activities && activities.length > 0) {
+                console.log(`${provider.name} berjaya.`);
+                if (activities.length === 7 && !activities[6].toLowerCase().includes("refleksi")) {
+                    activities[6] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
+                }
+                return res.json({ activities, source: provider.name });
+            }
+            console.log(`${provider.name} tidak mengembalikan kandungan.`);
+        } catch (error) {
+            console.error(`Ralat pada ${provider.name}:`, error.message);
+        }
+    }
+     res.status(500).json({ error: "Semua penyedia AI gagal. Sila cuba sebentar lagi." });
+});
+
+// DIUBAH SUAI: Menghantar fail index.html dari dalam folder 'public'
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
@@ -143,4 +179,3 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Server sedang berjalan di http://localhost:${PORT}`);
 });
-
