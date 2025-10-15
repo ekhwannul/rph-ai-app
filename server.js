@@ -34,9 +34,46 @@ const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
 Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
-Pastikan output adalah dalam format senarai bernombor sahaja (1., 2., 3., ...). Jangan tambah tajuk, pengenalan, atau penutup. Hanya senarai aktiviti.
+Syarat Paling Penting:
+1. Wajib hasilkan TEPAT 7 langkah pengajaran dalam format senarai bernombor.
+2. Jika menggunakan aktiviti PAK21, ringkaskan penerangannya ke dalam SATU langkah sahaja.
+3. Gunakan Bahasa Melayu standard Malaysia sepenuhnya. Elakkan istilah Indonesia.
+4. Langkah ke-7 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
+5. Jangan sertakan sebarang tajuk atau pengenalan. Berikan senarai aktiviti sahaja.
+6. Pastikan output adalah dalam format senarai bernombor sahaja (1., 2., 3., ...). Jangan tambah tajuk, pengenalan, atau penutup. Hanya senarai aktiviti.
 ${variationInstruction}`;
 };
+
+// API Endpoint Utama
+app.post('/api/generate-activities', async (req, res) => {
+    const { level, tajuk, sp } = req.body;
+    const prompt = buildPrompt(level, tajuk, sp);
+
+    const providers = [
+        { name: 'Groq', try: tryGroq },
+    ];
+
+    for (const provider of providers) {
+        try {
+            console.log(`Mencuba ${provider.name}...`);
+            const activities = await provider.try(prompt);
+            if (activities && activities.length > 0) {
+                console.log(`${provider.name} berjaya.`);
+                if (activities.length === 5 && !activities[4].includes("refleksi")) {
+                    activities[4] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
+                }
+                return res.json({ activities, source: provider.name });
+            }
+            console.log(`${provider.name} tidak mengembalikan kandungan.`);
+        } catch (error) {
+            // Log ralat yang lebih terperinci
+            console.error(`Ralat pada ${provider.name}:`, error.message);
+        }
+    }
+
+    console.log("Semua penyedia AI gagal. Menghantar mesej ralat.");
+    res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi pada masa ini. Sila cuba lagi sebentar lagi.' });
+});
 
 // Fungsi untuk memproses respons AI (Tidak Diubah)
 function processAIResponse(content) {
