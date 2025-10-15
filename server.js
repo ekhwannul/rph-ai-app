@@ -42,21 +42,16 @@ ${variationInstruction}`;
 // Fungsi untuk memproses jawapan dari API
 const processAIResponse = (responseText) => {
     if (!responseText) return [];
-    const activities = responseText.split('\n')
+    return responseText.split('\n')
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
         .filter(line => line.length > 0)
-        .slice(0, 5);
-    
-    if (activities.length > 0 && !activities[activities.length - 1].includes("refleksi")) {
-         activities[activities.length - 1] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
-    }
-    return activities;
+        .slice(0, 5); // Potong paksa untuk memastikan hanya 5 langkah diambil
 };
 
 // API Endpoint Utama
 app.post('/api/generate-activities', async (req, res) => {
-    const { level, tajuk, sp, previousActivities } = req.body;
-    const prompt = buildPrompt(level, tajuk, sp, previousActivities);
+    const { level, tajuk, sp } = req.body;
+    const prompt = buildPrompt(level, tajuk, sp);
 
     const providers = [
         { name: 'Groq', try: tryGroq },
@@ -70,83 +65,153 @@ app.post('/api/generate-activities', async (req, res) => {
             const activities = await provider.try(prompt);
             if (activities && activities.length > 0) {
                 console.log(`${provider.name} berjaya.`);
+                if (activities.length === 5 && !activities[4].includes("refleksi")) {
+                    activities[4] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
+                }
                 return res.json({ activities, source: provider.name });
             }
+            console.log(`${provider.name} tidak mengembalikan kandungan.`);
         } catch (error) {
+            // Log ralat yang lebih terperinci
             console.error(`Ralat pada ${provider.name}:`, error.message);
         }
     }
-    
-    console.log("Semua penyedia AI gagal. Menggunakan fallback statik...");
-    const staticActivities = [ "Maaf, semua perkhidmatan AI sedang sibuk. Sila cuba jana semula sebentar lagi." ];
-    res.json({ activities: staticActivities, source: 'Fallback Gagal' });
+
+    console.log("Semua penyedia AI gagal. Menghantar mesej ralat.");
+    res.status(500).json({ error: 'Semua perkhidmatan AI gagal dihubungi pada masa ini. Sila cuba lagi sebentar lagi.' });
 });
 
-// --- Fungsi untuk setiap penyedia AI ---
+// -----------------------------------------------------------------------------
+// FUNGSI PANGGILAN API UNTUK SETIAP PENYEDIA AI
+// -----------------------------------------------------------------------------
 
+// 1. Panggilan ke Groq (Pilihan Utama)
 async function tryGroq(prompt) {
     const apiKey = process.env.GROQ_API_KEY;
     if (!apiKey) throw new Error('GROQ_API_KEY tidak ditetapkan');
+
     const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
-        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+        },
         body: JSON.stringify({
             messages: [{ role: 'user', content: prompt }],
-            model: 'llama-3.1-8b-instant'
+            model: 'llama-3.1-8b-instant' // Model pantas dan cekap
         })
     });
+
     if (!response.ok) {
         const errorBody = await response.json();
         throw new Error(`Groq API returned ${response.status}: ${JSON.stringify(errorBody)}`);
     }
+
     const data = await response.json();
     const content = data.choices[0]?.message?.content;
     return processAIResponse(content);
 }
 
-async function tryHuggingFace(prompt) {
-    const apiKey = process.env.HUGGINGFACE_API_KEY;
-    if (!apiKey) throw new Error('HUGGINGFACE_API_KEY tidak ditetapkan');
-    const response = await fetch('https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2', {
-        method: 'POST',
-        headers: { 'Authorization': `Bearer ${apiKey}`, 'Content-Type': 'application/json' },
-        body: JSON.stringify({ inputs: prompt, parameters: { max_new_tokens: 300, return_full_text: false } })
-    });
-    if (!response.ok) {
-        const errorBody = await response.json();
-        throw new Error(`Hugging Face API returned ${response.status}: ${JSON.stringify(errorBody)}`);
-    }
-    const data = await response.json();
-    const content = data[0]?.generated_text; 
-    return processAIResponse(content);
-}
-
+// 2. Panggilan ke OpenRouter (Sandaran Pertama)
 async function tryOpenRouter(prompt) {
     const apiKey = process.env.OPENROUTER_API_KEY;
     if (!apiKey) throw new Error('OPENROUTER_API_KEY tidak ditetapkan');
+
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
-        headers: { 
-            'Authorization': `Bearer ${apiKey}`, 
-            'Content-Type': 'application/json',
-            'HTTP-Referer': 'https://rph-ai-app.onrender.com', 
-            'X-Title': 'RPH AI App'
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-            messages: [{ role: 'user', content: prompt }],
-            model: 'google/gemma-7b-it:free' 
+            model: "meta-llama/llama-3.1-8b-instruct", // Model yang sama untuk konsistensi
+            messages: [{ role: 'user', content: prompt }]
         })
     });
+
     if (!response.ok) {
         const errorBody = await response.json();
         throw new Error(`OpenRouter API returned ${response.status}: ${JSON.stringify(errorBody)}`);
     }
+
     const data = await response.json();
     const content = data.choices[0]?.message?.content;
     return processAIResponse(content);
 }
 
-app.listen(PORT, () => {
-    console.log(`Server sedang berjalan di port ${PORT}`);
+// 3. Panggilan ke Hugging Face (Sandaran Kedua)
+async function tryHuggingFace(prompt) {
+    const apiKey = process.env.HUGGINGFACE_API_KEY;
+    if (!apiKey) throw new Error('HUGGINGFACE_API_KEY tidak ditetapkan');
+    
+    // Nota: API percuma Hugging Face mungkin mengalami "cold start" (permintaan pertama perlahan).
+    const modelId = 'meta-llama/Meta-Llama-3.1-8B-Instruct';
+    const response = await fetch(`https://api-inference.huggingface.co/models/${modelId}`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer ${apiKey}`,
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            inputs: prompt,
+            parameters: {
+                return_full_text: false, // Hanya pulangkan jawapan yang dijana
+                max_new_tokens: 2048
+            }
+        })
+    });
+
+    if (!response.ok) {
+        const errorBody = await response.text();
+        throw new Error(`Hugging Face API returned ${response.status}: ${errorBody}`);
+    }
+
+    const data = await response.json();
+    const content = data[0]?.generated_text;
+    return processAIResponse(content);
+}
+
+// -----------------------------------------------------------------------------
+// ROUTE UTAMA APLIKASI
+// -----------------------------------------------------------------------------
+
+app.post('/generate-rph', async (req, res) => {
+    const { level, tajuk, sp, previousActivities } = req.body;
+    const prompt = buildPrompt(level, tajuk, sp, previousActivities);
+
+    // Rantaian sandaran: Groq -> OpenRouter -> Hugging Face
+    try {
+        console.log("Mencuba Groq (Pilihan 1)...");
+        const result = await tryGroq(prompt);
+        res.json(result);
+    } catch (e1) {
+        console.error("Ralat pada Groq:", e1.message);
+        console.log("Groq gagal. Mencuba OpenRouter (Pilihan 2)...");
+        try {
+            const result = await tryOpenRouter(prompt);
+            res.json(result);
+        } catch (e2) {
+            console.error("Ralat pada OpenRouter:", e2.message);
+            console.log("OpenRouter gagal. Mencuba Hugging Face (Pilihan 3)...");
+            try {
+                const result = await tryHuggingFace(prompt);
+                res.json(result);
+            } catch (e3) {
+                console.error("Ralat pada Hugging Face:", e3.message);
+                res.status(500).json({ error: "Semua penyedia AI (Groq, OpenRouter, Hugging Face) gagal. Sila cuba sebentar lagi." });
+            }
+        }
+    }
 });
 
+// -----------------------------------------------------------------------------
+// PENGENDALIAN LALUAN DAN SERVER
+// -----------------------------------------------------------------------------
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
+app.listen(PORT, () => {
+    console.log(`Server sedang berjalan di http://localhost:${PORT}`);
+});
