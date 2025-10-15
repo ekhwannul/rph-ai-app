@@ -81,22 +81,43 @@ app.post('/api/generate-activities', async (req, res) => {
 });
 
 // --- Fungsi untuk setiap penyedia AI ---
-
 async function tryGoogleGemini(prompt) {
     const apiKey = process.env.GEMINI_API_KEY;
+    const projectId = process.env.GOOGLE_CLOUD_PROJECT_ID; // Pembolehubah baharu
+
     if (!apiKey) throw new Error('GEMINI_API_KEY tidak ditetapkan');
-    const url = `https://generativelanguage.googleapis.com/v1/models/gemini-pro:generateContent?key=${apiKey}`;
+    if (!projectId) throw new Error('GOOGLE_CLOUD_PROJECT_ID tidak ditetapkan di persekitaran Render');
+
+    // URL endpoint untuk Vertex AI
+    const url = `https://us-central1-aiplatform.googleapis.com/v1/projects/${projectId}/locations/us-central1/publishers/google/models/gemini-pro:generateContent`;
+
     const response = await fetch(url, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+        headers: {
+            'Authorization': `Bearer ${apiKey}`, // Hantar sebagai Authorization Header
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            contents: [{
+                parts: [{
+                    text: prompt
+                }]
+            }]
+        })
     });
+
     if (!response.ok) {
         const errorBody = await response.json();
-        throw new Error(`Google Gemini API returned ${response.status}: ${JSON.stringify(errorBody)}`);
+        throw new Error(`Google Vertex AI API returned ${response.status}: ${JSON.stringify(errorBody)}`);
     }
+
     const data = await response.json();
+    // Struktur respons Vertex AI sedikit berbeza
     const content = data.candidates[0]?.content?.parts[0]?.text;
+    if (!content) {
+        console.error("Respons tidak lengkap dari Vertex AI:", JSON.stringify(data, null, 2));
+        throw new Error("Gagal mengekstrak kandungan daripada respons Vertex AI.");
+    }
     return processAIResponse(content);
 }
 
