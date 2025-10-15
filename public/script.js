@@ -1,5 +1,9 @@
-// --- LOGIK TELAH DIPERBAIKI ---
-// VERSI TERKINI: Membetulkan nama pemilih 'querySelector' daripada 'level' kepada 'aras' agar sepadan dengan HTML.
+// --- VERSI AKHIR & STABIL ---
+// Menggabungkan kestabilan kod lama dengan semua pembetulan baharu:
+// 1. Format penomboran (1., 2., 3., ...) telah ditambah.
+// 2. Ralat pemilih 'input[name="aras"]' telah diperbaiki.
+// 3. Pengesahan untuk memastikan Aras Kerumitan dipilih telah ditambah.
+// 4. Kod diselaraskan untuk berfungsi dengan server.js terkini.
 
 document.addEventListener('DOMContentLoaded', function () {
     if (typeof SEMUA_DATA === 'undefined') {
@@ -24,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
         mingguSelect.innerHTML = ''; 
 
         if (selectedTahun && SEMUA_DATA[selectedTahun]) {
+            // Menggunakan data RPT untuk mengisi minggu, lebih tepat daripada gelung statik
             const rptData = SEMUA_DATA[selectedTahun].RPT_DATA;
             Object.keys(rptData).forEach(mingguNum => {
                 const option = document.createElement('option');
@@ -43,17 +48,16 @@ document.addEventListener('DOMContentLoaded', function () {
         
         const selectedTahun = document.getElementById('tahun').value;
         const selectedMinggu = document.getElementById('minggu').value;
-        // === PERUBAHAN & PEMBETULAN DI SINI ===
-        // Nama ditukar daripada 'level' kepada 'aras' untuk sepadan dengan index.html
         const selectedLevelElement = document.querySelector('input[name="aras"]:checked');
 
+        // Pengesahan: Pastikan aras kerumitan dipilih
         if (!selectedLevelElement) {
             showError("Sila pilih satu Aras Kerumitan Aktiviti sebelum menjana RPH.");
             return; 
         }
         const selectedLevel = selectedLevelElement.value;
-        // === AKHIR PERUBAHAN ===
 
+        // Pengesahan: Pastikan data untuk tahun dan minggu wujud
         if (!SEMUA_DATA[selectedTahun] || !SEMUA_DATA[selectedTahun].RPT_DATA[selectedMinggu]) {
             showError("Data RPH tidak ditemui untuk tahun dan minggu yang dipilih.");
             return;
@@ -78,6 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const rptData = SEMUA_DATA[tahun].RPT_DATA[minggu];
         
         try {
+            // Memanggil endpoint /generate-rph yang betul
             const response = await fetch('/generate-rph', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -121,6 +126,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function formatRPHContent(rphData) {
+        // Logik penomboran yang anda inginkan
         const aktivitiHtml = rphData.rangkaAktiviti
             .map((item, index) => `<li>${index + 1}. ${item}</li>`)
             .join('');
@@ -152,6 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
             alert('Teks RPH telah disalin ke papan klip!');
         }).catch(err => {
             console.error('Gagal menyalin teks: ', err);
+            alert('Gagal menyalin. Sila cuba secara manual.');
         });
     };
     
@@ -191,6 +198,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
     
+    // Panggil pada mulanya untuk mengisi dropdown minggu
     populateMingguDropdown(tahunSelect.value);
 });
 
