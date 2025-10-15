@@ -15,14 +15,14 @@ const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
     let complexity;
     switch (level) {
         case 'Tinggi': complexity = "sangat kreatif dan berpusatkan murid menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
-        case 'Sederhana': complexity = "melibatkan perbincangan dan interaksi antara murid"; break;
-        default: complexity = "asas dan berpandukan arahan guru"; break;
+        case 'Sederhana': complexity = "melibatkan perbincangan dan interaksi antara murid menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
+        default: complexity = "asas dan berpandukan arahan guru menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
     }
 
     let variationInstruction = '';
     if (previousActivities && previousActivities.length > 0) {
-        const previousList = previousActivities.map(act => `- ${act}`).join('\n');
-        variationInstruction = `\nSyarat Tambahan: JANGAN ULANGI aktiviti terdahulu di bawah. WAJIB hasilkan set aktiviti dengan aktiviti PAK21 yang baharu dan berbeza setiap kali janaan.\nAktiviti Terdahulu:\n${previousList}`;
+        const previousList = previousActivities.map(act => `- ${act}`).join('\\n');
+        variationInstruction = `\\nSyarat Tambahan: JANGAN ULANGI aktiviti terdahulu di bawah. WAJIB hasilkan set aktiviti dengan aktiviti PAK21 yang baharu dan berbeza setiap kali janaan.\\nAktiviti Terdahulu:\\n${previousList}`;
     }
 
     return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia. Reka BENTUK TEPAT TUJUH (7) langkah aktiviti pengajaran yang ${complexity} dan mudah difahami.
@@ -32,7 +32,7 @@ Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
 Syarat Paling Penting:
 1. Hasilkan TEPAT 7 langkah pengajaran dalam format senarai bernombor.
-2. Jika menggunakan aktiviti PAK21, ringkaskan penerangannya ke dalam SATU langkah sahaja.
+2. WAJIB sertakan SATU aktiviti Pembelajaran Abad Ke-21 (PAK21) dan ringkaskan penerangannya dalam SATU langkah sahaja.
 3. Gunakan Bahasa Melayu standard Malaysia sepenuhnya. Elakkan istilah Indonesia.
 4. Langkah ke-7 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
 5. Jangan sertakan sebarang tajuk atau pengenalan. Berikan senarai aktiviti sahaja.
@@ -45,7 +45,7 @@ const processAIResponse = (responseText) => {
     return responseText.split('\n')
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
         .filter(line => line.length > 0)
-        .slice(0, 5); // Potong paksa untuk memastikan hanya 5 langkah diambil
+        .slice(0, 5); // Potong paksa untuk memastikan hanya 7 langkah diambil
 };
 
 // API Endpoint Utama
