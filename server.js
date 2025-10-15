@@ -143,31 +143,34 @@ async function tryOpenRouter(prompt) {
 async function tryHuggingFace(prompt) {
     const apiKey = process.env.HUGGINGFACE_API_KEY;
     if (!apiKey) throw new Error('HUGGINGFACE_API_KEY tidak ditetapkan');
+
+    const modelId = 'mistralai/Mistral-7B-Instruct-v0.2';
     
-    // Nota: API percuma Hugging Face mungkin mengalami "cold start" (permintaan pertama perlahan).
-    const modelId = 'meta-llama/Meta-Llama-3.1-8B-Instruct';
     const response = await fetch(`https://api-inference.huggingface.co/models/${modelId}`, {
         method: 'POST',
-        headers: {
-            'Authorization': `Bearer ${apiKey}`,
-            'Content-Type': 'application/json'
+        headers: { 
+            'Authorization': `Bearer ${apiKey}`, 
+            'Content-Type': 'application/json' 
         },
-        body: JSON.stringify({
-            inputs: prompt,
-            parameters: {
-                return_full_text: false, // Hanya pulangkan jawapan yang dijana
-                max_new_tokens: 2048
-            }
+        body: JSON.stringify({ 
+            inputs: prompt, 
+            parameters: { max_new_tokens: 2048, return_full_text: false } 
         })
     });
 
     if (!response.ok) {
-        const errorBody = await response.text();
+        // PERUBAHAN DI SINI: Baca ralat sebagai .text() dan bukannya .json()
+        const errorBody = await response.text(); 
         throw new Error(`Hugging Face API returned ${response.status}: ${errorBody}`);
     }
 
     const data = await response.json();
     const content = data[0]?.generated_text;
+    
+    if (!content || content.trim() === '') {
+        throw new Error("Hugging Face mengembalikan kandungan kosong.");
+    }
+    
     return processAIResponse(content);
 }
 
