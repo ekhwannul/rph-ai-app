@@ -260,10 +260,10 @@ function renderRPH(rphData, formData) {
         <h3>🔄 Rangka Pengajaran</h3>
         <div class="teaching-framework">
             <div class="framework-section">
-                <h4>Set Induksi (5 minit)</h4><ol>${rphData.rangkaSetInduksi.map((item, index) => `<li>${index + 1}. ${item}</li>`).join('')}</ol>
+                <h4>Set Induksi (5 minit)</h4><ol>${rphData.rangkaSetInduksi.map(item => `<li>${item}</li>`).join('')}</ol>
             </div>
             <div class="framework-section">
-                <h4>Aktiviti (55 minit)</h4><ol>${rphData.rangkaAktiviti.map(item => `<li>${item}</li>`).join('')}</ol>
+                <h4>Aktiviti (55 minit)</h4><ol>${rphData.rangkaAktiviti.map((item, index) => `<li>${index + 1}. ${item}</li>`).join('')}</ol>
             </div>
         </div>
         <h3>📦 Bahan Bantu Mengajar</h3><p>${rphData.bahanBBM}</p>
