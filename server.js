@@ -14,9 +14,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
     let complexity;
     switch (level) {
-        case 'Tinggi': complexity = "sangat kreatif dan berpusatkan murid menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
-        case 'Sederhana': complexity = "melibatkan perbincangan dan interaksi antara murid menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
-        default: complexity = "asas dan berpandukan arahan guru menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
+        case 'Tinggi': complexity = "sangat kreatif dan berpusatkan murid, menggunakan satu aktiviti PAK21 yang kompleks dan berimpak tinggi seperti 'Simulasi' atau 'Pembentangan Kumpulan Kreatif'"; break;
+        case 'Sederhana': complexity = "melibatkan perbincangan dan interaksi antara murid, menggunakan satu aktiviti PAK21 yang kolaboratif seperti 'Round Table' atau 'Gallery Walk'"; break;
+        default: complexity = "asas dan berpandukan arahan guru, tetapi WAJIB menyertakan satu aktiviti PAK21 yang mudah dan berstruktur seperti 'Think-Pair-Share' atau 'Peta Minda'"; break;
     }
 
     let variationInstruction = '';
