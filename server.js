@@ -10,13 +10,53 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Fungsi untuk membina prompt AI
+// =============================================================================
+// PANGKALAN DATA PENGETAHUAN AI (AKTIVITI PAK21)
+// =============================================================================
+const pak21Activities = {
+    Asas: [
+        'Fan-N-Pick', 'Find-Someone-Who', 'Formations', 'Inside-Outside Circle',
+        'Kinesthetic Symbols', 'Line Ups', 'Mendeklamasikan Sajak atau Menyanyikan Lagu',
+        'Mix-Freeze-Group', 'Mix-N-Match', 'Rally Robin', 'Rally Table',
+        'Round Robin', 'Round Table', 'Same-Different', 'Showdown',
+        'Spin-N-Think', 'Talking Chips', 'Team Interview', 'Team Project',
+        'Team Word-Web', 'The Yarn Yarn', 'Think-Pair-Share', 'Timed Pair Share'
+    ],
+    Sederhana: [
+        'Find the Fib / Guess the Fib', 'Gallery Tour', 'Gallery Walk', 'Match-Mine',
+        'Paraphrase Passport', 'Peta i-Think', 'Roam the Room', 'Rotating Review',
+        'Simultaneous Round Table', 'Stir-The-Class', 'Team Stand-N-Share',
+        'Three Stray, One Stay', 'Three-Step Interview', 'Value Lines',
+        'Who Am I?', 'Windows Pane'
+    ],
+    Tinggi: [
+        'Hot Seat', 'Lyrical Lessons', 'Role Play', 'Sages Share',
+        'Team Statements', 'Trade-A-Problem', 'Traveling File', 'Two-Box Induction',
+        'Simulasi', 'Pembentangan Kumpulan Kreatif' // Aktiviti asal dikekalkan
+    ]
+};
+
+// =============================================================================
+// FUNGSI PEMBINA PROMPT AI
+// =============================================================================
 const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
     let complexity;
+    let chosenActivity;
+
+    // === PERUBAHAN DI SINI: Logik Pemilihan Aktiviti Rawak ===
     switch (level) {
-        case 'Tinggi': complexity = "sangat kreatif dan berpusatkan murid, menggunakan satu aktiviti PAK21 yang kompleks dan berimpak tinggi seperti 'Simulasi' atau 'Pembentangan Kumpulan Kreatif'"; break;
-        case 'Sederhana': complexity = "melibatkan perbincangan dan interaksi antara murid, menggunakan satu aktiviti PAK21 yang kolaboratif seperti 'Round Table' atau 'Gallery Walk'"; break;
-        default: complexity = "asas dan berpandukan arahan guru, tetapi WAJIB menyertakan satu aktiviti PAK21 yang mudah dan berstruktur seperti 'Think-Pair-Share' atau 'Peta Minda'"; break;
+        case 'Tinggi':
+            chosenActivity = pak21Activities.Tinggi[Math.floor(Math.random() * pak21Activities.Tinggi.length)];
+            complexity = `sangat kreatif dan berpusatkan murid, menggunakan satu aktiviti PAK21 yang kompleks dan berimpak tinggi seperti '${chosenActivity}'`;
+            break;
+        case 'Sederhana':
+            chosenActivity = pak21Activities.Sederhana[Math.floor(Math.random() * pak21Activities.Sederhana.length)];
+            complexity = `melibatkan perbincangan dan interaksi antara murid, menggunakan satu aktiviti PAK21 yang kolaboratif seperti '${chosenActivity}'`;
+            break;
+        default: // Asas
+            chosenActivity = pak21Activities.Asas[Math.floor(Math.random() * pak21Activities.Asas.length)];
+            complexity = `asas dan berpandukan arahan guru, tetapi WAJIB menyertakan satu aktiviti PAK21 yang mudah dan berstruktur seperti '${chosenActivity}'`;
+            break;
     }
 
     let variationInstruction = '';
