@@ -30,12 +30,13 @@ const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
 Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
-Syarat Paling Penting:
-1. Hasilkan TEPAT 7 langkah pengajaran dalam format senarai bernombor dengan kemas.(nombor 1, nombor dua dibawah nombor 1, dan seterusnya hingga langkah 7)
+KRITIKAL:
+**SYARAT PALING PENTING:
+1. Hasilkan TEPAT 7 langkah pengajaran dalam format senarai bernombor dengan kemas.
 2. WAJIB sertakan SATU aktiviti Pembelajaran Abad Ke-21 (PAK21) dan ringkaskan penerangannya dalam SATU langkah sahaja.
 3. Gunakan Bahasa Melayu standard Malaysia sepenuhnya. Elakkan istilah Indonesia.
 4. Langkah ke-7 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
-5. Jangan sertakan sebarang tajuk atau pengenalan. Berikan senarai aktiviti sahaja.
+5. Jangan sertakan sebarang tajuk atau pengenalan. Berikan senarai aktiviti sahaja.**
 ${variationInstruction}`;
 };
 
