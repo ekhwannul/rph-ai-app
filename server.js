@@ -46,7 +46,7 @@ const processAIResponse = (responseText) => {
     return responseText.split('\n')
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
         .filter(line => line.length > 0)
-        .slice(0, 5); // Potong paksa untuk memastikan hanya 7 langkah diambil
+        .slice(0, 7); // Potong paksa untuk memastikan hanya 7 langkah diambil
 };
 
 // API Endpoint Utama
@@ -66,7 +66,7 @@ app.post('/api/generate-activities', async (req, res) => {
             const activities = await provider.try(prompt);
             if (activities && activities.length > 0) {
                 console.log(`${provider.name} berjaya.`);
-                if (activities.length === 5 && !activities[4].includes("refleksi")) {
+                if (activities.length === 7 && !activities[6].includes("refleksi")) {
                     activities[4] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
                 }
                 return res.json({ activities, source: provider.name });
