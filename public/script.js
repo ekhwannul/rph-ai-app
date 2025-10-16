@@ -209,8 +209,13 @@ async function generateRPHContent(formData, rptData, bukuTeksData, previousActiv
     }
     setInduksiBukuTeks += `.`;
 
+   // === PERUBAHAN DI SINI ===
     const spTextClean = spTerpilih.replace(/^\d+\.\d+\.\d+\s*/, '').trim();
-    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextClean} berdasarkan aktiviti yang dijalankan.`;
+    // 1. Baris ini ditambah untuk memotong teks sebelum ';'
+    const spTextShortened = spTextClean.split(';')[0].trim();
+    
+    // 2. Teks dipendekkan digunakan di sini
+    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextShortened} berdasarkan aktiviti yang dijalankan.`;
 
     return {
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
@@ -263,7 +268,7 @@ function renderRPH(rphData, formData) {
                 <h4>Set Induksi (5 minit)</h4><ol>${rphData.rangkaSetInduksi.map(item => `<li>${item}</li>`).join('')}</ol>
             </div>
             <div class="framework-section">
-                <h4>Aktiviti (55 minit)</h4><ol>${rphData.rangkaAktiviti.map((item, index) => `<li>${index + 1}. ${item}</li>`).join('')}</ol>
+                <h4>Aktiviti (55 minit)</h4><ol>${rphData.rangkaAktiviti.map((item, index) => `<li>${item}</li>`).join('')}</ol>
             </div>
         </div>
         <h3>📦 Bahan Bantu Mengajar</h3><p>${rphData.bahanBBM}</p>
