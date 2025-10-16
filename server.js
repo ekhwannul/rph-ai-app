@@ -10,21 +10,13 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// =============================================================================
-// FUNGSI PEMBINA PROMPT AI
-// =============================================================================
+// Fungsi untuk membina prompt AI
 const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
     let complexity;
     switch (level) {
-        case 'Tinggi':
-            complexity = "sangat kreatif dan berpusatkan murid, menggunakan satu aktiviti PAK21 yang kompleks dan berimpak tinggi seperti 'Simulasi' atau 'Pembentangan Kumpulan Kreatif'";
-            break;
-        case 'Sederhana':
-            complexity = "melibatkan perbincangan dan interaksi antara murid, menggunakan satu aktiviti PAK21 yang kolaboratif seperti 'Round Table' atau 'Gallery Walk'";
-            break;
-        default: // Asas
-            complexity = "asas dan berpandukan arahan guru, tetapi WAJIB menyertakan satu aktiviti PAK21 yang mudah dan berstruktur seperti 'Think-Pair-Share' atau 'Peta Minda'";
-            break;
+        case 'Tinggi': complexity = "sangat kreatif dan berpusatkan murid menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
+        case 'Sederhana': complexity = "melibatkan perbincangan dan interaksi antara murid menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
+        default: complexity = "asas dan berpandukan arahan guru menggunakan satu aktiviti PAK21 yang diringkaskan"; break;
     }
 
     let variationInstruction = '';
@@ -39,7 +31,7 @@ Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
 
 Syarat Paling Penting:
-1. Hasilkan TEPAT 7 langkah pengajaran dalam format senarai bernombor.
+1. Hasilkan TEPAT 7 langkah pengajaran dalam format senarai bernombor dengan kemas.(nombor 1, nombor dua dibawah nombor 1, dan seterusnya hingga langkah 7)
 2. WAJIB sertakan SATU aktiviti Pembelajaran Abad Ke-21 (PAK21) dan ringkaskan penerangannya dalam SATU langkah sahaja.
 3. Gunakan Bahasa Melayu standard Malaysia sepenuhnya. Elakkan istilah Indonesia.
 4. Langkah ke-7 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
@@ -47,18 +39,15 @@ Syarat Paling Penting:
 ${variationInstruction}`;
 };
 
-// =============================================================================
-// FUNGSI PEMPROSESAN RESPON
-// =============================================================================
+// Fungsi untuk memproses jawapan dari API
 const processAIResponse = (responseText) => {
     if (!responseText) return [];
-    return responseText.split('\\n')
+    return responseText.split('\n')
         .map(line => line.replace(/^\d+\.\s*/, '').trim())
         .filter(line => line.length > 0)
-        .slice(0, 7);
+        .slice(0, 5); // Potong paksa untuk memastikan hanya 7 langkah diambil
 };
 
-// =============================================================================
 // API Endpoint Utama
 app.post('/api/generate-activities', async (req, res) => {
     const { level, tajuk, sp } = req.body;
