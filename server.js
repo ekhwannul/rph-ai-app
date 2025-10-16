@@ -34,7 +34,7 @@ KRITIKAL:
 **SYARAT PALING PENTING:**
 1. Hasilkan TEPAT 5 langkah pengajaran dalam format senarai bernombor.
 2. FORMAT SETIAP LANGKAH: MESTI gabungkan tajuk dan huraian dalam satu ayat. Mulakan dengan tajuk, diikuti titik bertindih (:), dan huraian. Contoh: "1. Pengenalan Topik: Guru menjelaskan topik keselamatan di rumah kepada murid."
-3. WAJIB sertakan SATU aktiviti Pembelajaran Abad Ke-21 (PAK21) dan ringkaskan penerangannya dalam TIGA langkah sahaja.
+3. Hasilkan TEPAT SATU (dan HANYA SATU) aktiviti Pembelajaran Abad Ke-21 (PAK21) dalam keseluruhan 7 langkah ini dan ringkaskan penerangannya dalam TIGA langkah sahaja.
 4. ARAHAN BAHASA (SANGAT PENTING): Gunakan BAHASA MELAYU STANDARD MALAYSIA sepenuhnya. DILARANG KERAS menggunakan bahasa atau istilah Indonesia. Contoh perkataan salah: "jawaban" (sepatutnya "jawapan"), "aktivitas" (sepatutnya "aktiviti").
 5. Langkah ke-5 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
 6. Jangan sertakan sebarang tajuk atau pengenalan. Berikan senarai aktiviti sahaja.
