@@ -67,7 +67,7 @@ app.post('/api/generate-activities', async (req, res) => {
             if (activities && activities.length > 0) {
                 console.log(`${provider.name} berjaya.`);
                 if (activities.length === 7 && !activities[6].includes("refleksi")) {
-                    activities[4] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
+                    activities[7] = "Guru dan murid membuat refleksi tentang pengajaran hari ini.";
                 }
                 return res.json({ activities, source: provider.name });
             }
