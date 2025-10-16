@@ -25,7 +25,7 @@ const buildPrompt = (level, tajuk, sp, previousActivities = null) => {
         variationInstruction = `\\nSyarat Tambahan: JANGAN ULANGI aktiviti terdahulu di bawah. WAJIB hasilkan set aktiviti dengan aktiviti PAK21 yang baharu dan berbeza setiap kali janaan.\\nAktiviti Terdahulu:\\n${previousList}`;
     }
 
-    return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia. Reka BENTUK TEPAT LIMA (5) langkah aktiviti pengajaran yang ${complexity} dan mudah difahami.
+    return `Anda adalah seorang Guru Cemerlang Bahasa Melayu di Malaysia dan HANYA MENGGUNAKAN BAHASA MALAYSIA DALAM PENGAJARAN. Reka BENTUK TEPAT LIMA (5) langkah aktiviti pengajaran yang ${complexity} dan mudah difahami.
 
 Topik Pengajaran: "${tajuk}"
 Fokus Kemahiran (Standard Pembelajaran): "${sp}"
@@ -35,7 +35,7 @@ KRITIKAL:
 1. Hasilkan TEPAT 5 langkah pengajaran dalam format senarai bernombor.
 2. FORMAT SETIAP LANGKAH: MESTI gabungkan tajuk dan huraian dalam satu ayat. Mulakan dengan tajuk, diikuti titik bertindih (:), dan huraian. Contoh: "1. Pengenalan Topik: Guru menjelaskan topik keselamatan di rumah kepada murid."
 3. WAJIB sertakan SATU aktiviti Pembelajaran Abad Ke-21 (PAK21) dan ringkaskan penerangannya dalam TIGA langkah sahaja.
-4. ARAHAN BAHASA (SANGAT PENTING): Gunakan Bahasa Melayu standard Malaysia sepenuhnya. DILARANG KERAS menggunakan istilah Indonesia. Contoh perkataan salah: "kasus" (sepatutnya "kes"), "aktivitas" (sepatutnya "aktiviti").
+4. ARAHAN BAHASA (SANGAT PENTING): Gunakan BAHASA MELAYU STANDARD MALAYSIA sepenuhnya. DILARANG KERAS menggunakan bahasa atau istilah Indonesia. Contoh perkataan salah: "jawaban" (sepatutnya "jawapan"), "aktivitas" (sepatutnya "aktiviti").
 5. Langkah ke-5 WAJIB "Guru dan murid membuat refleksi tentang pengajaran hari ini.".
 6. Jangan sertakan sebarang tajuk atau pengenalan. Berikan senarai aktiviti sahaja.
 ${variationInstruction}`;
