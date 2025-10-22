@@ -200,6 +200,24 @@ async function generateRPHContent(formData, rptData, bukuTeksData, previousActiv
     const infoBukuTeks = pilihInfoBukuTeks(bukuTeksData.mukaSurat, rptData.tajuk, spTerpilih);
     const { mukaSurat: mukaSuratPilihan, aktiviti: aktivitiSpesifik } = infoBukuTeks;
 
+    // Bersihkan standard pembelajaran untuk kriteria kejayaan
+    // Tujuan: buang kod nombor (1.1.3) dan penomboran dalam kurungan, tetapi SIMPAN teks selepas tanda titik koma.
+    // Juga normalisasikan ruang dan huruf pertama ke huruf kecil supaya kriteria nampak konsisten.
+    const cleanSP = (sp) => {
+        if (!sp || typeof sp !== 'string') return '';
+        // 1) Buang kod standard seperti 1.1.3 di awal
+        let out = sp.replace(/^\s*\d+(?:\.\d+)+\s*/, '');
+        // 2) Buang penomboran/label dalam kurungan seperti (i), (ii)
+        out = out.replace(/\([ivx]+\)/gi, '');
+        // 3) Buang simbol titik koma ';' tapi simpan teks selepasnya (hanya gantikan ';' dengan ruang)
+        out = out.replace(/;/g, ' ');
+        // 4) Hapuskan spasi berlebihan dan trim
+        out = out.replace(/\s+/g, ' ').trim();
+        // 5) Pastikan huruf pertama adalah huruf kecil (untuk konsistensi dalam ayat kriteria)
+        out = out.replace(/^[A-ZÀ-Ý]/, (m) => m.toLowerCase());
+        return out;
+    };
+
     const hasilAI = await getAIActivities(formData.kreativiti, rptData.tajuk, spTerpilih, previousActivities);
     const { activities: rangkaAktivitiDinamik, source: sumberAktiviti } = hasilAI;
 
@@ -221,7 +239,7 @@ async function generateRPHContent(formData, rptData, bukuTeksData, previousActiv
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
         standardKandungan: skTerpilih, standardPembelajaran: spTerpilih,
         mukaSurat: mukaSuratPilihan, objektif: objektifDinamik,
-        kriteriaKejayaan: `Murid berjaya sekiranya murid dapat:\nMenyatakan 4 daripada aktiviti ${spTerpilih} yang dipelajari.`,
+        kriteriaKejayaan: `Murid berjaya sekiranya murid dapat:\nMenyatakan 4 daripada aktiviti ${cleanSP(spTerpilih)} yang dipelajari.`,
         rangkaSetInduksi: [`Guru mempamerkan gambar visual berkaitan ${rptData.tajuk} dan murid menyatakan pemerhatian awal.`, setInduksiBukuTeks],
         rangkaAktiviti: rangkaAktivitiDinamik,
         bahanBBM: `Buku teks muka surat ${mukaSuratPilihan}, bahan PAK21, alat multimedia, visual aids berkaitan ${rptData.tajuk}.`,
