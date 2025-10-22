@@ -233,7 +233,8 @@ async function generateRPHContent(formData, rptData, bukuTeksData, previousActiv
     const spTextShortened = spTextClean.split(';')[0].trim();
     
     // 2. Teks dipendekkan digunakan di sini
-    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${skTerpilih} berdasarkan 3 dari 5 aktiviti yang dijalankan.`;
+    // Gunakan fungsi pembersihan untuk memastikan kod nombor dibuang dan huruf pertama adalah huruf kecil
+    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${cleanSP(skTerpilih)} berdasarkan 3 dari 5 aktiviti yang dijalankan.`;
 
     return {
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
