@@ -234,13 +234,13 @@ async function generateRPHContent(formData, rptData, bukuTeksData, previousActiv
     
     // 2. Teks dipendekkan digunakan di sini
     // Gunakan fungsi pembersihan untuk memastikan kod nombor dibuang dan huruf pertama adalah huruf kecil
-    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${cleanSP(skTerpilih)} berdasarkan 3 dari 5 aktiviti yang dijalankan.`;
+    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${cleanSP(skTerpilih)} berdasarkan aktiviti yang dijalankan.`;
 
     return {
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
         standardKandungan: skTerpilih, standardPembelajaran: spTerpilih,
         mukaSurat: mukaSuratPilihan, objektif: objektifDinamik,
-        kriteriaKejayaan: `Murid berjaya sekiranya murid dapat:\nMenyatakan 4 daripada aktiviti ${cleanSP(spTerpilih)} yang dipelajari.`,
+        kriteriaKejayaan: `Murid berjaya sekiranya murid dapat:\nMenyatakan 4 daripada 5 aktiviti ${cleanSP(spTerpilih)} yang dipelajari.`,
         rangkaSetInduksi: [`Guru mempamerkan gambar visual berkaitan ${rptData.tajuk} dan murid menyatakan pemerhatian awal.`, setInduksiBukuTeks],
         rangkaAktiviti: rangkaAktivitiDinamik,
         bahanBBM: `Buku teks muka surat ${mukaSuratPilihan}, bahan PAK21, alat multimedia, visual aids berkaitan ${rptData.tajuk}.`,
