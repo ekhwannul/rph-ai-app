@@ -215,13 +215,13 @@ async function generateRPHContent(formData, rptData, bukuTeksData, previousActiv
     const spTextShortened = spTextClean.split(';')[0].trim();
     
     // 2. Teks dipendekkan digunakan di sini
-    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextShortened} 3 dari 5 aktiviti ${spTextShortened} berdasarkan aktiviti yang dijalankan.`;
+    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${skTerpilih} berdasarkan 3 dari 5 aktiviti yang dijalankan.`;
 
     return {
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
         standardKandungan: skTerpilih, standardPembelajaran: spTerpilih,
         mukaSurat: mukaSuratPilihan, objektif: objektifDinamik,
-        kriteriaKejayaan: `Murid berjaya sekiranya murid dapat:\n1. Menulis ${spTextShortened} dengan baik.\n2. Membaca ${spTextShortened} dengan lancar.\n3. Menjawab dua soalan ${spTextShortened} dengan betul.`,
+        kriteriaKejayaan: `Murid berjaya sekiranya murid dapat:\nMenyatakan 4 daripada aktiviti ${spTerpilih} yang dipelajari.`,
         rangkaSetInduksi: [`Guru mempamerkan gambar visual berkaitan ${rptData.tajuk} dan murid menyatakan pemerhatian awal.`, setInduksiBukuTeks],
         rangkaAktiviti: rangkaAktivitiDinamik,
         bahanBBM: `Buku teks muka surat ${mukaSuratPilihan}, bahan PAK21, alat multimedia, visual aids berkaitan ${rptData.tajuk}.`,
