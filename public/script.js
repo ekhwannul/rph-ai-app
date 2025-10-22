@@ -215,15 +215,13 @@ async function generateRPHContent(formData, rptData, bukuTeksData, previousActiv
     const spTextShortened = spTextClean.split(';')[0].trim();
     
     // 2. Teks dipendekkan digunakan di sini
-    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextShortened} berdasarkan aktiviti yang dijalankan.`;
+    const objektifDinamik = `Pada akhir pengajaran, murid dapat ${spTextShortened} 3 dari 5 aktiviti ${spTextShortened} berdasarkan aktiviti yang dijalankan.`;
 
     return {
         tema: rptData.tema, unit: rptData.unit, tajuk: rptData.tajuk,
         standardKandungan: skTerpilih, standardPembelajaran: spTerpilih,
         mukaSurat: mukaSuratPilihan, objektif: objektifDinamik,
-        kriteriaCemerlang: `Murid berjaya melakukan 5 dari 5 aktiviti ${spTextShortened} dengan cemerlang serta menunjukkan kefahaman mendalam.`,
-        kriteriaSederhana: `Murid berjaya melakukan 3 dari 5 aktiviti ${spTextShortened} dengan baik serta memahami konsep asas.`,
-        kriteriaBimbingan: `Murid berjaya melakukan 2 dari 5 aktiviti ${spTextShortened} dengan bimbingan guru.`,
+        kriteriaKejayaan: `Murid berjaya sekiranya murid dapat:\n1. Menulis ${spTextShortened} dengan baik.\n2. Membaca ${spTextShortened} dengan lancar.\n3. Menjawab dua soalan ${spTextShortened} dengan betul.`,
         rangkaSetInduksi: [`Guru mempamerkan gambar visual berkaitan ${rptData.tajuk} dan murid menyatakan pemerhatian awal.`, setInduksiBukuTeks],
         rangkaAktiviti: rangkaAktivitiDinamik,
         bahanBBM: `Buku teks muka surat ${mukaSuratPilihan}, bahan PAK21, alat multimedia, visual aids berkaitan ${rptData.tajuk}.`,
@@ -258,9 +256,7 @@ function renderRPH(rphData, formData) {
         <h3>📚 Objektif Pembelajaran</h3><p>${rphData.objektif}</p>
         <h3>🎯 Kriteria Kejayaan</h3>
         <div class="success-criteria">
-            <div class="criteria-item">🏆 <strong>Cemerlang:</strong> ${rphData.kriteriaCemerlang}</div>
-            <div class="criteria-item">✅ <strong>Sederhana:</strong> ${rphData.kriteriaSederhana}</div>
-            <div class="criteria-item">💡 <strong>Perlu Bimbingan:</strong> ${rphData.kriteriaBimbingan}</div>
+            <p>${rphData.kriteriaKejayaan.split('\n').join('<br>')}</p>
         </div>
         <h3>🔄 Rangka Pengajaran</h3>
         <div class="teaching-framework">
